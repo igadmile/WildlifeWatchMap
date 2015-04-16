@@ -38,15 +38,15 @@ function resetHighlight(e) {
     exp_stazeJSON.resetStyle(e.target);
 }	
 
-function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-}
+// function zoomToFeature(e) {
+//     map.fitBounds(e.target.getBounds());
+// }
 //sklapanje gornjih funkcija u ineachfeature
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-		click:zoomToFeature
+//         click:zoomToFeature
     })
 	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
 	layer.bindPopup(popupContent);
