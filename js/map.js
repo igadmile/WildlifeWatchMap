@@ -23,79 +23,93 @@ var layerOrder=new Array();
 //dodavanje fucnkcije za promijenu boje
 function highlightFeature(e) {
     var layer = e.target;
-
     layer.setStyle({
         weight: 6,
         color: 'yellow',
-		fillColor:'yellow',
+        fillColor:'yellow',
         opacity: 0.7,
         fillOpacity: 0.7
     });
+    layer.bringToFront();
 }
 
-//dodavanje funkcije za vraćanje boje na staro
-function resetHighlight(e) {
-    exp_stazeJSON.resetStyle(e.target);
+//dodavanje funkcije za vraćanje boje na staro planinarske staze
+function resetHighlightMhouse(e) {
+    hike.resetStyle(e.target);
 }	
+//dodavanje funkcije za vraćanje boje na staro biciklističke
+function resetHighlightBike(e) {
+    bike.resetStyle(e.target);
+}
 
-// function zoomToFeature(e) {
-//     map.fitBounds(e.target.getBounds());
-// }
-//sklapanje gornjih funkcija u ineachfeature
-function onEachFeature(feature, layer) {
+//sklapanje gornjih funkcija u oneachfeature za plninarske staze
+function onEachFeatureMhouse(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
-        mouseout: resetHighlight,
-//         click:zoomToFeature
+        mouseout: resetHighlightMhouse,
     })
 	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
 	layer.bindPopup(popupContent);
 };
 
-var exp_stazeJSON = new L.geoJson(exp_staze,{
-	onEachFeature: onEachFeature,
+//sklapanje gornjih funkcija u oneachfeature za biciklističke staze
+function onEachFeatureBike(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlightBike,
+    })
+	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
+	layer.bindPopup(popupContent);
+};
+
+var hike = new L.geoJson(exp_staze,{
+	onEachFeature: onEachFeatureMhouse,
 	style: function (feature) {
 		return {weight: feature.properties.radius_qgis2leaf,
-				color: feature.properties.color_qgis2leaf,
-				opacity: feature.properties.transp_qgis2leaf,
-				fillOpacity: feature.properties.transp_qgis2leaf};
+                        color: feature.properties.color_qgis2leaf,
+                        opacity: feature.properties.transp_qgis2leaf,
+                        fillOpacity: feature.properties.transp_qgis2leaf};
 		}
 	});
 
-feature_group.addLayer(exp_stazeJSON);
+feature_group.addLayer(hike);
 
-// layerOrder[layerOrder.length] = exp_stazeJSON;
+// layerOrder[layerOrder.length] = hike;
 // 	for (index = 0; index < layerOrder.length; index++) {
 // 		feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
 // }
 
 //add comment sign to hide this layer on the map in the initial view.
-exp_stazeJSON.addTo(map);
-					
-var exp_gospicJSON = new L.geoJson(exp_sredenestaze,{
-	onEachFeature: onEachFeature,
-	style: function (feature) {
-		return {weight: feature.properties.radius_qgis2leaf,
-				color: feature.properties.color_qgis2leaf,
-				opacity: feature.properties.transp_qgis2leaf,
-				fillOpacity: feature.properties.transp_qgis2leaf};
-		}
-	});
-feature_group.addLayer(exp_gospicJSON);
+hike.addTo(map);
 
-// layerOrder[layerOrder.length] = exp_gospicJSON;
+function styleBike(feature) {
+        return {
+                weight: 3.3,
+                color: '#33a02c',
+                dashArray: '',
+                opacity: 0.8,
+                fillOpacity: 0.9
+        };
+}					
+var bike = new L.geoJson(exp_sredenestaze,{
+	onEachFeature: onEachFeatureBike,
+	style: styleBike
+});
+feature_group.addLayer(bike);
+
+// layerOrder[layerOrder.length] = bike;
 // for (index = 0; index < layerOrder.length; index++) {
 // 	feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
 // }
 			
 //add comment sign to hide this layer on the map in the initial view.
-exp_gospicJSON.addTo(map);
+bike.addTo(map);
 
 
 var redMarker = L.MakiMarkers.icon({
     icon: "building", 
-	color: "#969559", 
-	size: "m"
+    color: "#969559", 
+    size: "m"
 });		
 
 function onEachFeature2(feature, marker) {
@@ -103,7 +117,7 @@ function onEachFeature2(feature, marker) {
 	marker.bindPopup(popupContent);
 };
 
-var exp_planinarskekueJSON = new L.geoJson(exp_planinarskekue,{
+var Mhouse = new L.geoJson(exp_planinarskekue,{
 	onEachFeature: onEachFeature2,
 	pointToLayer: function (feature, latlng) {  
 		return L.marker(latlng, {
@@ -113,16 +127,16 @@ var exp_planinarskekueJSON = new L.geoJson(exp_planinarskekue,{
 	}
 });
 
-feature_group.addLayer(exp_planinarskekueJSON);
+feature_group.addLayer(Mhouse);
 
-// layerOrder[layerOrder.length] = exp_planinarskekueJSON;
+// layerOrder[layerOrder.length] = Mhouse;
 // 
 // for (index = 0; index < layerOrder.length; index++) {
 // 	feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
 // }
 
 //add comment sign to hide this layer on the map in the initial view.
-exp_planinarskekueJSON.addTo(map);
+Mhouse.addTo(map);
 
 var baseMaps = {
 // 	'openstreetmap':basemap_1,
@@ -133,19 +147,8 @@ var baseMaps = {
 L.control.locate().addTo(map);
 
 // search control
-map.addControl( new L.Control.Search({layer: exp_planinarskekueJSON, propertyName: 'name'}) );
+map.addControl( new L.Control.Search({layer: Mhouse, propertyName: 'name'}) );
 
-L.control.layers(baseMaps,{"Planinarske kuće": exp_planinarskekueJSON,"Biciklističke staze": exp_gospicJSON,"Planinarske staze": exp_stazeJSON},{collapsed:false}).addTo(map);
-	
-// map.locate({setView: true, maxZoom: 16});
-// 	
-// function onLocationFound(e) {
-// 	var radius = e.accuracy / 2;
-// 	L.marker(e.latlng).addTo(map)
-// 	.bindPopup("You are within " + radius + " meters from this point").openPopup();
-// 	L.circle(e.latlng, radius).addTo(map);
-// }
-// 
-// map.on('locationfound', onLocationFound);
+L.control.layers(baseMaps,{"Planinarske kuće": Mhouse,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
 	
 L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
