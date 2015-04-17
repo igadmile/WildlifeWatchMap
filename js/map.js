@@ -14,10 +14,6 @@ var basemap_0 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/
 	attribution: additional_attrib});	
 basemap_0.addTo(map);	
 
-// var basemap_1 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-// 	attribution: additional_attrib});	
-// basemap_1.addTo(map);
-
 var layerOrder=new Array();	
 
 //dodavanje fucnkcije za promijenu boje
@@ -32,14 +28,9 @@ function highlight (layer) {
     layer.bringToFront();
 }
 
-function dehighlightBike (layer) {
+function dehighlight (layer) {
     if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
         bike.resetStyle(layer);
-    }
-}
-
-function dehighlightHike (layer) {
-    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
         hike.resetStyle(layer);
     }
 }
@@ -57,8 +48,7 @@ function select (layer) {
     // If there was a previous selection
     if (previous) {
         // Dehighlight previous
-        dehighlightBike(previous);
-        dehighlightHike(previous);
+        dehighlight(previous);
     }
 }
 
@@ -69,29 +59,13 @@ function onEachFeatureMhouse(feature, marker) {
 };
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke staze
-function onEachFeatureBike(feature, layer) {
+function onEachFeature(feature, layer) {
     layer.on({
         'mouseover': function (e) {
                 highlight(e.target);
         },
         'mouseout': function (e) {
-            dehighlightBike(e.target);
-        },
-        'click': function (e) {
-            select(e.target);
-        }
-    })
-	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
-	layer.bindPopup(popupContent);
-};
-
-function onEachFeatureHike(feature, layer) {
-    layer.on({
-        'mouseover': function (e) {
-                highlight(e.target);
-        },
-        'mouseout': function (e) {
-            dehighlightHike(e.target);
+            dehighlight(e.target);
         },
         'click': function (e) {
             select(e.target);
@@ -102,7 +76,7 @@ function onEachFeatureHike(feature, layer) {
 };
 
 var hike = new L.geoJson(exp_staze,{
-	onEachFeature: onEachFeatureHike,
+	onEachFeature: onEachFeature,
 	style: function (feature) {
 		return {weight: feature.properties.radius_qgis2leaf,
                         color: feature.properties.color_qgis2leaf,
@@ -113,34 +87,20 @@ var hike = new L.geoJson(exp_staze,{
 
 feature_group.addLayer(hike);
 
-// layerOrder[layerOrder.length] = hike;
-// 	for (index = 0; index < layerOrder.length; index++) {
-// 		feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
-// }
-
 //add comment sign to hide this layer on the map in the initial view.
 hike.addTo(map);
-
-function styleBike(feature) {
-        return {
-                weight: 3.3,
-                color: '#33a02c',
-                dashArray: '',
-                opacity: 0.8,
-                fillOpacity: 0.9
-        };
-}					
+					
 var bike = new L.geoJson(exp_sredenestaze,{
-	onEachFeature: onEachFeatureBike,
-	style: styleBike
+	onEachFeature: onEachFeature,
+	style: function (feature) {
+		return {weight: feature.properties.radius_qgis2leaf,
+                        color: feature.properties.color_qgis2leaf,
+                        opacity: feature.properties.transp_qgis2leaf,
+                        fillOpacity: feature.properties.transp_qgis2leaf};
+		}
 });
 feature_group.addLayer(bike);
-
-// layerOrder[layerOrder.length] = bike;
-// for (index = 0; index < layerOrder.length; index++) {
-// 	feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
-// }
-			
+		
 //add comment sign to hide this layer on the map in the initial view.
 bike.addTo(map);
 
@@ -163,17 +123,10 @@ var Mhouse = new L.geoJson(exp_planinarskekue,{
 
 feature_group.addLayer(Mhouse);
 
-// layerOrder[layerOrder.length] = Mhouse;
-// 
-// for (index = 0; index < layerOrder.length; index++) {
-// 	feature_group.removeLayer(layerOrder[index]);feature_group.addLayer(layerOrder[index]);
-// }
-
 //add comment sign to hide this layer on the map in the initial view.
 Mhouse.addTo(map);
 
 var baseMaps = {
-// 	'openstreetmap':basemap_1,
 	'Thunderforest Landscape': basemap_0
 };
 
