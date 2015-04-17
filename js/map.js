@@ -32,10 +32,15 @@ function highlight (layer) {
     layer.bringToFront();
 }
 
-function dehighlight (layer) {
+function dehighlightBike (layer) {
     if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
         bike.resetStyle(layer);
-        bike.resetStyle(layer);
+    }
+}
+
+function dehighlightHike (layer) {
+    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+        hike.resetStyle(layer);
     }
 }
 
@@ -52,7 +57,8 @@ function select (layer) {
     // If there was a previous selection
     if (previous) {
         // Dehighlight previous
-        dehighlight(previous);
+        dehighlightBike(previous);
+        dehighlightHike(previous);
     }
 }
 
@@ -63,24 +69,40 @@ function onEachFeatureMhouse(feature, marker) {
 };
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke staze
-function onEachFeature(feature, layer) {
+function onEachFeatureBike(feature, layer) {
     layer.on({
         'mouseover': function (e) {
                 highlight(e.target);
-            },
-            'mouseout': function (e) {
-                dehighlight(e.target);
-            },
-            'click': function (e) {
-              select(e.target);
-            }
+        },
+        'mouseout': function (e) {
+            dehighlightBike(e.target);
+        },
+        'click': function (e) {
+            select(e.target);
+        }
+    })
+	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
+	layer.bindPopup(popupContent);
+};
+
+function onEachFeatureHike(feature, layer) {
+    layer.on({
+        'mouseover': function (e) {
+                highlight(e.target);
+        },
+        'mouseout': function (e) {
+            dehighlightHike(e.target);
+        },
+        'click': function (e) {
+            select(e.target);
+        }
     })
 	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
 	layer.bindPopup(popupContent);
 };
 
 var hike = new L.geoJson(exp_staze,{
-	onEachFeature: onEachFeature,
+	onEachFeature: onEachFeatureHike,
 	style: function (feature) {
 		return {weight: feature.properties.radius_qgis2leaf,
                         color: feature.properties.color_qgis2leaf,
@@ -109,7 +131,7 @@ function styleBike(feature) {
         };
 }					
 var bike = new L.geoJson(exp_sredenestaze,{
-	onEachFeature: onEachFeature,
+	onEachFeature: onEachFeatureBike,
 	style: styleBike
 });
 feature_group.addLayer(bike);
