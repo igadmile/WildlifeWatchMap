@@ -9,7 +9,7 @@ zoomHome.addTo(map);
 var raster_group = new L.LayerGroup([]);
 
 var basemap_0 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
-	attribution: additional_attrib
+    attribution: additional_attrib
 });
 
 basemap_0.addTo(map);
@@ -69,8 +69,8 @@ function onEachFeature(feature, layer) {
             select(e.target);
         }
     })
-	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
-	layer.bindPopup(popupContent);
+    var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
+    layer.bindPopup(popupContent);
 };
 
 var hike = new L.geoJson(exp_staze,{
