@@ -6,15 +6,14 @@ var additional_attrib = 'created as part of Wildlife Watch project, supported by
 var zoomHome = L.Control.zoomHome({position: 'topleft'});
 zoomHome.addTo(map);	
 
-var feature_group = new L.featureGroup([]);
 
 var raster_group = new L.LayerGroup([]);
 
 var basemap_0 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
-	attribution: additional_attrib});	
-basemap_0.addTo(map);	
+	attribution: additional_attrib
+});	
 
-var layerOrder=new Array();	
+basemap_0.addTo(map);		
 
 //dodavanje fucnkcije za promijenu boje
 function highlight (layer) {
@@ -26,14 +25,14 @@ function highlight (layer) {
         fillOpacity: 0.7
     });
     layer.bringToFront();
-}
+};
 
 function dehighlight (layer) {
     if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
         bike.resetStyle(layer);
         hike.resetStyle(layer);
     }
-}
+};
 
 var selected = null;
 
@@ -50,7 +49,7 @@ function select (layer) {
         // Dehighlight previous
         dehighlight(previous);
     }
-}
+};
 
 //sklapanje gornjih funkcija u oneachfeature za plninarske staze
 function onEachFeatureMhouse(feature, marker) {
@@ -62,7 +61,7 @@ function onEachFeatureMhouse(feature, marker) {
 function onEachFeature(feature, layer) {
     layer.on({
         'mouseover': function (e) {
-                highlight(e.target);
+            highlight(e.target);
         },
         'mouseout': function (e) {
             dehighlight(e.target);
@@ -85,8 +84,6 @@ var hike = new L.geoJson(exp_staze,{
 		}
 	});
 
-feature_group.addLayer(hike);
-
 //add comment sign to hide this layer on the map in the initial view.
 hike.addTo(map);
 					
@@ -99,7 +96,6 @@ var bike = new L.geoJson(exp_sredenestaze,{
                         fillOpacity: feature.properties.transp_qgis2leaf};
 		}
 });
-feature_group.addLayer(bike);
 		
 //add comment sign to hide this layer on the map in the initial view.
 bike.addTo(map);
@@ -120,8 +116,6 @@ var Mhouse = new L.geoJson(exp_planinarskekue,{
 			})
 	}
 });
-
-feature_group.addLayer(Mhouse);
 
 //add comment sign to hide this layer on the map in the initial view.
 Mhouse.addTo(map);
