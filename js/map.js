@@ -73,6 +73,11 @@ function onEachFeature(feature, layer) {
         },
         'click': function (e) {
             select(e.target);
+        },
+        'popupclose':function (e) {
+            selected=null;
+            bike.resetStyle(layer);
+            hike.resetStyle(layer);
         }
     })
     var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
