@@ -8,11 +8,17 @@ zoomHome.addTo(map);
 
 var raster_group = new L.LayerGroup([]);
 
-var basemap_0 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
+var basemap_0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
     attribution: additional_attrib
 });
 
 basemap_0.addTo(map);
+
+var basemap_1 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
+    attribution: additional_attrib
+});
+
+basemap_1.addTo(map);
 
 //dodavanje fucnkcije za promijenu boje
 function highlight (layer) {
@@ -119,7 +125,9 @@ var Mhouse = new L.geoJson(exp_planinarskekue,{
 Mhouse.addTo(map);
 
 var baseMaps = {
-    'Thunderforest Landscape': basemap_0
+    'OpenstreetMap':basemap_0,
+    'Thunderforest Landscape': basemap_1
+    
 };
 
 // locate control
