@@ -4,16 +4,15 @@ var additional_attrib = 'created as part of Wildlife Watch project, supported by
 
 // home icon
 var zoomHome = L.Control.zoomHome({position: 'topleft'});
-zoomHome.addTo(map);	
-
+zoomHome.addTo(map);
 
 var raster_group = new L.LayerGroup([]);
 
 var basemap_0 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
 	attribution: additional_attrib
-});	
+});
 
-basemap_0.addTo(map);		
+basemap_0.addTo(map);
 
 //dodavanje fucnkcije za promijenu boje
 function highlight (layer) {
@@ -53,8 +52,8 @@ function select (layer) {
 
 //sklapanje gornjih funkcija u oneachfeature za plninarske staze
 function onEachFeatureMhouse(feature, marker) {
-	var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
-	marker.bindPopup(popupContent);
+    var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
+    marker.bindPopup(popupContent);
 };
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke staze
@@ -75,29 +74,29 @@ function onEachFeature(feature, layer) {
 };
 
 var hike = new L.geoJson(exp_staze,{
-	onEachFeature: onEachFeature,
-	style: function (feature) {
-		return {weight: feature.properties.radius_qgis2leaf,
-                        color: feature.properties.color_qgis2leaf,
-                        opacity: feature.properties.transp_qgis2leaf,
-                        fillOpacity: feature.properties.transp_qgis2leaf};
-		}
-	});
+    onEachFeature: onEachFeature,
+    style: function (feature) {
+        return {
+            weight: feature.properties.radius_qgis2leaf,
+            color: feature.properties.color_qgis2leaf,
+            opacity: feature.properties.transp_qgis2leaf,
+            fillOpacity: feature.properties.transp_qgis2leaf};
+        }
+    });
 
-//add comment sign to hide this layer on the map in the initial view.
 hike.addTo(map);
 					
 var bike = new L.geoJson(exp_sredenestaze,{
-	onEachFeature: onEachFeature,
-	style: function (feature) {
-		return {weight: feature.properties.radius_qgis2leaf,
-                        color: feature.properties.color_qgis2leaf,
-                        opacity: feature.properties.transp_qgis2leaf,
-                        fillOpacity: feature.properties.transp_qgis2leaf};
-		}
+    onEachFeature: onEachFeature,
+    style: function (feature) {
+        return {
+            weight: feature.properties.radius_qgis2leaf,
+            color: feature.properties.color_qgis2leaf,
+            opacity: feature.properties.transp_qgis2leaf,
+            fillOpacity: feature.properties.transp_qgis2leaf};
+        }
 });
 		
-//add comment sign to hide this layer on the map in the initial view.
 bike.addTo(map);
 
 
@@ -108,20 +107,19 @@ var redMarker = L.MakiMarkers.icon({
 });		
 
 var Mhouse = new L.geoJson(exp_planinarskekue,{
-	onEachFeature: onEachFeatureMhouse,
-	pointToLayer: function (feature, latlng) {  
-		return L.marker(latlng, {
-			icon: redMarker,
-			riseOnHover: true
-			})
-	}
+    onEachFeature: onEachFeatureMhouse,
+    pointToLayer: function (feature, latlng) {  
+        return L.marker(latlng, {
+            icon: redMarker,
+            riseOnHover: true
+            })
+    }
 });
 
-//add comment sign to hide this layer on the map in the initial view.
 Mhouse.addTo(map);
 
 var baseMaps = {
-	'Thunderforest Landscape': basemap_0
+    'Thunderforest Landscape': basemap_0
 };
 
 // locate control
