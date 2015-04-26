@@ -1,7 +1,7 @@
 var map = L.map('map', { fullscreenControl: true,zoomControl:false }).fitBounds([[44.1378,14.6474],[45.1181,16.2639]]);
 var hash = new L.Hash(map); //add hashes to html address to easy share locations
 var additional_attrib = 'Created as part of Wildlife Watch project, supported by European Union';
-var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvoded by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
+var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
 // home icon
 var zoomHome = L.Control.zoomHome({position: 'topleft'});
 zoomHome.addTo(map);
