@@ -1,24 +1,34 @@
-var map = L.map('map', { fullscreenControl: true,zoomControl:false }).fitBounds([[43.83511132,14.2488295908],[45.22224532,16.5379539508]]);
+var map = L.map('map', { fullscreenControl: true,zoomControl:false }).fitBounds([[44.1378,14.6474],[45.1181,16.2639]]);
 var hash = new L.Hash(map); //add hashes to html address to easy share locations
-var additional_attrib = 'created as part of Wildlife Watch project, supported by European Union';
-
+var additional_attrib = 'Created as part of Wildlife Watch project, supported by European Union';
+var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvoded by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
 // home icon
 var zoomHome = L.Control.zoomHome({position: 'topleft'});
 zoomHome.addTo(map);
 
 var raster_group = new L.LayerGroup([]);
 
-var basemap_0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+var basemap_0 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
+        layers: 'DOF',
+        format: 'image/jpeg',
+        transparent: true,
+        continuousWorld : true,
+        attribution: additional_attrib2
+})
+
+var basemap_1 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
+        layers: 'TK25',
+        format: 'image/jpeg',
+        transparent: true,
+        continuousWorld : true,
+        attribution: additional_attrib2
+})
+
+var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
     attribution: additional_attrib
 });
 
-basemap_0.addTo(map);
-
-var basemap_1 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', { 
-    attribution: additional_attrib
-});
-
-basemap_1.addTo(map);
+basemap_2.addTo(map);
 
 //dodavanje fucnkcije za promijenu boje
 function highlight (layer) {
@@ -130,9 +140,9 @@ var Mhouse = new L.geoJson(exp_planinarskekue,{
 Mhouse.addTo(map);
 
 var baseMaps = {
-    'OpenstreetMap':basemap_0,
-    'Thunderforest Landscape': basemap_1
-    
+    'Thunderforest Landscape': basemap_2,
+    'TK25':basemap_1,
+    'Digital Ortofoto':basemap_0
 };
 
 // locate control
