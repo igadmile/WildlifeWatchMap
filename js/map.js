@@ -94,7 +94,7 @@ function onEachFeature(feature, layer) {
     layer.bindPopup(popupContent);
 };
 
-var hike = new L.geoJson(exp_staze,{
+var hike = new L.geoJson(exp_hike,{
     onEachFeature: onEachFeature,
     style: function (feature) {
         return {
@@ -107,7 +107,7 @@ var hike = new L.geoJson(exp_staze,{
 
 hike.addTo(map);
 					
-var bike = new L.geoJson(exp_sredenestaze,{
+var bike = new L.geoJson(exp_bike,{
     onEachFeature: onEachFeature,
     style: function (feature) {
         return {
@@ -127,7 +127,7 @@ var redMarker = L.MakiMarkers.icon({
     size: "m"
 });		
 
-var Mhouse = new L.geoJson(exp_planinarskekue,{
+var Mhouse = new L.geoJson(exp_Mhouse,{
     onEachFeature: onEachFeatureMhouse,
     pointToLayer: function (feature, latlng) {  
         return L.marker(latlng, {
