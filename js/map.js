@@ -1,4 +1,4 @@
-var map = L.map('map', { fullscreenControl: true,zoomControl:false }).fitBounds([[44.1378,14.6474],[45.1181,16.2639]]);
+var map = L.map('map', { fullscreenControl: true,zoomControl:false }).fitBounds([[44.2626173655,14.7660291146],[44.9415644853,16.2414966344]]);
 var hash = new L.Hash(map); //add hashes to html address to easy share locations
 var additional_attrib = 'Created as part of Wildlife Watch project, supported by European Union';
 var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
@@ -66,8 +66,8 @@ function select (layer) {
     }
 };
 
-//sklapanje gornjih funkcija u oneachfeature za plninarske staze
-function onEachFeatureMhouse(feature, marker) {
+//sklapanje gornjih funkcija u oneachfeature za mhouse
+function onEachFeaturemhouse(feature, marker) {
     var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties['name'])) + '</td></tr></table>';
     marker.bindPopup(popupContent);
 };
@@ -120,24 +120,55 @@ var bike = new L.geoJson(exp_bike,{
 		
 bike.addTo(map);
 
-
-var redMarker = L.MakiMarkers.icon({
-    icon: "building", 
+var mhouseMarker = L.MakiMarkers.icon({
+    icon: "campsite", 
     color: "#969559", 
     size: "m"
 });		
 
-var Mhouse = new L.geoJson(exp_Mhouse,{
-    onEachFeature: onEachFeatureMhouse,
+var mhouse = new L.geoJson(exp_mhouse,{
+    onEachFeature: onEachFeaturemhouse,
     pointToLayer: function (feature, latlng) {  
         return L.marker(latlng, {
-            icon: redMarker,
+            icon: mhouseMarker,
             riseOnHover: true
             })
     }
 });
 
-Mhouse.addTo(map);
+var accommodationMarker = L.MakiMarkers.icon({
+    icon: "building", 
+    color: "#004e9e", 
+    size: "m"
+});		
+
+var accommodation = new L.geoJson(exp_accommodation,{
+    onEachFeature: onEachFeaturemhouse,
+    pointToLayer: function (feature, latlng) {  
+        return L.marker(latlng, {
+            icon: accommodationMarker,
+            riseOnHover: true
+            })
+    }
+});
+
+accommodation.addTo(map);
+
+var sceneryMarker = L.MakiMarkers.icon({
+    icon: "camera", 
+    color: "#009e4e", 
+    size: "m"
+});		
+
+var scenery = new L.geoJson(exp_scenery,{
+    onEachFeature: onEachFeaturemhouse,
+    pointToLayer: function (feature, latlng) {  
+        return L.marker(latlng, {
+            icon: sceneryMarker,
+            riseOnHover: true
+            })
+    }
+});
 
 var baseMaps = {
     'Thunderforest Landscape': basemap_2,
@@ -145,12 +176,24 @@ var baseMaps = {
     'Digital Ortofoto':basemap_0
 };
 
+map.on('viewreset', onZoomend);
+function onZoomend(){
+    if(map.getZoom()<10)
+     {map.removeLayer(scenery);
+      map.removeLayer(mhouse);
+    };
+    if(map.getZoom()>=10) 
+     {map.addLayer(scenery);
+      map.addLayer(mhouse);
+    };
+ };
+
 // locate control
 L.control.locate().addTo(map);
 
 // search control
-map.addControl( new L.Control.Search({layer: Mhouse, propertyName: 'name'}) );
+// map.addControl( new L.Control.Search({layer: mhouse, propertyName: 'name'}) );
 
-L.control.layers(baseMaps,{"Planinarske kuće": Mhouse,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
+L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:true}).addTo(map);
 	
 L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
