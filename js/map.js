@@ -8,19 +8,19 @@ var zoomHome = L.Control.zoomHome({position: 'topleft'});
 zoomHome.addTo(map);
 
 var basemap_0 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
-	layers: 'DOF',
-	format: 'image/jpeg',
-	attribution: additional_attrib2
+    layers: 'DOF',
+    format: 'image/jpeg',
+    attribution: additional_attrib2
 });
 
 var basemap_1 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
-	layers: 'TK25',
-	format: 'image/jpeg',
-	attribution: additional_attrib2
+    layers: 'TK25',
+    format: 'image/jpeg',
+    attribution: additional_attrib2
 });
 
 var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
-	attribution: additional_attrib
+    attribution: additional_attrib
 });
 
 basemap_2.addTo(map);
@@ -68,6 +68,20 @@ function onEachFeaturemhouse(feature, marker) {
     marker.bindPopup(popupContent);
 }
 
+// elevation window
+var el = L.control.elevation({
+    position: "bottomright",
+    interpolation: "basis-open"
+});
+el.addTo(map);
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+
+
+
 //sklapanje gornjih funkcija u oneachfeature za biciklističke staze
 function onEachFeature(feature, layer) {
     layer.on({
@@ -79,6 +93,9 @@ function onEachFeature(feature, layer) {
         },
         'click': function (e) {
             select(e.target);
+            el.clear();
+            el.addData(feature);
+            zoomToFeature(e);
         },
         'popupclose':function (e) {
             selected=null;
@@ -94,10 +111,10 @@ var hike = new L.geoJson(exp_hike,{
     onEachFeature: onEachFeature,
     style: function (feature) {
         return {
-            weight: feature.properties.radius_qgis2leaf,
-            color: feature.properties.color_qgis2leaf,
-            opacity: feature.properties.transp_qgis2leaf,
-            fillOpacity: feature.properties.transp_qgis2leaf};
+            weight: feature.properties.radius,
+            color: feature.properties.color,
+            opacity: feature.properties.transp,
+            fillOpacity: feature.properties.fill};
         }
     });
 
@@ -107,10 +124,10 @@ var bike = new L.geoJson(exp_bike,{
     onEachFeature: onEachFeature,
     style: function (feature) {
         return {
-            weight: feature.properties.radius_qgis2leaf,
-            color: feature.properties.color_qgis2leaf,
-            opacity: feature.properties.transp_qgis2leaf,
-            fillOpacity: feature.properties.transp_qgis2leaf};
+            weight: feature.properties.radius,
+            color: feature.properties.color,
+            opacity: feature.properties.transp,
+            fillOpacity: feature.properties.fill};
         }
 });
 
@@ -126,9 +143,9 @@ var mhouse = new L.geoJson(exp_mhouse,{
     onEachFeature: onEachFeaturemhouse,
     pointToLayer: function (feature, latlng) {
 	return L.marker(latlng, {
-		icon: mhouseMarker,
-		riseOnHover: true
-		});
+            icon: mhouseMarker,
+            riseOnHover: true
+            });
     }
 });
 
@@ -142,9 +159,9 @@ var accommodation = new L.geoJson(exp_accommodation,{
     onEachFeature: onEachFeaturemhouse,
     pointToLayer: function (feature, latlng) {
 	return L.marker(latlng, {
-		icon: accommodationMarker,
-		riseOnHover: true
-		});
+            icon: accommodationMarker,
+            riseOnHover: true
+            });
     }
 });
 
@@ -174,11 +191,11 @@ var baseMaps = {
 
 map.on('viewreset', onZoomend);
 function onZoomend(){
-    if(map.getZoom()<10)
+    if(map.getZoom()<12)
      {map.removeLayer(scenery);
       map.removeLayer(mhouse);
     }
-    if(map.getZoom()>=10)
+    if(map.getZoom()>=12)
      {map.addLayer(scenery);
       map.addLayer(mhouse);
     }
@@ -187,9 +204,6 @@ function onZoomend(){
 // locate control
 L.control.locate().addTo(map);
 
-// search control
-// map.addControl( new L.Control.Search({layer: mhouse, propertyName: 'name'}) );
-
-L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:true}).addTo(map);
+L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
 
 L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
