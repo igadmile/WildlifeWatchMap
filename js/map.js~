@@ -68,6 +68,13 @@ function onEachFeaturemhouse(feature, marker) {
     marker.bindPopup(popupContent);
 }
 
+// elevation window
+var el = L.control.elevation({
+    position: "bottomright",
+    interpolation: "basis-open"
+});
+el.addTo(map);
+
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
@@ -89,8 +96,8 @@ function onEachFeature(feature, layer) {
         },
         'popupclose':function (e) {
             selected=null;
-            bike.setStyle(doStylebike(layer));
-            hike.setStyle(doStylehike(layer));
+            bike.resetStyle(layer);
+            hike.resetStyle(layer);
         }
     });
     var popupContent = '<table><tr><th scope="row">name</th><td>' + Autolinker.link(String(feature.properties.name)) + '</td></tr></table>';
@@ -140,10 +147,10 @@ var mhouseMarker = L.MakiMarkers.icon({
 var mhouse = new L.geoJson(exp_mhouse,{
     onEachFeature: onEachFeaturemhouse,
     pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
+	return L.marker(latlng, {
             icon: mhouseMarker,
             riseOnHover: true
-        });
+            });
     }
 });
 
@@ -156,10 +163,10 @@ var accommodationMarker = L.MakiMarkers.icon({
 var accommodation = new L.geoJson(exp_accommodation,{
     onEachFeature: onEachFeaturemhouse,
     pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
+	return L.marker(latlng, {
             icon: accommodationMarker,
             riseOnHover: true
-        });
+            });
     }
 });
 
@@ -199,26 +206,9 @@ function onZoomend(){
     }
  }
 
-// check if mobile or desktop and load elevation profile and controls accordingly
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    var el = L.control.elevation({
-    position: "bottomright",
-    theme: "steelblue-theme",
-    collapsed: true,
-    });
-    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:true}).addTo(map);
-}
-else {
-    var el = L.control.elevation({
-    position: "bottomright",
-    theme: "steelblue-theme",
-    collapsed: false,
-    });
-    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
-} 
-el.addTo(map);
-
 // locate control
 L.control.locate().addTo(map);
+
+L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
 
 L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
