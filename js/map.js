@@ -40,6 +40,12 @@ function dehighlightHike (layer) {
     }
 }
 
+function dehighlightwildTrail (layer) {
+    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+        wildTrail.resetStyle(layer);
+    }
+}
+
 function dehighlightBike (layer) {
     if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
         bike.resetStyle(layer);
@@ -64,7 +70,7 @@ function select (layer) {
 
 //dodavanje popupa za mhouse
 function onEachFeaturemhouse(feature, marker) {
-    var popupContent = '<div style="text-align:center"><h3>'+Autolinker.link(String(feature.properties['name']))+'</h3></div>'+'<p><img src="photo/sr-krasno.jpg"></p>';
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
     marker.bindPopup(popupContent);
 }
 
@@ -92,7 +98,30 @@ function onEachFeatureHike(feature, layer) {
             hike.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h3>'+Autolinker.link(String(feature.properties['name']));
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
+    layer.bindPopup(popupContent);
+}
+
+function onEachFeaturewildTrail(feature, layer) {
+    layer.on({
+        'mouseover': function (e) {
+            highlight(e.target);
+        },
+        'mouseout': function (e) {
+            dehighlightwildTrail(e.target);
+        },
+        'click': function (e) {
+            select(e.target);
+            el.clear();
+            el.addData(feature);
+            zoomToFeature(e);
+        },
+        'popupclose':function (e) {
+            selected=null;
+            wildTrail.resetStyle(layer);
+        }
+    });
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>'+'<table><tr><th scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
     layer.bindPopup(popupContent);
 }
 
@@ -115,7 +144,7 @@ function onEachFeatureBike(feature, layer) {
             bike.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h3>'+Autolinker.link(String(feature.properties['name']));
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
     layer.bindPopup(popupContent);
 }
 
@@ -132,6 +161,21 @@ function doStylehike(feature) {
 var hike = new L.geoJson(exp_hike,{
     onEachFeature: onEachFeatureHike,
     style: doStylehike
+    });
+
+function doStylewildTrail(feature) {
+    return {
+            weight: 3.3,
+            color: '#64a5a5',
+            dashArray: '',
+            opacity: 1.0,
+            fillOpacity: 1.0
+    };
+}
+
+var wildTrail = new L.geoJson(exp_wildTrail,{
+    onEachFeature: onEachFeaturewildTrail,
+    style: doStylewildTrail
     });
 
 function doStylebike(feature) {
@@ -208,7 +252,8 @@ var overlays = {
     "bike":bike,
     "mhouse":mhouse,
     "accommodation":accommodation,
-    "scenery":scenery
+    "scenery":scenery,
+    "wildtrail":wildTrail
 };
 
 var params = {};
@@ -241,7 +286,7 @@ basemap_2.addTo(map);
 
 // check if mobile or desktop and load elevation profile and controls accordingly
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.getElementById("map").offsetWidth<1025) {
-    if (map.hasLayer(hike)||map.hasLayer(bike)) {
+    if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
         el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
@@ -249,10 +294,10 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         });
         el.addTo(map);
     }
-    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:true}).addTo(map);
+    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Wildlife ture":wildTrail,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:true}).addTo(map);
 }
 else {
-    if (map.hasLayer(hike)||map.hasLayer(bike)) {
+    if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
         var el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
@@ -260,7 +305,7 @@ else {
         });
         el.addTo(map);
     }
-    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
+    L.control.layers(baseMaps,{"Smještaj": accommodation,"Planinarske kuće": mhouse,"Vidikovci": scenery,"Wildlife ture":wildTrail,"Biciklističke staze": bike,"Planinarske staze": hike},{collapsed:false}).addTo(map);
 }
 
 // locate control
