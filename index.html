@@ -2,22 +2,25 @@
 <html>
 <head> 
     <title>Wildlife Watch map</title>
+    <link rel="shortcut icon" type="image/png" href="favico.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
 <!--css-->
+    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" /> <!-- we will us e this as the styling script for our webmap-->
     <link href='css/leaflet.fullscreen.css' rel='stylesheet' />
     <link href='css/L.Control.Locate.min.css' rel='stylesheet' />
     <link href='css/leaflet.zoomhome.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/leaflet.elevation-0.0.4.css">
+    <link rel="stylesheet" type="text/css" href="css/styledLayerControl.css">
     <link rel="stylesheet" type="text/css" href="css/own_style.css">
 </head>
 <body>
     <div id="map"></div>
 <!--javascript-->
 <!--	<script>L_PREFER_CANVAS = true;</script>-->
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script> 
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
     <script src="js/Leaflet.MakiMarkers.js"></script>
@@ -26,8 +29,10 @@
     <script src="js/Autolinker.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="js/leaflet.elevation-0.0.4.min.js"></script>
+    <script src="js/styledLayerControl.min.js"></script>
 <!--data-->
     <script src='data/data.js' ></script>
-    <script src='js/map.js' ></script>				
+    <script src='js/map.js' ></script>	
+    <script src='js/slider.js' ></script>
 </body>
 </html>

@@ -1,41 +1,112 @@
 html,body {
-	padding: 0;
-	margin: 0;
-        height:100%;
+    padding: 0;
+    margin: 0;
+    height:100%;
+}
+
+.leaflet-container, body {
+    font-family: 'Allerta', sans-serif;
 }
 
 #map {
-	height: 100%;
-	width: 100%;
-	margin: auto;
+    height: 100%;
+    width: 100%;
+    margin: auto;
 }
 
 th {
-	text-align: left;
-	vertical-align: top;
-}
-	
-.info {
-	padding: 6px 8px;
-	font: 14px/16px Arial, Helvetica, sans-serif;
-	background: white;
-	background: rgba(255,255,255,0.8);
-	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 5px;
+    text-align: left;
+    vertical-align: top;
 }
 
-.info h2 {
-	margin: 0 0 5px;
-	color: #777;
+.leaflet-popup-content-wrapper, .map-legends, .map-tooltip {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
 }
 
-.leaflet-container .leaflet-control-search {
-	background: none repeat scroll 0 0 rgba(255, 255, 255, 1);	
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-	margin-left: 11px;
+/* new css */
+.leaflet-control-layers,.leaflet-bar, .leaflet-bar a:first-child, .leaflet-bar a:last-child {
+    border-radius: 0px;
 }
 
-.leaflet-control-search .search-button:hover {
-	background: url('../images/search-icon.png') no-repeat 2px 2px;
-	background-color: #f4f4f4;
+.leaflet-control-layers-expanded {
+    padding-right:6px;
+}
+
+.ac-container label {
+    font-family: 'Allerta', sans-serif
+}
+
+.ac-container input.menu:checked + label, .ac-container input.menu:checked + label:hover {
+    background: #b7deb7 none repeat scroll 0 0 !important;
+}
+
+.leaflet-control-locate a {
+    padding:0;
+}
+
+.leaflet-control-fullscreen-button {
+    background-position:0 0 !important;
+}
+
+/* slideshow */
+.cycle {
+    position:relative;
+}
+
+.popup .slideshow .image        { 
+    display:none; 
+}
+.popup .slideshow .image.active { 
+    display:block; 
+    
+}
+.popup .slideshow img {
+    width:100%;
+}
+
+.popup button {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    top: 25%;
+    bottom: 25%;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    opacity: 0;
+    z-index: 2;
+    height:50%;
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+
+.popup  button.prev {
+    left: 0;
+}
+
+.popup  button.next {
+    right: 0;
+}
+
+.popup  button:hover, .slider button:active {
+    opacity: 1.0;
+    transition: opacity .25s ease;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+}
+
+.imgShadow {
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         2px 2px 2px 0px rgba(50, 50, 50, 0.75);
 }
