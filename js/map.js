@@ -95,7 +95,7 @@ function onEachFeatureOpg(feature, marker) {
                                     '<button href="#" class="next">&raquo;</button>' +
                                 '</div>'+
                             '</div>'+
-                        '<table style="width:256px"><tr><th scope="row">Adresa</th><td>'+ Autolinker.link(String(feature.properties['addr']))+'</td></tr><tr><th scope="row">Proizvodi</th><td>'+Autolinker.link(String(feature.properties['prod']));
+                        '<table style="width:256px"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ Autolinker.link(String(feature.properties['addr']))+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+Autolinker.link(String(feature.properties['prod']));
         var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
     })
@@ -145,7 +145,7 @@ function onEachFeaturewildTrail(feature, layer) {
             wildTrail.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>'+'<table><tr><th scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
     layer.bindPopup(popupContent);
 }
 
@@ -174,7 +174,7 @@ function onEachFeatureBike(feature, layer) {
 function doStylehike(feature) {
     return {
             weight: 3.3,
-            color: '#7b8db2',
+            color: '#525252',
             dashArray: '',
             opacity: 1.0,
             fillOpacity: 1.0
@@ -189,7 +189,7 @@ var hike = new L.geoJson(exp_hike,{
 function doStylewildTrail(feature) {
     return {
             weight: 3.3,
-            color: '#64a5a5',
+            color: '#c1272d',
             dashArray: '',
             opacity: 1.0,
             fillOpacity: 1.0
@@ -266,7 +266,7 @@ var scenery = new L.geoJson(exp_scenery,{
 
 var opgMarker = L.MakiMarkers.icon({
     icon: "farm",
-    color: "#fdbf6f",
+    color: "#c1272d",
     size: "m"
 });
 

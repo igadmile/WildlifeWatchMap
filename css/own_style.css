@@ -4,6 +4,10 @@ html,body {
     height:100%;
 }
 
+.letterSpaceing {
+	letter-spacing: -0.5px;
+}
+
 .leaflet-container, body {
     font-family: 'Allerta', sans-serif;
 }
@@ -38,7 +42,9 @@ th {
 }
 
 .ac-container input.menu:checked + label, .ac-container input.menu:checked + label:hover {
-    background: #b7deb7 none repeat scroll 0 0 !important;
+    background: #c1272d none repeat scroll 0 0 !important;
+	color:#f2f2f2;
+	text-shadow:#525252;
 }
 
 .leaflet-control-locate a {
