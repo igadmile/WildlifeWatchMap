@@ -17,7 +17,11 @@ var basemap_1 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
     attribution: additional_attrib2
 });
 
-var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
+var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {
+    attribution: additional_attrib
+});
+
+var basemap_3 = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
     attribution: additional_attrib
 });
 
@@ -286,6 +290,7 @@ var baseMaps = [
         expanded : true,
         layers    : {
             'Thunderforest Landscape': basemap_2,
+            'ESRI':basemap_3,
             'TK25':basemap_1,
             'Digitalni ortofoto':basemap_0
         }
