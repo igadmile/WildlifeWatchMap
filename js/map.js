@@ -1,9 +1,11 @@
 var additional_attrib = 'Created as part of Wildlife Watch project, supported by European Union';
 var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
 
-// // home icon
-// var zoomHome = L.Control.zoomHome({position: 'topleft'});
-// zoomHome.addTo(map);
+// take parameters from url and add them to object
+var params = {};
+window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+    params[key] = decodeURIComponent(value);
+});
 
 var basemap_0 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
     layers: 'DOF',
@@ -81,7 +83,7 @@ function onEachFeaturemhouse(feature, marker) {
 function onEachFeatureOpg(feature, marker) {
     marker.on({"click": function (e) {
          // Create custom popup content
-        var popupContent =  '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</div>'+
+        var popupContent =  '<div style="text-align:center;width:256px;"><h4>'+Autolinker.link(String(feature.properties['name']))+'</div>'+
                             '<div class="popup">' +
                             '<div class="cycle">' +
                                 '<div class="slideshow">' +
@@ -110,6 +112,17 @@ function onEachFeatureOpg(feature, marker) {
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke i planinarske staze
 function onEachFeatureHike(feature, layer) {
+//     provjeri ima li feat u url-u, ako ima highlight-aj
+    if (feature.properties.name==params.feat){
+        layer.setStyle({
+            weight: 6,
+            color: 'yellow',
+            fillColor:'yellow',
+            opacity: 0.7,
+            fillOpacity: 0.7
+        });
+        console.log(layer)
+    }
     layer.on({
         'mouseover': function (e) {
             highlight(e.target);
@@ -121,6 +134,7 @@ function onEachFeatureHike(feature, layer) {
             select(e.target);
             el.clear();
             el.addData(feature);
+            console.log(e.target)
         },
         'popupclose':function (e) {
             selected=null;
@@ -149,7 +163,24 @@ function onEachFeaturewildTrail(feature, layer) {
             wildTrail.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
+    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</div>'+
+                            '<div class="popup">' +
+                            '<div class="cycle">' +
+                                '<div class="slideshow">' +
+                                    '<div class="image' + ' active' + '">' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
+                                    '</div>'+
+                                    '<div class="image' + '">' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
+                                    '</div>'+
+                                    '<div class="image' + '">' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
+                                    '</div>'+
+                                '</div>' +
+                                    '<button href="#" class="prev">&laquo;</button>' +
+                                    '<button href="#" class="next">&raquo;</button>' +
+                                '</div>'+
+                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
     layer.bindPopup(popupContent);
 }
 
@@ -176,13 +207,37 @@ function onEachFeatureBike(feature, layer) {
 }
 
 function doStylehike(feature) {
-    return {
-            weight: 3.3,
+    switch (feature.properties.desc) {
+    case 1:
+        return {
+            weight: '2.3',
+            color: '#525252',
+            dashArray: '',
+            opacity: 0.8,
+            fillOpacity: 1.0
+        };
+        break;
+    case 2:
+        return {
+            weight: '3.3',
+            color: '#525252',
+            dashArray: '',
+            opacity: 0.8,
+            fillOpacity: 1.0
+        };
+        break;
+    case 3:
+        return {
+            weight: '4.3',
             color: '#525252',
             dashArray: '',
             opacity: 1.0,
             fillOpacity: 1.0
-    };
+        };
+        break;
+
+    default:
+    }
 }
 
 var hike = new L.geoJson(exp_hike,{
@@ -319,11 +374,6 @@ var overlays2 = [
     }
 ];
 
-var params = {};
-window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-  params[key] = decodeURIComponent(value);
-});
-
 if (params.layers) {
     var overlays = {
     "hike":hike,
@@ -339,7 +389,7 @@ if (params.layers) {
     });
 }
 
-var map = L.map('map', { center: [params.lat || 44.26, params.lng || 14.76], zoom: 7, fullscreenControl: true,layers: layers || hike});
+var map = L.map('map', { center: [params.lat || 44.59, params.lng || 15.36], zoom: params.zoom || 10, fullscreenControl: true,layers: layers || hike});
 
 basemap_2.addTo(map);
 
