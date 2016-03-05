@@ -23,10 +23,6 @@ var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}
     attribution: additional_attrib
 });
 
-var basemap_3 = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: additional_attrib
-});
-
 //dodavanje fucnkcije za promijenu boje
 function highlight (layer) {
     layer.setStyle({
@@ -76,39 +72,60 @@ function select (layer) {
 
 //dodavanje popupa za mhouse
 function onEachFeaturemhouse(feature, marker) {
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
+    var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</h4></div>';
     marker.bindPopup(popupContent);
 }
 
 function onEachFeatureOpg(feature, marker) {
     marker.on({"click": function (e) {
          // Create custom popup content
-        var popupContent =  '<div style="text-align:center;width:256px;"><h4>'+Autolinker.link(String(feature.properties['name']))+'</div>'+
-                            '<div class="popup">' +
-                            '<div class="cycle">' +
-                                '<div class="slideshow">' +
-                                    '<div class="image' + ' active' + '">' +
-                                        '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+        if (params.lang=='eng') {
+            var popupContent =  '<div style="text-align:center;width:256px;"><h4>'+feature.properties['name']+'</div>'+
+                                '<div class="popup">' +
+                                '<div class="cycle">' +
+                                    '<div class="slideshow">' +
+                                        '<div class="image' + ' active' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                        '</div>'+
+                                        '<div class="image' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                        '</div>'+
+                                        '<div class="image' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
+                                        '</div>'+
+                                    '</div>' +
+                                        '<button href="#" class="prev">&laquo;</button>' +
+                                        '<button href="#" class="next">&raquo;</button>' +
                                     '</div>'+
-                                    '<div class="image' + '">' +
-                                        '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                    '</div>'+
-                                    '<div class="image' + '">' +
-                                        '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
-                                    '</div>'+
-                                '</div>' +
-                                    '<button href="#" class="prev">&laquo;</button>' +
-                                    '<button href="#" class="next">&raquo;</button>' +
                                 '</div>'+
-                            '</div>'+
-                        '<table style="width:256px"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ Autolinker.link(String(feature.properties['addr']))+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+Autolinker.link(String(feature.properties['prod']));
-        var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                            '<table style="width:256px"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2'];
+            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
+        else {
+            var popupContent =  '<div style="text-align:center;width:256px;"><h4>'+feature.properties['name']+'</div>'+
+                                '<div class="popup">' +
+                                '<div class="cycle">' +
+                                    '<div class="slideshow">' +
+                                        '<div class="image' + ' active' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                        '</div>'+
+                                        '<div class="image' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                        '</div>'+
+                                        '<div class="image' + '">' +
+                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
+                                        '</div>'+
+                                    '</div>' +
+                                        '<button href="#" class="prev">&laquo;</button>' +
+                                        '<button href="#" class="next">&raquo;</button>' +
+                                    '</div>'+
+                                '</div>'+
+                            '<table style="width:256px"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+feature.properties['prod'];
+            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+        }
+    }
     })
 }
-// function zoomToFeature(e) {
-//     map.fitBounds(e.target.getBounds());
-// }
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke i planinarske staze
 function onEachFeatureHike(feature, layer) {
@@ -121,7 +138,6 @@ function onEachFeatureHike(feature, layer) {
             opacity: 0.7,
             fillOpacity: 0.7
         });
-        console.log(layer)
     }
     layer.on({
         'mouseover': function (e) {
@@ -134,18 +150,28 @@ function onEachFeatureHike(feature, layer) {
             select(e.target);
             el.clear();
             el.addData(feature);
-            console.log(e.target)
         },
         'popupclose':function (e) {
             selected=null;
             hike.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
+    var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</h4></div>';
     layer.bindPopup(popupContent);
 }
 
 function onEachFeaturewildTrail(feature, layer) {
+    //     provjeri ima li feat u url-u, ako ima highlight-aj
+    if (feature.properties.name==params.feat){
+        layer.setStyle({
+            weight: 6,
+            color: 'yellow',
+            fillColor:'yellow',
+            opacity: 0.7,
+            fillOpacity: 0.7
+        });
+        console.log(layer)
+    }
     layer.on({
         'mouseover': function (e) {
             highlight(e.target);
@@ -163,7 +189,7 @@ function onEachFeaturewildTrail(feature, layer) {
             wildTrail.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</div>'+
+    var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</div>'+
                             '<div class="popup">' +
                             '<div class="cycle">' +
                                 '<div class="slideshow">' +
@@ -180,7 +206,7 @@ function onEachFeaturewildTrail(feature, layer) {
                                     '<button href="#" class="prev">&laquo;</button>' +
                                     '<button href="#" class="next">&raquo;</button>' +
                                 '</div>'+
-                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ Autolinker.link(String(feature.properties['time'])) + '</td></tr></table>';
+                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ feature.properties['time'] + '</td></tr></table>';
     layer.bindPopup(popupContent);
 }
 
@@ -202,7 +228,7 @@ function onEachFeatureBike(feature, layer) {
             bike.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+Autolinker.link(String(feature.properties['name']))+'</h4></div>';
+    var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</h4></div>';
     layer.bindPopup(popupContent);
 }
 
@@ -339,40 +365,74 @@ var opg = new L.geoJson(exp_opg,{
     }
 });
 
-var baseMaps = [
-    { 
-        groupName : "Pozadinske karte",
-        expanded : true,
-        layers    : {
-            'Thunderforest Landscape': basemap_2,
-            'ESRI':basemap_3,
-            'TK25':basemap_1,
-            'Digitalni ortofoto':basemap_0
+if (params.lang=='eng') {
+    var baseMaps = [
+        { 
+            groupName : "Basemaps",
+            expanded : true,
+            layers    : {
+                'Thunderforest Landscape': basemap_2,
+                'Topographic map':basemap_1,
+                'Digital orthophoto':basemap_0
+            }
         }
-    }
-]; 
-
-var overlays2 = [
-    {
-    groupName : "Staze",
-    expanded  : true,
-    layers    : { 
-        "Wildlife ture": wildTrail,
-        "Planinarske staze": hike,
-        "Biciklističke staze": bike,
-    }
-    },
-    {
-    groupName : "POI",
-    expanded  : true,
-    layers    : { 
-        "OPG":opg,
-        "Planinarske kuće": mhouse,
-        "Vidikovci": scenery,
-        "Smještaj": accommodation
-    }
-    }
-];
+    ]; 
+    var overlays2 = [
+        {
+        groupName : "Trails",
+        expanded  : true,
+        layers    : { 
+            "Wildlife trails": wildTrail,
+            "Hiking trails": hike,
+            "Biking trails": bike,
+        }
+        },
+        {
+        groupName : "POI",
+        expanded  : true,
+        layers    : { 
+            "Family farms":opg,
+            "Mountain shelters": mhouse,
+            "Scenery": scenery,
+            "Accommodation": accommodation
+        }
+        }
+    ];
+}
+else {
+    var baseMaps = [
+        { 
+            groupName : "Pozadinske karte",
+            expanded : true,
+            layers    : {
+                'Thunderforest Landscape': basemap_2,
+                'Topografska karta':basemap_1,
+                'Digitalni ortofoto':basemap_0
+            }
+        }
+    ]; 
+    var overlays2 = [
+        {
+        groupName : "Staze",
+        expanded  : true,
+        layers    : { 
+            "Staze u prirodi": wildTrail,
+            "Planinarske staze": hike,
+            "Biciklističke staze": bike,
+        }
+        },
+        {
+        groupName : "POI",
+        expanded  : true,
+        layers    : { 
+            "OPG":opg,
+            "Planinarske kuće": mhouse,
+            "Vidikovci": scenery,
+            "Smještaj": accommodation
+        }
+        }
+    ];
+}
 
 if (params.layers) {
     var overlays = {
@@ -395,25 +455,25 @@ basemap_2.addTo(map);
 
 // check if mobile or desktop and load elevation profile and controls accordingly
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.getElementById("map").offsetWidth<1025) {
-    if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
+//     if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
         el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
         collapsed: true,
         });
         el.addTo(map);
-    }
+//     }
     L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:true}).addTo(map);
 }
 else {
-    if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
+//     if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
         var el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
         collapsed: false,
         });
         el.addTo(map);
-    }
+//     }
     L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:false}).addTo(map);
 }
 
