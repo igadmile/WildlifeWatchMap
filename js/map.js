@@ -194,19 +194,19 @@ function onEachFeaturewildTrail(feature, layer) {
                             '<div class="cycle">' +
                                 '<div class="slideshow">' +
                                     '<div class="image' + ' active' + '">' +
-                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['desc'] + '.jpg" />' +
                                     '</div>'+
                                     '<div class="image' + '">' +
-                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['desc'] + '2.jpg" />' +
                                     '</div>'+
                                     '<div class="image' + '">' +
-                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
+                                        '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['desc'] + '3.jpg" />' +
                                     '</div>'+
                                 '</div>' +
                                     '<button href="#" class="prev">&laquo;</button>' +
                                     '<button href="#" class="next">&raquo;</button>' +
-                                '</div>'+
-                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ feature.properties['time'] + '</td></tr></table>';
+                                '</div>';
+/*                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ feature.properties['time'] + '</td></tr></table>'*/
     layer.bindPopup(popupContent);
 }
 
