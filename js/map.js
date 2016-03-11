@@ -125,6 +125,7 @@ function onEachFeatureOpg(feature, marker) {
         }
     }
     })
+    marker._leaflet_id=feature.properties.name;
 }
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke i planinarske staze
@@ -214,6 +215,7 @@ function onEachFeatureBike(feature, layer) {
     });
     var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</h4></div>';
     layer.bindPopup(popupContent);
+    layer._leaflet_id=feature.properties.name;
 }
 
 function doStylehike(feature) {
@@ -436,21 +438,19 @@ var map = L.map('map', { center: [params.lat || 44.59, params.lng || 15.36], zoo
 
 basemap_2.addTo(map);
 
-// check if mobile or desktop and load elevation profile and controls accordingly
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.getElementById("map").offsetWidth<1025) {
-//     if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
-        el = L.control.elevation({
-        position: "bottomright",
-        theme: "steelblue-theme",
-        collapsed: true,
-        });
-        el.addTo(map);
-//     }
-    L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:true}).addTo(map);
-    
+function init (parameter) {
+    el = L.control.elevation({
+    position: "bottomright",
+    theme: "steelblue-theme",
+    collapsed: parameter,
+    });
+    el.addTo(map);
+    L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:parameter}).addTo(map);
+
     if(params.layers && params.id){
         if(params.layers=='opg' || params.layers=='scenery' || params.layers=='mhouse' || params.layers=='accommodation') {
             layers[0]._layers[params.id].fire('click', {latlng:layers[0]._layers[params.id]._latlng});
+            
         }
         else {
             var featureCoordinates=layers[0]._layers[params.id]._latlngs;
@@ -459,27 +459,12 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         }
     }
 }
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.getElementById("map").offsetWidth<1025) {
+    init(true);
+}
 else {
-//     if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
-        var el = L.control.elevation({
-        position: "bottomright",
-        theme: "steelblue-theme",
-        collapsed: false,
-        });
-        el.addTo(map);
-//     }
-    L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:false}).addTo(map);
-    
-    if(params.layers && params.id){
-        if(params.layers=='opg' || params.layers=='scenery' || params.layers=='mhouse' || params.layers=='accommodation') {
-            layers[0]._layers[params.id].fire('click', {latlng:layers[0]._layers[params.id]._latlng});
-        }
-        else {
-            var featureCoordinates=layers[0]._layers[params.id]._latlngs;
-            layers[0]._layers[params.id].fire('click', {latlng:featureCoordinates[Math.round((featureCoordinates.length - 1) / 2)]});
-            map.fitBounds(layers[0]._layers[params.id].getBounds());
-        }
-    }
+    init(false);
 }
 
 // locate control
