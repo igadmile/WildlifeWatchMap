@@ -1,5 +1,5 @@
-var additional_attrib = 'Created as part of Wildlife Watch project, supported by European Union';
-var additional_attrib2 = 'Created as part of Wildlife Watch project, supported by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
+var additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
+var additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
 
 // take parameters from url and add them to object
 var params = {};
@@ -129,16 +129,6 @@ function onEachFeatureOpg(feature, marker) {
 
 //sklapanje gornjih funkcija u oneachfeature za biciklističke i planinarske staze
 function onEachFeatureHike(feature, layer) {
-//     provjeri ima li feat u url-u, ako ima highlight-aj
-    if (feature.properties.name==params.feat){
-        layer.setStyle({
-            weight: 6,
-            color: 'yellow',
-            fillColor:'yellow',
-            opacity: 0.7,
-            fillOpacity: 0.7
-        });
-    }
     layer.on({
         'mouseover': function (e) {
             highlight(e.target);
@@ -147,6 +137,7 @@ function onEachFeatureHike(feature, layer) {
             dehighlightHike(e.target);
         },
         'click': function (e) {
+            highlight(e.target);
             select(e.target);
             el.clear();
             el.addData(feature);
@@ -158,20 +149,10 @@ function onEachFeatureHike(feature, layer) {
     });
     var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</h4></div>';
     layer.bindPopup(popupContent);
+    layer._leaflet_id=feature.properties.name;
 }
 
 function onEachFeaturewildTrail(feature, layer) {
-    //     provjeri ima li feat u url-u, ako ima highlight-aj
-    if (feature.properties.name==params.feat){
-        layer.setStyle({
-            weight: 6,
-            color: 'yellow',
-            fillColor:'yellow',
-            opacity: 0.7,
-            fillOpacity: 0.7
-        });
-        console.log(layer)
-    }
     layer.on({
         'mouseover': function (e) {
             highlight(e.target);
@@ -180,6 +161,7 @@ function onEachFeaturewildTrail(feature, layer) {
             dehighlightwildTrail(e.target);
         },
         'click': function (e) {
+            highlight(e.target);
             select(e.target);
             el.clear();
             el.addData(feature);
@@ -189,7 +171,7 @@ function onEachFeaturewildTrail(feature, layer) {
             wildTrail.resetStyle(layer);
         }
     });
-    var popupContent = '<div style="text-align:center"><h4>'+feature.properties['name']+'</div>'+
+    var popupContent = '<div style="text-align:center;width:256px"><h4>'+feature.properties['name']+'</div>'+
                             '<div class="popup">' +
                             '<div class="cycle">' +
                                 '<div class="slideshow">' +
@@ -208,6 +190,7 @@ function onEachFeaturewildTrail(feature, layer) {
                                 '</div>';
 /*                            '</div>'+'<table><tr><th class="letterSpaceing"scope="row">Trajanje ture</th><td>'+ feature.properties['time'] + '</td></tr></table>'*/
     layer.bindPopup(popupContent);
+    layer._leaflet_id=feature.properties.name;
 }
 
 function onEachFeatureBike(feature, layer) {
@@ -219,6 +202,7 @@ function onEachFeatureBike(feature, layer) {
             dehighlightBike(e.target);
         },
         'click': function (e) {
+            highlight(e.target);
             select(e.target);
             el.clear();
             el.addData(feature);
@@ -261,7 +245,6 @@ function doStylehike(feature) {
             fillOpacity: 1.0
         };
         break;
-
     default:
     }
 }
@@ -269,7 +252,7 @@ function doStylehike(feature) {
 var hike = new L.geoJson(exp_hike,{
     onEachFeature: onEachFeatureHike,
     style: doStylehike
-    });
+});
 
 function doStylewildTrail(feature) {
     return {
@@ -284,7 +267,7 @@ function doStylewildTrail(feature) {
 var wildTrail = new L.geoJson(exp_wildTrail,{
     onEachFeature: onEachFeaturewildTrail,
     style: doStylewildTrail
-    });
+});
 
 function doStylebike(feature) {
     return {
@@ -445,7 +428,7 @@ if (params.layers) {
     "opg":opg
     };
     var layers = params.layers.split(',').map(function(item) { 
-    return overlays[item]; 
+        return overlays[item]; 
     });
 }
 
@@ -464,6 +447,17 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         el.addTo(map);
 //     }
     L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:true}).addTo(map);
+    
+    if(params.layers && params.id){
+        if(params.layers=='opg' || params.layers=='scenery' || params.layers=='mhouse' || params.layers=='accommodation') {
+            layers[0]._layers[params.id].fire('click', {latlng:layers[0]._layers[params.id]._latlng});
+        }
+        else {
+            var featureCoordinates=layers[0]._layers[params.id]._latlngs;
+            layers[0]._layers[params.id].fire('click', {latlng:featureCoordinates[Math.round((featureCoordinates.length - 1) / 2)]});
+            map.fitBounds(layers[0]._layers[params.id].getBounds());
+        }
+    }
 }
 else {
 //     if (map.hasLayer(hike)||map.hasLayer(bike)||map.hasLayer(wildTrail)) {
@@ -475,6 +469,17 @@ else {
         el.addTo(map);
 //     }
     L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:false}).addTo(map);
+    
+    if(params.layers && params.id){
+        if(params.layers=='opg' || params.layers=='scenery' || params.layers=='mhouse' || params.layers=='accommodation') {
+            layers[0]._layers[params.id].fire('click', {latlng:layers[0]._layers[params.id]._latlng});
+        }
+        else {
+            var featureCoordinates=layers[0]._layers[params.id]._latlngs;
+            layers[0]._layers[params.id].fire('click', {latlng:featureCoordinates[Math.round((featureCoordinates.length - 1) / 2)]});
+            map.fitBounds(layers[0]._layers[params.id].getBounds());
+        }
+    }
 }
 
 // locate control
