@@ -104,48 +104,61 @@ function onEachFeaturepoi(feature, marker) {
 
 function onEachFeatureOpg(feature, marker) {
     marker.on({"click": function (e) {
+        if (feature.properties['name']=='OPG Marin Bušljeta') {
+            var sliderContent='<div class="popup">' +
+                                    '<div class="cycle">' +
+                                        '<div class="slideshow">' +
+                                            '<div class="image active">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                            '</div>'+
+                                            '<div class="image">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                            '</div>'+
+                                        '</div>' +
+                                            '<button href="#" class="prev">&laquo;</button>' +
+                                            '<button href="#" class="next">&raquo;</button>' +
+                                        '</div>'+
+                                    '</div>';
+        }
+        else if (feature.properties['name']=='OPG Anić') {
+            var sliderContent='<div class="popup">' +
+                                    '<div class="cycle">' +
+                                        '<div class="slideshow">' +
+                                            '<div class="image active">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                            '</div>'+
+                                    '</div>';
+        }
+        else if (feature.properties['photo']){
+            var sliderContent='<div class="popup">' +
+                                    '<div class="cycle">' +
+                                        '<div class="slideshow">' +
+                                            '<div class="image active">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                            '</div>'+
+                                            '<div class="image">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                            '</div>'+
+                                            '<div class="image">' +
+                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
+                                            '</div>'+
+                                        '</div>' +
+                                            '<button href="#" class="prev">&laquo;</button>' +
+                                            '<button href="#" class="next">&raquo;</button>' +
+                                        '</div>'+
+                                    '</div>';
+        }
+        else {
+            var sliderContent='';
+        }
          // Create custom popup content
         if (params.lang=='eng') {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                '<div class="popup">' +
-                                '<div class="cycle">' +
-                                    '<div class="slideshow">' +
-                                        '<div class="image' + ' active' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
-                                        '</div>'+
-                                    '</div>' +
-                                        '<button href="#" class="prev">&laquo;</button>' +
-                                        '<button href="#" class="next">&raquo;</button>' +
-                                    '</div>'+
-                                '</div>'+
+            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                             '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2']+'</table>';
             var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
         else {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                '<div class="popup">' +
-                                '<div class="cycle">' +
-                                    '<div class="slideshow">' +
-                                        '<div class="image' + ' active' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image' + '">' +
-                                            '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
-                                        '</div>'+
-                                    '</div>' +
-                                        '<button href="#" class="prev">&laquo;</button>' +
-                                        '<button href="#" class="next">&raquo;</button>' +
-                                    '</div>'+
-                                '</div>'+
+            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                             '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+feature.properties['prod']+'</table>';
             var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
@@ -210,46 +223,35 @@ function onEachFeaturewildTrail(feature, layer) {
             wildTrail.resetStyle(layer);
         }
     });
+    if (feature.properties['photo']){
+        var sliderContent='<div class="popup">' +
+                                    '<div class="cycle">' +
+                                        '<div class="slideshow">' +
+                                            '<div class="image active">' +
+                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
+                                            '</div>'+
+                                            '<div class="image">' +
+                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
+                                            '</div>'+
+                                            '<div class="image">' +
+                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
+                                            '</div>'+
+                                        '</div>' +
+                                            '<button href="#" class="prev">&laquo;</button>' +
+                                            '<button href="#" class="next">&raquo;</button>' +
+                                        '</div>';
+    }
+    else {
+        var sliderContent='';
+    }
     if (params.lang=='eng') {
-        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+
-                                '<div class="popup">' +
-                                '<div class="cycle">' +
-                                    '<div class="slideshow">' +
-                                        '<div class="image active">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
-                                        '</div>'+
-                                    '</div>' +
-                                        '<button href="#" class="prev">&laquo;</button>' +
-                                        '<button href="#" class="next">&raquo;</button>' +
-                                    '</div>'+
+        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                                 '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
                                 '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr></table>';
         layer.bindPopup(popupContent);
     }
     else {
-        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+
-                                '<div class="popup">' +
-                                '<div class="cycle">' +
-                                    '<div class="slideshow">' +
-                                        '<div class="image active">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
-                                        '</div>'+
-                                        '<div class="image">' +
-                                            '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
-                                        '</div>'+
-                                    '</div>' +
-                                        '<button href="#" class="prev">&laquo;</button>' +
-                                        '<button href="#" class="next">&raquo;</button>' +
-                                    '</div>'+
+        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                                 '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
                                 '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr></table>';
         layer.bindPopup(popupContent);
@@ -334,7 +336,7 @@ var hike = new L.geoJson(exp_hike,{
 function doStylewildTrail(feature) {
     return {
             weight: 3.3,
-            color: '#c1272d',
+            color: '#009245',
             dashArray: '',
             opacity: 1.0,
             fillOpacity: 1.0
@@ -351,7 +353,7 @@ function doStylebike(feature) {
     case 1:
         return {
             weight: '2.5',
-            color: '#009245',
+            color: '#c1272d',
             dashArray: '',
             opacity: 0.8,
             fillOpacity: 1.0
@@ -360,7 +362,7 @@ function doStylebike(feature) {
     case 2:
         return {
             weight: '3.5',
-            color: '#009245',
+            color: '#c1272d',
             dashArray: '',
             opacity: 0.8,
             fillOpacity: 1.0
@@ -369,7 +371,7 @@ function doStylebike(feature) {
     case 3:
         return {
             weight: '4.5',
-            color: '#009245',
+            color: '#c1272d',
             dashArray: '',
             opacity: 1.0,
             fillOpacity: 1.0
@@ -538,13 +540,13 @@ basemap_2.addTo(map);
 // enable scrolling only after you click on map
 map.once('focus', function() { map.scrollWheelZoom.enable(); });
 map.on('click', function() {
-    if (map.scrollWheelZoom.enabled()) {
-        map.scrollWheelZoom.disable();
-    }
-    else {
+//     if (map.scrollWheelZoom.enabled()) {
+//         map.scrollWheelZoom.disable();
+//     }
+//     else {
         map.scrollWheelZoom.enable();
-    }
-});
+    });
+// });
 
 function init (parameter) {
     el = L.control.elevation({
