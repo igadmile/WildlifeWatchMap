@@ -1,26 +1,7 @@
-var additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
-var additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
-
 // take parameters from url and add them to object
 var params = {};
 window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
     params[key] = decodeURIComponent(value);
-});
-
-var basemap_0 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
-    layers: 'DOF',
-    format: 'image/jpeg',
-    attribution: additional_attrib2
-});
-
-var basemap_1 = L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
-    layers: 'TK25',
-    format: 'image/jpeg',
-    attribution: additional_attrib2
-});
-
-var basemap_2 = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {
-    attribution: additional_attrib
 });
 
 //dodavanje fucnkcije za promijenu boje
@@ -69,6 +50,7 @@ function select (layer) {
         dehighlight(previous);
     }
 };
+
 // dodavanje objekta oneachFeature
 var onEachFeature = {
     mhouse:function (feature, marker) {
@@ -437,15 +419,33 @@ var overlays = {
     })
 };
 
+var additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
+var additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
+var basemaps ={
+    basemap_0:L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
+        layers: 'DOF',
+        format: 'image/jpeg',
+        attribution: additional_attrib2
+    }),
+    basemap_1:L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
+        layers: 'TK25',
+        format: 'image/jpeg',
+        attribution: additional_attrib2
+    }),
+    basemap_2:L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {
+        attribution: additional_attrib
+    })
+};
+
 if (params.lang=='eng') {
     var baseMaps = [
         { 
             groupName : "Basemaps",
             expanded : true,
             layers    : {
-                'Thunderforest Landscape': basemap_2,
-                'Topographic map':basemap_1,
-                'Digital orthophoto':basemap_0
+                'Thunderforest Landscape': basemaps.basemap_2,
+                'Topographic map':basemaps.basemap_1,
+                'Digital orthophoto':basemaps.basemap_0
             }
         }
     ]; 
@@ -477,9 +477,9 @@ else {
             groupName : "Pozadinske karte",
             expanded : true,
             layers    : {
-                'Thunderforest Landscape': basemap_2,
-                'Topografska karta':basemap_1,
-                'Digitalni ortofoto':basemap_0
+                'Thunderforest Landscape': basemaps.basemap_2,
+                'Topografska karta':basemaps.basemap_1,
+                'Digitalni ortofoto':basemaps.basemap_0
             }
         }
     ]; 
@@ -513,7 +513,7 @@ if (params.layers) {
 }
 
 var map = L.map('map', {scrollWheelZoom:false,center: [params.lat || 44.59, params.lng || 15.36], zoom: params.zoom || 9, fullscreenControl: true,layers: layers || overlays.hike});
-basemap_2.addTo(map);
+basemaps.basemap_2.addTo(map);
 
 // enable scrolling only after you click on map
 map.once('focus', function() { map.scrollWheelZoom.enable(); });
