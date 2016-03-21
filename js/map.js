@@ -33,26 +33,26 @@ function highlight (layer) {
         fillOpacity: 0.7
     });
     layer.bringToFront();
-}
+};
 
-//dodavanje fucnkcije za vraćanje boje na staro
-function dehighlightHike (layer) {
-    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-        hike.resetStyle(layer);
+//dodavanje objekta za vraćanje boje na staro
+var dehighlight = {
+    hike:function (layer) {
+        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+            overlays.hike.resetStyle(layer);
+        }
+    },
+    wildtrail:function (layer) {
+        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+            overlays.wildtrail.resetStyle(layer);
+        }
+    },
+    bike:function (layer) {
+        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+            overlays.bike.resetStyle(layer);
+        }
     }
-}
-
-function dehighlightwildTrail (layer) {
-    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-        wildTrail.resetStyle(layer);
-    }
-}
-
-function dehighlightBike (layer) {
-    if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-        bike.resetStyle(layer);
-    }
-}
+};
 
 var selected = null;
 function select (layer) {
@@ -68,387 +68,374 @@ function select (layer) {
         // Dehighlight previous
         dehighlight(previous);
     }
-}
-
-//dodavanje popupa za mhouse
-function onEachFeaturemhouse(feature, marker) {
-    marker.on({"click": function (e) {
-         // Create custom popup content
-        if (params.lang=='eng') {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                    '<div>'+
-                                        '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
+};
+// dodavanje objekta oneachFeature
+var onEachFeature = {
+    mhouse:function (feature, marker) {
+        marker.on({"click": function (e) {
+            // Create custom popup content
+            if (params.lang=='eng') {
+                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
+                                        '<div>'+
+                                            '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
+                                        '</div>'+
                                     '</div>'+
-                                '</div>'+
-                            '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Elevation</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">House type</th><td>'+feature.properties['tip_eng']+'<tr><th class="letterSpaceing"scope="row">Number of beds</th><td>'+ feature.properties['bed']+'</td></tr></table>';
-            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Elevation</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">House type</th><td>'+feature.properties['tip_eng']+'<tr><th class="letterSpaceing"scope="row">Number of beds</th><td>'+ feature.properties['bed']+'</td></tr></table>';
+                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            }
+            else {
+                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
+                                        '<div>'+
+                                            '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
+                                        '</div>'+
+                                    '</div>'+
+                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Nadmorska visina</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">Tip kuće</th><td>'+feature.properties['tip']+'<tr><th class="letterSpaceing"scope="row">Broj kreveta</th><td>'+ feature.properties['bed']+'</td></tr></table>';
+                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            }
+        }
+        })
+        marker._leaflet_id=feature.properties.name;
+    },
+    poi:function (feature, marker) {
+        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>';
+        marker.bindPopup(popupContent);
+    },
+    opg:function (feature, marker) {
+        marker.on({"click": function (e) {
+            if (feature.properties['name']=='OPG Marin Bušljeta') {
+                var sliderContent='<div class="popup">' +
+                                        '<div class="cycle">' +
+                                            '<div class="slideshow">' +
+                                                '<div class="image active">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                                '</div>'+
+                                                '<div class="image">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                                '</div>'+
+                                            '</div>' +
+                                                '<button href="#" class="prev">&laquo;</button>' +
+                                                '<button href="#" class="next">&raquo;</button>' +
+                                            '</div>'+
+                                        '</div>';
+            }
+            else if (feature.properties['name']=='OPG Anić') {
+                var sliderContent='<div class="popup">' +
+                                        '<div class="cycle">' +
+                                            '<div class="slideshow">' +
+                                                '<div class="image active">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                                '</div>'+
+                                        '</div>';
+            }
+            else if (feature.properties['photo']){
+                var sliderContent='<div class="popup">' +
+                                        '<div class="cycle">' +
+                                            '<div class="slideshow">' +
+                                                '<div class="image active">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
+                                                '</div>'+
+                                                '<div class="image">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
+                                                '</div>'+
+                                                '<div class="image">' +
+                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
+                                                '</div>'+
+                                            '</div>' +
+                                                '<button href="#" class="prev">&laquo;</button>' +
+                                                '<button href="#" class="next">&raquo;</button>' +
+                                            '</div>'+
+                                        '</div>';
+            }
+            else {
+                var sliderContent='';
+            }
+            // Create custom popup content
+            if (params.lang=='eng') {
+                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
+                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2']+'</table>';
+                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            }
+            else {
+                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
+                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+feature.properties['prod']+'</table>';
+                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            }
+        }
+        })
+        marker._leaflet_id=feature.properties.name;
+    },
+    hike:function (feature, layer) {
+        layer.on({
+            'mouseover': function (e) {
+                highlight(e.target);
+            },
+            'mouseout': function (e) {
+                dehighlight.hike(e.target);
+            },
+            'click tap': function (e) {
+                highlight(e.target);
+                select(e.target);
+                el.clear();
+                el.addData(feature);
+            },
+            'popupclose':function (e) {
+                selected=null;
+                overlays.hike.resetStyle(layer);
+            }
+        });
+        if (params.lang=='eng') {
+            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
+                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Trail difficulty</th><td>'+ feature.properties['tez_eng'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
         }
         else {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                    '<div>'+
-                                        '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
-                                    '</div>'+
-                                '</div>'+
-                            '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Nadmorska visina</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">Tip kuće</th><td>'+feature.properties['tip']+'<tr><th class="letterSpaceing"scope="row">Broj kreveta</th><td>'+ feature.properties['bed']+'</td></tr></table>';
-            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
+                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Težina staze</th><td>'+ feature.properties['tez'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
         }
-    }
-    })
-    marker._leaflet_id=feature.properties.name;
-}
-
-function onEachFeaturepoi(feature, marker) {
-    var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>';
-    marker.bindPopup(popupContent);
-}
-
-function onEachFeatureOpg(feature, marker) {
-    marker.on({"click": function (e) {
-        if (feature.properties['name']=='OPG Marin Bušljeta') {
+        layer._leaflet_id=feature.properties.name;
+    },
+    wildtrail:function (feature, layer) {
+        layer.on({
+            'mouseover': function (e) {
+                highlight(e.target);
+            },
+            'mouseout': function (e) {
+                dehighlight.wildtrail(e.target);
+            },
+            'click tap': function (e) {
+                highlight(e.target);
+                select(e.target);
+                el.clear();
+                el.addData(feature);
+            },
+            'popupclose':function (e) {
+                selected=null;
+                overlays.wildtrail.resetStyle(layer);
+            }
+        });
+        if (feature.properties['photo']){
             var sliderContent='<div class="popup">' +
-                                    '<div class="cycle">' +
-                                        '<div class="slideshow">' +
-                                            '<div class="image active">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                            '</div>'+
-                                            '<div class="image">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                            '</div>'+
-                                        '</div>' +
-                                            '<button href="#" class="prev">&laquo;</button>' +
-                                            '<button href="#" class="next">&raquo;</button>' +
-                                        '</div>'+
-                                    '</div>';
-        }
-        else if (feature.properties['name']=='OPG Anić') {
-            var sliderContent='<div class="popup">' +
-                                    '<div class="cycle">' +
-                                        '<div class="slideshow">' +
-                                            '<div class="image active">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                            '</div>'+
-                                    '</div>';
-        }
-        else if (feature.properties['photo']){
-            var sliderContent='<div class="popup">' +
-                                    '<div class="cycle">' +
-                                        '<div class="slideshow">' +
-                                            '<div class="image active">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                            '</div>'+
-                                            '<div class="image">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                            '</div>'+
-                                            '<div class="image">' +
-                                                '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
-                                            '</div>'+
-                                        '</div>' +
-                                            '<button href="#" class="prev">&laquo;</button>' +
-                                            '<button href="#" class="next">&raquo;</button>' +
-                                        '</div>'+
-                                    '</div>';
+                                        '<div class="cycle">' +
+                                            '<div class="slideshow">' +
+                                                '<div class="image active">' +
+                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
+                                                '</div>'+
+                                                '<div class="image">' +
+                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
+                                                '</div>'+
+                                                '<div class="image">' +
+                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
+                                                '</div>'+
+                                            '</div>' +
+                                                '<button href="#" class="prev">&laquo;</button>' +
+                                                '<button href="#" class="next">&raquo;</button>' +
+                                            '</div>';
         }
         else {
             var sliderContent='';
         }
-         // Create custom popup content
         if (params.lang=='eng') {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                            '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2']+'</table>';
-            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
+                                    '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                                    '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
         }
         else {
-            var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                            '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+feature.properties['prod']+'</table>';
-            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+            var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
+                                    '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                                    '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
         }
+        layer._leaflet_id=feature.properties.name;
+    },
+    bike:function (feature, layer) {
+        layer.on({
+            'mouseover': function (e) {
+                highlight(e.target);
+            },
+            'mouseout': function (e) {
+                dehighlight.bike(e.target);
+            },
+            'click tap': function (e) {
+                highlight(e.target);
+                select(e.target);
+                el.clear();
+                el.addData(feature);
+            },
+            'popupclose':function (e) {
+                selected=null;
+                overlays.bike.resetStyle(layer);
+            }
+        });
+        if (params.lang=='eng') {
+            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
+                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Surface</th><td>'+ feature.properties['pod_eng'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
+        }
+        else {
+            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
+                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
+                            '<tr><th class="letterSpaceing"scope="row">Podloga</th><td>'+ feature.properties['pod'] + '</td></tr></table>';
+            layer.bindPopup(popupContent);
+        }
+        layer._leaflet_id=feature.properties.name;
     }
+};
+
+var doStyle = {
+    hike:function (feature) {
+        switch (feature.properties.desc) {
+        case 1:
+            return {
+                weight: '2.3',
+                color: '#525252',
+                dashArray: '',
+                opacity: 0.8,
+                fillOpacity: 1.0
+            };
+            break;
+        case 2:
+            return {
+                weight: '3.3',
+                color: '#525252',
+                dashArray: '',
+                opacity: 0.8,
+                fillOpacity: 1.0
+            };
+            break;
+        case 3:
+            return {
+                weight: '4.3',
+                color: '#525252',
+                dashArray: '',
+                opacity: 1.0,
+                fillOpacity: 1.0
+            };
+            break;
+        default:
+        }
+    },
+    wildtrail:function (feature) {
+        return {
+                weight: 3.3,
+                color: '#009245',
+                dashArray: '',
+                opacity: 1.0,
+                fillOpacity: 1.0
+        };
+    },
+    bike:function (feature) {
+        switch (feature.properties.c) {
+        case 1:
+            return {
+                weight: '2.5',
+                color: '#c1272d',
+                dashArray: '',
+                opacity: 0.8,
+                fillOpacity: 1.0
+            };
+            break;
+        case 2:
+            return {
+                weight: '3.5',
+                color: '#c1272d',
+                dashArray: '',
+                opacity: 0.8,
+                fillOpacity: 1.0
+            };
+            break;
+        case 3:
+            return {
+                weight: '4.5',
+                color: '#c1272d',
+                dashArray: '',
+                opacity: 1.0,
+                fillOpacity: 1.0
+            };
+            break;
+        default:
+        }
+    },
+    mhouse:L.MakiMarkers.icon({
+        icon: "campsite",
+        color: "#FDB913",
+        size: "m"
+    }),
+    accommodation:L.MakiMarkers.icon({
+        icon: "building",
+        color: "#0072BC",
+        size: "m"
+    }),
+    scenery:L.MakiMarkers.icon({
+        icon: "camera",
+        color: "#B3B3B3",
+        size: "m"
+    }),
+    opg:L.MakiMarkers.icon({
+        icon: "farm",
+        color: "#c1272d",
+        size: "m"
     })
-    marker._leaflet_id=feature.properties.name;
-}
+};
 
-//sklapanje gornjih funkcija u oneachfeature za biciklističke i planinarske staze
-function onEachFeatureHike(feature, layer) {
-    layer.on({
-        'mouseover': function (e) {
-            highlight(e.target);
-        },
-        'mouseout': function (e) {
-            dehighlightHike(e.target);
-        },
-        'click tap': function (e) {
-            highlight(e.target);
-            select(e.target);
-            el.clear();
-            el.addData(feature);
-        },
-        'popupclose':function (e) {
-            selected=null;
-            hike.resetStyle(layer);
+var overlays = {
+    hike:new L.geoJson(exp_hike,{
+        onEachFeature: onEachFeature.hike,
+        style: doStyle.hike
+    }),
+    bike:new L.geoJson(exp_bike,{
+        onEachFeature: onEachFeature.bike,
+        style: doStyle.bike
+    }),
+    mhouse:new L.geoJson(exp_mhouse,{
+        onEachFeature: onEachFeature.mhouse,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {
+                icon: doStyle.mhouse,
+                riseOnHover: true
+            });
         }
-    });
-    if (params.lang=='eng') {
-        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                        '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Trail difficulty</th><td>'+ feature.properties['tez_eng'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    else {
-        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                        '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Težina staze</th><td>'+ feature.properties['tez'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    layer._leaflet_id=feature.properties.name;
-}
-
-function onEachFeaturewildTrail(feature, layer) {
-    layer.on({
-        'mouseover': function (e) {
-            highlight(e.target);
-        },
-        'mouseout': function (e) {
-            dehighlightwildTrail(e.target);
-        },
-        'click tap': function (e) {
-            highlight(e.target);
-            select(e.target);
-            el.clear();
-            el.addData(feature);
-        },
-        'popupclose':function (e) {
-            selected=null;
-            wildTrail.resetStyle(layer);
+    }),
+    accommodation:new L.geoJson(exp_accommodation,{
+        onEachFeature: onEachFeature.poi,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {
+                icon: doStyle.accommodation,
+                riseOnHover: true
+            });
         }
-    });
-    if (feature.properties['photo']){
-        var sliderContent='<div class="popup">' +
-                                    '<div class="cycle">' +
-                                        '<div class="slideshow">' +
-                                            '<div class="image active">' +
-                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
-                                            '</div>'+
-                                            '<div class="image">' +
-                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
-                                            '</div>'+
-                                            '<div class="image">' +
-                                                '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
-                                            '</div>'+
-                                        '</div>' +
-                                            '<button href="#" class="prev">&laquo;</button>' +
-                                            '<button href="#" class="next">&raquo;</button>' +
-                                        '</div>';
-    }
-    else {
-        var sliderContent='';
-    }
-    if (params.lang=='eng') {
-        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                                '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    else {
-        var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                                '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    layer._leaflet_id=feature.properties.name;
-}
-
-function onEachFeatureBike(feature, layer) {
-    layer.on({
-        'mouseover': function (e) {
-            highlight(e.target);
-        },
-        'mouseout': function (e) {
-            dehighlightBike(e.target);
-        },
-        'click tap': function (e) {
-            highlight(e.target);
-            select(e.target);
-            el.clear();
-            el.addData(feature);
-        },
-        'popupclose':function (e) {
-            selected=null;
-            bike.resetStyle(layer);
+    }),
+    scenery:new L.geoJson(exp_scenery,{
+        onEachFeature: onEachFeature.poi,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {
+                icon: doStyle.scenery,
+                riseOnHover: true
+            });
         }
-    });
-    if (params.lang=='eng') {
-        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                        '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Surface</th><td>'+ feature.properties['pod_eng'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    else {
-        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                        '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                        '<tr><th class="letterSpaceing"scope="row">Podloga</th><td>'+ feature.properties['pod'] + '</td></tr></table>';
-        layer.bindPopup(popupContent);
-    }
-    layer._leaflet_id=feature.properties.name;
-}
-
-function doStylehike(feature) {
-    switch (feature.properties.desc) {
-    case 1:
-        return {
-            weight: '2.3',
-            color: '#525252',
-            dashArray: '',
-            opacity: 0.8,
-            fillOpacity: 1.0
-        };
-        break;
-    case 2:
-        return {
-            weight: '3.3',
-            color: '#525252',
-            dashArray: '',
-            opacity: 0.8,
-            fillOpacity: 1.0
-        };
-        break;
-    case 3:
-        return {
-            weight: '4.3',
-            color: '#525252',
-            dashArray: '',
-            opacity: 1.0,
-            fillOpacity: 1.0
-        };
-        break;
-    default:
-    }
-}
-
-var hike = new L.geoJson(exp_hike,{
-    onEachFeature: onEachFeatureHike,
-    style: doStylehike
-});
-
-function doStylewildTrail(feature) {
-    return {
-            weight: 3.3,
-            color: '#009245',
-            dashArray: '',
-            opacity: 1.0,
-            fillOpacity: 1.0
-    };
-}
-
-var wildTrail = new L.geoJson(exp_wildTrail,{
-    onEachFeature: onEachFeaturewildTrail,
-    style: doStylewildTrail
-});
-
-function doStylebike(feature) {
-    switch (feature.properties.c) {
-    case 1:
-        return {
-            weight: '2.5',
-            color: '#c1272d',
-            dashArray: '',
-            opacity: 0.8,
-            fillOpacity: 1.0
-        };
-        break;
-    case 2:
-        return {
-            weight: '3.5',
-            color: '#c1272d',
-            dashArray: '',
-            opacity: 0.8,
-            fillOpacity: 1.0
-        };
-        break;
-    case 3:
-        return {
-            weight: '4.5',
-            color: '#c1272d',
-            dashArray: '',
-            opacity: 1.0,
-            fillOpacity: 1.0
-        };
-        break;
-    default:
-    }
-}
-
-var bike = new L.geoJson(exp_bike,{
-    onEachFeature: onEachFeatureBike,
-    style: doStylebike
-});
-
-var mhouseMarker = L.MakiMarkers.icon({
-    icon: "campsite",
-    color: "#FDB913",
-    size: "m"
-});
-
-var mhouse = new L.geoJson(exp_mhouse,{
-    onEachFeature: onEachFeaturemhouse,
-    pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
-            icon: mhouseMarker,
-            riseOnHover: true
-        });
-    }
-});
-
-var accommodationMarker = L.MakiMarkers.icon({
-    icon: "building",
-    color: "#0072BC",
-    size: "m"
-});
-
-var accommodation = new L.geoJson(exp_accommodation,{
-    onEachFeature: onEachFeaturepoi,
-    pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
-            icon: accommodationMarker,
-            riseOnHover: true
-        });
-    }
-});
-
-var sceneryMarker = L.MakiMarkers.icon({
-    icon: "camera",
-    color: "#B3B3B3",
-    size: "m"
-});
-
-var scenery = new L.geoJson(exp_scenery,{
-    onEachFeature: onEachFeaturepoi,
-    pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
-            icon: sceneryMarker,
-            riseOnHover: true
-        });
-    }
-});
-
-var opgMarker = L.MakiMarkers.icon({
-    icon: "farm",
-    color: "#c1272d",
-    size: "m"
-});
-
-var opg = new L.geoJson(exp_opg,{
-    onEachFeature: onEachFeatureOpg,
-    pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, {
-            icon: opgMarker,
-            riseOnHover: true
-        });
-    }
-});
+    }),
+    wildtrail:new L.geoJson(exp_wildTrail,{
+        onEachFeature: onEachFeature.wildtrail,
+        style: doStyle.wildtrail
+    }),
+    opg:new L.geoJson(exp_opg,{
+        onEachFeature: onEachFeature.opg,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {
+                icon: doStyle.opg,
+                riseOnHover: true
+            });
+        }
+    })
+};
 
 if (params.lang=='eng') {
     var baseMaps = [
@@ -467,19 +454,19 @@ if (params.lang=='eng') {
         groupName : "Trails",
         expanded  : true,
         layers    : { 
-            "Wildlife trails": wildTrail,
-            "Hiking trails": hike,
-            "Biking trails": bike,
+            "Wildlife trails": overlays.wildtrail,
+            "Hiking trails": overlays.hike,
+            "Biking trails": overlays.bike,
         }
         },
         {
         groupName : "POI",
         expanded  : true,
         layers    : { 
-            "Family farms":opg,
-            "Mountain shelters": mhouse,
-            "Scenery": scenery,
-            "Accommodation": accommodation
+            "Family farms":overlays.opg,
+            "Mountain shelters": overlays.mhouse,
+            "Scenery": overlays.scenery,
+            "Accommodation": overlays.accommodation
         }
         }
     ];
@@ -501,52 +488,38 @@ else {
         groupName : "Staze",
         expanded  : true,
         layers    : { 
-            "Staze u prirodi": wildTrail,
-            "Planinarske staze": hike,
-            "Biciklističke staze": bike,
+            "Staze u prirodi": overlays.wildtrail,
+            "Planinarske staze": overlays.hike,
+            "Biciklističke staze": overlays.bike,
         }
         },
         {
         groupName : "POI",
         expanded  : true,
         layers    : { 
-            "OPG":opg,
-            "Planinarske kuće": mhouse,
-            "Vidikovci": scenery,
-            "Smještaj": accommodation
+            "OPG":overlays.opg,
+            "Planinarske kuće": overlays.mhouse,
+            "Vidikovci": overlays.scenery,
+            "Smještaj": overlays.accommodation
         }
         }
     ];
 }
 
 if (params.layers) {
-    var overlays = {
-    "hike":hike,
-    "bike":bike,
-    "mhouse":mhouse,
-    "accommodation":accommodation,
-    "scenery":scenery,
-    "wildtrail":wildTrail,
-    "opg":opg
-    };
     var layers = params.layers.split(',').map(function(item) { 
         return overlays[item]; 
     });
 }
 
-var map = L.map('map', {scrollWheelZoom:false,center: [params.lat || 44.59, params.lng || 15.36], zoom: params.zoom || 9, fullscreenControl: true,layers: layers || hike});
+var map = L.map('map', {scrollWheelZoom:false,center: [params.lat || 44.59, params.lng || 15.36], zoom: params.zoom || 9, fullscreenControl: true,layers: layers || overlays.hike});
 basemap_2.addTo(map);
 
 // enable scrolling only after you click on map
 map.once('focus', function() { map.scrollWheelZoom.enable(); });
 map.on('click', function() {
-//     if (map.scrollWheelZoom.enabled()) {
-//         map.scrollWheelZoom.disable();
-//     }
-//     else {
-        map.scrollWheelZoom.enable();
-    });
-// });
+    map.scrollWheelZoom.enable();
+});
 
 function init (parameter) {
     el = L.control.elevation({
@@ -563,7 +536,7 @@ function init (parameter) {
             
         }
         else {
-//             change max zoom for fitBounds if requested
+            //change max zoom for fitBounds if requested
             if (params.zoom && params.padding){
                 var boundsParams={maxZoom:params.zoom,paddingTopLeft:[0,params.padding]};
             }
