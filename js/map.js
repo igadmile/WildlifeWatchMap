@@ -566,7 +566,6 @@ function init (parameter) {
 //             change max zoom for fitBounds if requested
             if (params.zoom && params.padding){
                 var boundsParams={maxZoom:params.zoom,paddingTopLeft:[0,params.padding]};
-                console.log('aaa')
             }
             else if (params.zoom){
                 var boundsParams={maxZoom:params.zoom};
