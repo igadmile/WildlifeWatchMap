@@ -369,15 +369,15 @@ var doStyle = {
 };
 
 var overlays = {
-    hike:new L.geoJson(exp_hike,{
+    hike:L.geoJson(exp_hike,{
         onEachFeature: onEachFeature.hike,
         style: doStyle.hike
     }),
-    bike:new L.geoJson(exp_bike,{
+    bike:L.geoJson(exp_bike,{
         onEachFeature: onEachFeature.bike,
         style: doStyle.bike
     }),
-    mhouse:new L.geoJson(exp_mhouse,{
+    mhouse:L.geoJson(exp_mhouse,{
         onEachFeature: onEachFeature.mhouse,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
@@ -386,7 +386,7 @@ var overlays = {
             });
         }
     }),
-    accommodation:new L.geoJson(exp_accommodation,{
+    accommodation:L.geoJson(exp_accommodation,{
         onEachFeature: onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
@@ -395,7 +395,7 @@ var overlays = {
             });
         }
     }),
-    scenery:new L.geoJson(exp_scenery,{
+    scenery:L.geoJson(exp_scenery,{
         onEachFeature: onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
@@ -404,11 +404,11 @@ var overlays = {
             });
         }
     }),
-    wildtrail:new L.geoJson(exp_wildTrail,{
+    wildtrail:L.geoJson(exp_wildTrail,{
         onEachFeature: onEachFeature.wildtrail,
         style: doStyle.wildtrail
     }),
-    opg:new L.geoJson(exp_opg,{
+    opg:L.geoJson(exp_opg,{
         onEachFeature: onEachFeature.opg,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
