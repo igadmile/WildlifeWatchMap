@@ -1,11 +1,12 @@
 // take parameters from url and add them to object
-var params = {};
+var wwwMap ={}
+wwwMap.params = {};
 window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-    params[key] = decodeURIComponent(value);
+    wwwMap.params[key] = decodeURIComponent(value);
 });
 
 //dodavanje fucnkcije za promijenu boje
-function highlight (layer) {
+wwwMap.highlight = function (layer) {
     layer.setStyle({
         weight: 6,
         color: 'yellow',
@@ -17,46 +18,46 @@ function highlight (layer) {
 };
 
 //dodavanje objekta za vraćanje boje na staro
-var dehighlight = {
+wwwMap.dehighlight = {
     hike:function (layer) {
-        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-            overlays.hike.resetStyle(layer);
+        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
+            wwwMap.overlays.hike.resetStyle(layer);
         }
     },
     wildtrail:function (layer) {
-        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-            overlays.wildtrail.resetStyle(layer);
+        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
+            wwwMap.overlays.wildtrail.resetStyle(layer);
         }
     },
     bike:function (layer) {
-        if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-            overlays.bike.resetStyle(layer);
+        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
+           wwwMap.overlays.bike.resetStyle(layer);
         }
     }
 };
 
-var selected = null;
-function select (layer) {
+wwwMap.selected = null;
+wwwMap.select = function(layer) {
     // See if there is already a selection
-    if (selected !== null) {
+    if (wwwMap.selected !== null) {
         // Store for now
-        var previous = selected;
+        var previous = wwwMap.selected;
     }
     // Set new selection
-    selected = layer;
+    wwwMap.selected = layer;
     // If there was a previous selection
     if (previous) {
         // Dehighlight previous
-        dehighlight(previous);
+        wwwMap.dehighlight(previous);
     }
 };
 
 // dodavanje objekta oneachFeature
-var onEachFeature = {
+wwwMap.onEachFeature = {
     mhouse:function (feature, marker) {
         marker.on({"click": function (e) {
             // Create custom popup content
-            if (params.lang=='eng') {
+            if (wwwMap.params.lang=='eng') {
                 var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
                                         '<div>'+
                                             '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
@@ -132,7 +133,7 @@ var onEachFeature = {
                 var sliderContent='';
             }
             // Create custom popup content
-            if (params.lang=='eng') {
+            if (wwwMap.params.lang=='eng') {
                 var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                                 '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2']+'</table>';
                 var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
@@ -149,23 +150,23 @@ var onEachFeature = {
     hike:function (feature, layer) {
         layer.on({
             'mouseover': function (e) {
-                highlight(e.target);
+                wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                dehighlight.hike(e.target);
+                wwwMap.dehighlight.hike(e.target);
             },
             'click tap': function (e) {
-                highlight(e.target);
-                select(e.target);
-                el.clear();
-                el.addData(feature);
+                wwwMap.highlight(e.target);
+                wwwMap.select(e.target);
+                wwwMap.el.clear();
+                wwwMap.el.addData(feature);
             },
             'popupclose':function (e) {
-                selected=null;
-                overlays.hike.resetStyle(layer);
+                wwwMap.selected=null;
+                wwwMap.overlays.hike.resetStyle(layer);
             }
         });
-        if (params.lang=='eng') {
+        if (wwwMap.params.lang=='eng') {
             var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
                             '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
                             '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
@@ -184,20 +185,20 @@ var onEachFeature = {
     wildtrail:function (feature, layer) {
         layer.on({
             'mouseover': function (e) {
-                highlight(e.target);
+                wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                dehighlight.wildtrail(e.target);
+                wwwMap.dehighlight.wildtrail(e.target);
             },
             'click tap': function (e) {
-                highlight(e.target);
-                select(e.target);
-                el.clear();
-                el.addData(feature);
+                wwwMap.highlight(e.target);
+                wwwMap.select(e.target);
+                wwwMap.el.clear();
+               wwwMap.el.addData(feature);
             },
             'popupclose':function (e) {
-                selected=null;
-                overlays.wildtrail.resetStyle(layer);
+                wwwMap.selected=null;
+                wwwMap.overlays.wildtrail.resetStyle(layer);
             }
         });
         if (feature.properties['photo']){
@@ -221,7 +222,7 @@ var onEachFeature = {
         else {
             var sliderContent='';
         }
-        if (params.lang=='eng') {
+        if (wwwMap.params.lang=='eng') {
             var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
                                     '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
                                     '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr></table>';
@@ -238,23 +239,23 @@ var onEachFeature = {
     bike:function (feature, layer) {
         layer.on({
             'mouseover': function (e) {
-                highlight(e.target);
+                wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                dehighlight.bike(e.target);
+                wwwMap.dehighlight.bike(e.target);
             },
             'click tap': function (e) {
-                highlight(e.target);
-                select(e.target);
-                el.clear();
-                el.addData(feature);
+                wwwMap.highlight(e.target);
+                wwwMap.select(e.target);
+                wwwMap.el.clear();
+                wwwMap.el.addData(feature);
             },
             'popupclose':function (e) {
-                selected=null;
-                overlays.bike.resetStyle(layer);
+                wwwMap.selected=null;
+                wwwMap.overlays.bike.resetStyle(layer);
             }
         });
-        if (params.lang=='eng') {
+        if (wwwMap.params.lang=='eng') {
             var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
                             '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
                             '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
@@ -272,7 +273,7 @@ var onEachFeature = {
     }
 };
 
-var doStyle = {
+wwwMap.doStyle = {
     hike:function (feature) {
         switch (feature.properties.desc) {
         case 1:
@@ -368,152 +369,152 @@ var doStyle = {
     })
 };
 
-var overlays = {
+wwwMap.overlays = {
     hike:L.geoJson(exp_hike,{
-        onEachFeature: onEachFeature.hike,
-        style: doStyle.hike
+        onEachFeature: wwwMap.onEachFeature.hike,
+        style: wwwMap.doStyle.hike
     }),
     bike:L.geoJson(exp_bike,{
-        onEachFeature: onEachFeature.bike,
-        style: doStyle.bike
+        onEachFeature: wwwMap.onEachFeature.bike,
+        style: wwwMap.doStyle.bike
     }),
     mhouse:L.geoJson(exp_mhouse,{
-        onEachFeature: onEachFeature.mhouse,
+        onEachFeature: wwwMap.onEachFeature.mhouse,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
-                icon: doStyle.mhouse,
+                icon: wwwMap.doStyle.mhouse,
                 riseOnHover: true
             });
         }
     }),
     accommodation:L.geoJson(exp_accommodation,{
-        onEachFeature: onEachFeature.poi,
+        onEachFeature: wwwMap.onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
-                icon: doStyle.accommodation,
+                icon: wwwMap.doStyle.accommodation,
                 riseOnHover: true
             });
         }
     }),
     scenery:L.geoJson(exp_scenery,{
-        onEachFeature: onEachFeature.poi,
+        onEachFeature: wwwMap.onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
-                icon: doStyle.scenery,
+                icon: wwwMap.doStyle.scenery,
                 riseOnHover: true
             });
         }
     }),
     wildtrail:L.geoJson(exp_wildTrail,{
-        onEachFeature: onEachFeature.wildtrail,
-        style: doStyle.wildtrail
+        onEachFeature: wwwMap.onEachFeature.wildtrail,
+        style: wwwMap.doStyle.wildtrail
     }),
     opg:L.geoJson(exp_opg,{
-        onEachFeature: onEachFeature.opg,
+        onEachFeature: wwwMap.onEachFeature.opg,
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
-                icon: doStyle.opg,
+                icon: wwwMap.doStyle.opg,
                 riseOnHover: true
             });
         }
     })
 };
 
-var additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
-var additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
-var basemaps ={
+wwwMap.additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
+wwwMap.additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
+wwwMap.basemaps ={
     basemap_0:L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
         layers: 'DOF',
         format: 'image/jpeg',
-        attribution: additional_attrib2
+        attribution: wwwMap.additional_attrib2
     }),
     basemap_1:L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
         layers: 'TK25',
         format: 'image/jpeg',
-        attribution: additional_attrib2
+        attribution: wwwMap.additional_attrib2
     }),
     basemap_2:L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {
-        attribution: additional_attrib
+        attribution: wwwMap.additional_attrib
     })
 };
 
-if (params.lang=='eng') {
-    var baseMaps = [
+if (wwwMap.params.lang=='eng') {
+    wwwMap.baseMaps = [
         { 
             groupName : "Basemaps",
             expanded : true,
             layers    : {
-                'Thunderforest Landscape': basemaps.basemap_2,
-                'Topographic map':basemaps.basemap_1,
-                'Digital orthophoto':basemaps.basemap_0
+                'Thunderforest Landscape': wwwMap.basemaps.basemap_2,
+                'Topographic map':wwwMap.basemaps.basemap_1,
+                'Digital orthophoto':wwwMap.basemaps.basemap_0
             }
         }
     ]; 
-    var overlays2 = [
+    wwwMap.overlays2 = [
         {
         groupName : "Trails",
         expanded  : true,
         layers    : { 
-            "Wildlife trails": overlays.wildtrail,
-            "Hiking trails": overlays.hike,
-            "Biking trails": overlays.bike,
+            "Wildlife trails": wwwMap.overlays.wildtrail,
+            "Hiking trails": wwwMap.overlays.hike,
+            "Biking trails": wwwMap.overlays.bike,
         }
         },
         {
         groupName : "POI",
         expanded  : true,
         layers    : { 
-            "Family farms":overlays.opg,
-            "Mountain shelters": overlays.mhouse,
-            "Scenery": overlays.scenery,
-            "Accommodation": overlays.accommodation
+            "Family farms":wwwMap.overlays.opg,
+            "Mountain shelters": wwwMap.overlays.mhouse,
+            "Scenery": wwwMap.overlays.scenery,
+            "Accommodation": wwwMap.overlays.accommodation
         }
         }
     ];
 }
 else {
-    var baseMaps = [
+    wwwMap.baseMaps = [
         { 
             groupName : "Pozadinske karte",
             expanded : true,
             layers    : {
-                'Thunderforest Landscape': basemaps.basemap_2,
-                'Topografska karta':basemaps.basemap_1,
-                'Digitalni ortofoto':basemaps.basemap_0
+                'Thunderforest Landscape': wwwMap.basemaps.basemap_2,
+                'Topografska karta':wwwMap.basemaps.basemap_1,
+                'Digitalni ortofoto':wwwMap.basemaps.basemap_0
             }
         }
     ]; 
-    var overlays2 = [
+    wwwMap.overlays2 = [
         {
         groupName : "Staze",
         expanded  : true,
         layers    : { 
-            "Staze u prirodi": overlays.wildtrail,
-            "Planinarske staze": overlays.hike,
-            "Biciklističke staze": overlays.bike,
+            "Staze u prirodi": wwwMap.overlays.wildtrail,
+            "Planinarske staze": wwwMap.overlays.hike,
+            "Biciklističke staze": wwwMap.overlays.bike,
         }
         },
         {
         groupName : "POI",
         expanded  : true,
         layers    : { 
-            "OPG":overlays.opg,
-            "Planinarske kuće": overlays.mhouse,
-            "Vidikovci": overlays.scenery,
-            "Smještaj": overlays.accommodation
+            "OPG":wwwMap.overlays.opg,
+            "Planinarske kuće": wwwMap.overlays.mhouse,
+            "Vidikovci": wwwMap.overlays.scenery,
+            "Smještaj": wwwMap.overlays.accommodation
         }
         }
     ];
 }
 
-if (params.layers) {
-    var layers = params.layers.split(',').map(function(item) { 
-        return overlays[item]; 
+if (wwwMap.params.layers) {
+    wwwMap.layers = wwwMap.params.layers.split(',').map(function(item) { 
+        return wwwMap.overlays[item]; 
     });
 }
 
-var map = L.map('map', {scrollWheelZoom:false,center: [params.lat || 44.59, params.lng || 15.36], zoom: params.zoom || 9, fullscreenControl: true,layers: layers || overlays.hike});
-basemaps.basemap_2.addTo(map);
+var map = L.map('map', {scrollWheelZoom:false,center: [wwwMap.params.lat || 44.59, wwwMap.params.lng || 15.36], zoom: wwwMap.params.zoom || 9, fullscreenControl: true,layers: wwwMap.layers || wwwMap.overlays.hike});
+wwwMap.basemaps.basemap_2.addTo(map);
 
 // enable scrolling only after you click on map
 map.once('focus', function() { map.scrollWheelZoom.enable(); });
@@ -521,43 +522,43 @@ map.on('click', function() {
     map.scrollWheelZoom.enable();
 });
 
-function init (parameter) {
-    el = L.control.elevation({
+wwwMap.init=function (parameter) {
+    wwwMap.el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
         collapsed: parameter,
     });
-    el.addTo(map);
-    L.Control.styledLayerControl(baseMaps, overlays2, {collapsed:parameter}).addTo(map);
+    wwwMap.el.addTo(map);
+    L.Control.styledLayerControl(wwwMap.baseMaps, wwwMap.overlays2, {collapsed:parameter}).addTo(map);
 
-    if(params.layers && params.feat){
-        if(params.layers=='opg' || params.layers=='scenery' || params.layers=='mhouse' || params.layers=='accommodation') {
-            layers[0]._layers[params.feat].fire('click', {latlng:layers[0]._layers[params.feat]._latlng});
+    if(wwwMap.params.layers && wwwMap.params.feat){
+        if(wwwMap.params.layers=='opg' || wwwMap.params.layers=='scenery' || wwwMap.params.layers=='mhouse' || wwwMap.params.layers=='accommodation') {
+            wwwMap.layers[0]._layers[wwwMap.params.feat].fire('click', {latlng:wwwMap.layers[0]._layers[wwwMap.params.feat]._latlng});
             
         }
         else {
             //change max zoom for fitBounds if requested
-            if (params.zoom && params.padding){
-                var boundsParams={maxZoom:params.zoom,paddingTopLeft:[0,params.padding]};
+            if (wwwMap.params.zoom && wwwMap.params.padding){
+                wwwMap.boundsParams={maxZoom:wwwMap.params.zoom,paddingTopLeft:[0,wwwMap.params.padding]};
             }
-            else if (params.zoom){
-                var boundsParams={maxZoom:params.zoom};
+            else if (wwwMap.params.zoom){
+                wwwMap.boundsParams={maxZoom:wwwMap.params.zoom};
             }
             else {
-                var boundsParams={maxZoom:18};
+                wwwMap.boundsParams={maxZoom:18};
             }
-            var featureCoordinates=layers[0]._layers[params.feat]._latlngs;
-            layers[0]._layers[params.feat].fire('click', {latlng:featureCoordinates[Math.round((featureCoordinates.length - 50) / 2)]});
-            map.fitBounds(layers[0]._layers[params.feat].getBounds(),boundsParams);
+            var featureCoordinates=wwwMap.layers[0]._layers[wwwMap.params.feat]._latlngs;
+            wwwMap.layers[0]._layers[wwwMap.params.feat].fire('click', {latlng:featureCoordinates[Math.round((featureCoordinates.length - 50) / 2)]});
+            map.fitBounds(wwwMap.layers[0]._layers[wwwMap.params.feat].getBounds(),wwwMap.boundsParams);
         }
     }
 }
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.getElementById("map").offsetWidth<1025) {
-    init(true);
+    wwwMap.init(true);
 }
 else {
-    init(false);
+    wwwMap.init(false);
 }
 
 // locate control

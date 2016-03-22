@@ -1,7 +1,5 @@
 #!/bin/bash
-mkdir dist;
-cp -r . ./dist;
-rm -r ./dist/dist;
+rsync -auv . dist
 
 # download included files
 wget http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css -P ./dist/css;
@@ -12,10 +10,16 @@ wget http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js -P ./dist/js
 wget https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js -P ./dist/js;
 wget https://domoritz.github.io/leaflet-locatecontrol/src/L.Control.Locate.js -P ./dist/js;
 wget http://d3js.org/d3.v3.min.js -P ./dist/js;
+wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip -P ./dist;
 
+unzip ./dist/font-awesome-4.5.0.zip -d ./dist;
+cp ./dist/font-awesome-4.5.0/css/font-awesome.min.css ./dist/css;
+cp -r ./dist/font-awesome-4.5.0/fonts ./dist;
+rm -r ./dist/font-awesome-4.5.0;
+rm -r ./dist/font-awesome-4.5.0.zip;
 
-cat ./dist/css/leaflet.css ./dist/css/leaflet.fullscreen.css ./dist/css/L.Control.Locate.min.css ./dist/css/leaflet.elevation-0.0.4.css ./dist/css/styledLayerControl.css ./dist/css/own_style.css > ./dist/css/include.css;
-rm ./dist/css/leaflet.css ./dist/css/leaflet.fullscreen.css ./dist/css/L.Control.Locate.min.css ./dist/css/leaflet.elevation-0.0.4.css ./dist/css/styledLayerControl.css ./dist/css/own_style.css;
+cat ./dist/css/font-awesome.min.css ./dist/css/leaflet.css ./dist/css/leaflet.fullscreen.css ./dist/css/L.Control.Locate.min.css ./dist/css/leaflet.elevation-0.0.4.css ./dist/css/styledLayerControl.css ./dist/css/own_style.css > ./dist/css/include.css;
+rm ./dist/css/font-awesome.min.css ./dist/css/leaflet.css ./dist/css/leaflet.fullscreen.css ./dist/css/L.Control.Locate.min.css ./dist/css/leaflet.elevation-0.0.4.css ./dist/css/styledLayerControl.css ./dist/css/own_style.css;
 uglifycss ./dist/css/include.css > ./dist/css/includes.css;
 rm ./dist/css/include.css;
 
