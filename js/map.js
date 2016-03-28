@@ -273,100 +273,61 @@ wwwMap.onEachFeature = {
     }
 };
 
+wwwMap.stylePresets = {
+	styleLine:function (weight,color) {
+		var styleReturn = {
+			weight: weight,
+			color: color,
+			opacity: 0.8,
+			fillOpacity: 1.0
+		}
+		return styleReturn;
+	},
+	styleMarker:function (icon,color) {
+		var styleReturn = L.MakiMarkers.icon({
+		    icon: icon,
+		    color: color,
+		    size: "m"
+		})
+		return styleReturn;
+	}
+};
+
 wwwMap.doStyle = {
-    hike:function (feature) {
+    hike: function (feature) {
         switch (feature.properties.desc) {
         case 1:
-            return {
-                weight: '2.3',
-                color: '#525252',
-                dashArray: '',
-                opacity: 0.8,
-                fillOpacity: 1.0
-            };
+            return wwwMap.stylePresets.styleLine('2.3','#525252');
             break;
         case 2:
-            return {
-                weight: '3.3',
-                color: '#525252',
-                dashArray: '',
-                opacity: 0.8,
-                fillOpacity: 1.0
-            };
-            break;
+            return wwwMap.stylePresets.styleLine('2.3','#525252');
         case 3:
-            return {
-                weight: '4.3',
-                color: '#525252',
-                dashArray: '',
-                opacity: 1.0,
-                fillOpacity: 1.0
-            };
+            return wwwMap.stylePresets.styleLine('4.3','#525252');
             break;
         default:
         }
     },
     wildtrail:function (feature) {
-        return {
-                weight: 3.3,
-                color: '#009245',
-                dashArray: '',
-                opacity: 1.0,
-                fillOpacity: 1.0
-        };
+        return wwwMap.stylePresets.styleLine('3.3','#009245');
     },
     bike:function (feature) {
         switch (feature.properties.c) {
         case 1:
-            return {
-                weight: '2.5',
-                color: '#c1272d',
-                dashArray: '',
-                opacity: 0.8,
-                fillOpacity: 1.0
-            };
+            return wwwMap.stylePresets.styleLine('2.5','#c1272d');
             break;
         case 2:
-            return {
-                weight: '3.5',
-                color: '#c1272d',
-                dashArray: '',
-                opacity: 0.8,
-                fillOpacity: 1.0
-            };
+            return wwwMap.stylePresets.styleLine('3.5','#c1272d');
             break;
         case 3:
-            return {
-                weight: '4.5',
-                color: '#c1272d',
-                dashArray: '',
-                opacity: 1.0,
-                fillOpacity: 1.0
-            };
+            return wwwMap.stylePresets.styleLine('4.5','#c1272d');
             break;
         default:
         }
     },
-    mhouse:L.MakiMarkers.icon({
-        icon: "campsite",
-        color: "#FDB913",
-        size: "m"
-    }),
-    accommodation:L.MakiMarkers.icon({
-        icon: "building",
-        color: "#0072BC",
-        size: "m"
-    }),
-    scenery:L.MakiMarkers.icon({
-        icon: "camera",
-        color: "#B3B3B3",
-        size: "m"
-    }),
-    opg:L.MakiMarkers.icon({
-        icon: "farm",
-        color: "#c1272d",
-        size: "m"
-    })
+    mhouse:wwwMap.stylePresets.styleMarker('campsite','#FDB913'),
+    accommodation:wwwMap.stylePresets.styleMarker('building','#0072BC'),
+    scenery:wwwMap.stylePresets.styleMarker('camera','#B3B3B3'),
+    opg:wwwMap.stylePresets.styleMarker('farm','#c1272d'),
 };
 
 wwwMap.overlays = {
