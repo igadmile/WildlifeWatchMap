@@ -10,9 +10,7 @@ wwwMap.highlight = function (layer) {
     layer.setStyle({
         weight: 6,
         color: 'yellow',
-        fillColor:'yellow',
         opacity: 0.7,
-        fillOpacity: 0.7
     });
     layer.bringToFront();
 };
@@ -52,27 +50,36 @@ wwwMap.select = function(layer) {
     }
 };
 
+wwwMap.html = {
+	name: function (feature,width) {
+		return'<div style="text-align:center;'+width+'"><h3>'+feature.properties['name']+'</h3></div>';
+	},
+	img: function (source,feature,activity,picNum) {
+		return '<div class="image '+activity+'">'+
+                    '<img class="imgShadow" src="photo/'+source + feature.properties['photo'] + picNum+'.jpg" />' +
+                '</div>';
+	},
+	tableRow: function (title,value) {
+		return '<tr><th class="letterSpaceing"scope="row">'+title+'</th><td>'+ value+'</td></tr><tr>';
+	},
+	button: function (title,value) {
+		return '</div><button href="#" class="prev">&laquo;</button><button href="#" class="next">&raquo;</button></div>';
+	}
+};
+
 // dodavanje objekta oneachFeature
 wwwMap.onEachFeature = {
     mhouse:function (feature, marker) {
         marker.on({"click": function (e) {
             // Create custom popup content
             if (wwwMap.params.lang=='eng') {
-                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                        '<div>'+
-                                            '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                    '</div>'+
-                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Elevation</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">House type</th><td>'+feature.properties['tip_eng']+'<tr><th class="letterSpaceing"scope="row">Number of beds</th><td>'+ feature.properties['bed']+'</td></tr></table>';
+                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+
+                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Elevation',feature.properties['ele'])+wwwMap.html.tableRow('House type',feature.properties['tip_eng'])+wwwMap.html.tableRow('Number of beds',feature.properties['bed'])+'</table>';
                 var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
             }
             else {
-                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+
-                                        '<div>'+
-                                            '<img class="imgShadow" src="photo/mhouse/' + feature.properties['photo'] + '.jpg" />' +
-                                        '</div>'+
-                                    '</div>'+
-                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Nadmorska visina</th><td>'+ feature.properties['ele']+'</td></tr><tr><th class="letterSpaceing"scope="row">Tip kuće</th><td>'+feature.properties['tip']+'<tr><th class="letterSpaceing"scope="row">Broj kreveta</th><td>'+ feature.properties['bed']+'</td></tr></table>';
+                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+
+                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Nadmorska visina',feature.properties['ele'])+wwwMap.html.tableRow('Tip kuće',feature.properties['tip'])+wwwMap.html.tableRow('Broj kreveta',feature.properties['bed'])+'</table>';
                 var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
             }
         }
@@ -80,7 +87,7 @@ wwwMap.onEachFeature = {
         marker._leaflet_id=feature.properties.name;
     },
     poi:function (feature, marker) {
-        var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>';
+        var popupContent = wwwMap.html.name(feature);
         marker.bindPopup(popupContent);
     },
     opg:function (feature, marker) {
@@ -88,45 +95,23 @@ wwwMap.onEachFeature = {
             if (feature.properties['name']=='OPG Marin Bušljeta') {
                 var sliderContent='<div class="popup">' +
                                         '<div class="cycle">' +
-                                            '<div class="slideshow">' +
-                                                '<div class="image active">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                                '</div>'+
-                                                '<div class="image">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                                '</div>'+
-                                            '</div>' +
-                                                '<button href="#" class="prev">&laquo;</button>' +
-                                                '<button href="#" class="next">&raquo;</button>' +
-                                            '</div>'+
+                                            '<div class="slideshow">' + 
+                                            wwwMap.html.img('opg/',feature,'active','')+
+                                            wwwMap.html.img('opg/',feature,'','2')+
+                                            wwwMap.html.button()+
                                         '</div>';
             }
             else if (feature.properties['name']=='OPG Anić') {
-                var sliderContent='<div class="popup">' +
-                                        '<div class="cycle">' +
-                                            '<div class="slideshow">' +
-                                                '<div class="image active">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                                '</div>'+
-                                        '</div>';
+                var sliderContent='<div class="popup">' + wwwMap.html.img('opg/',feature,'active slideshow','');
             }
             else if (feature.properties['photo']){
                 var sliderContent='<div class="popup">' +
                                         '<div class="cycle">' +
                                             '<div class="slideshow">' +
-                                                '<div class="image active">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '.jpg" />' +
-                                                '</div>'+
-                                                '<div class="image">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '2.jpg" />' +
-                                                '</div>'+
-                                                '<div class="image">' +
-                                                    '<img class="imgShadow" src="photo/opg/' + feature.properties['photo'] + '3.jpg" />' +
-                                                '</div>'+
-                                            '</div>' +
-                                                '<button href="#" class="prev">&laquo;</button>' +
-                                                '<button href="#" class="next">&raquo;</button>' +
-                                            '</div>'+
+                                                wwwMap.html.img('opg/',feature,'active','')+
+                                                wwwMap.html.img('opg/',feature,'','2')+
+                                                wwwMap.html.img('opg/',feature,'','3')+
+                                            	wwwMap.html.button()+
                                         '</div>';
             }
             else {
@@ -134,13 +119,13 @@ wwwMap.onEachFeature = {
             }
             // Create custom popup content
             if (wwwMap.params.lang=='eng') {
-                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adress</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Products</th><td>'+feature.properties['prod2']+'</table>';
+                var popupContent =  wwwMap.html.name(feature)+sliderContent+
+                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Adress',feature.properties['addr'])+wwwMap.html.tableRow('Products',feature.properties['prod2'])+'</table>';
                 var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
             }
             else {
-                var popupContent =  '<div style="text-align:center;width:256px;"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                '<table style="width:256px;margin:auto"><tr><th class="letterSpaceing"scope="row">Adresa</th><td>'+ feature.properties['addr']+'</td></tr><tr><th class="letterSpaceing"scope="row">Proizvodi</th><td>'+feature.properties['prod']+'</table>';
+                var popupContent = wwwMap.html.name(feature)+sliderContent+
+                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Adresa',feature.properties['addr'])+wwwMap.html.tableRow('Proizvodi',feature.properties['prod'])+'</table>';
                 var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
             }
         }
@@ -167,17 +152,13 @@ wwwMap.onEachFeature = {
             }
         });
         if (wwwMap.params.lang=='eng') {
-            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Trail difficulty</th><td>'+ feature.properties['tez_eng'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature)+
+                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+wwwMap.html.tableRow('Trail difficulty',feature.properties['tez_eng'])+'</table>';
             layer.bindPopup(popupContent);
         }
         else {
-            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Težina staze</th><td>'+ feature.properties['tez'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature)+
+                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+wwwMap.html.tableRow('Težina staze',feature.properties['tez'])+'</table>';
             layer.bindPopup(popupContent);
         }
         layer._leaflet_id=feature.properties.name;
@@ -205,15 +186,9 @@ wwwMap.onEachFeature = {
             var sliderContent='<div class="popup">' +
                                         '<div class="cycle">' +
                                             '<div class="slideshow">' +
-                                                '<div class="image active">' +
-                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '.jpg" />' +
-                                                '</div>'+
-                                                '<div class="image">' +
-                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '2.jpg" />' +
-                                                '</div>'+
-                                                '<div class="image">' +
-                                                    '<img class="imgShadow" src="photo/wildtrail/' + feature.properties['photo'] + '3.jpg" />' +
-                                                '</div>'+
+                                                wwwMap.html.img('wildtrail/',feature,'active','')+
+                                                wwwMap.html.img('wildtrail/',feature,'','2')+
+                                                wwwMap.html.img('wildtrail/',feature,'','3')+
                                             '</div>' +
                                                 '<button href="#" class="prev">&laquo;</button>' +
                                                 '<button href="#" class="next">&raquo;</button>' +
@@ -223,15 +198,13 @@ wwwMap.onEachFeature = {
             var sliderContent='';
         }
         if (wwwMap.params.lang=='eng') {
-            var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                    '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                                    '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+
+                                    '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+'</table>';
             layer.bindPopup(popupContent);
         }
         else {
-            var popupContent = '<div style="text-align:center;width:256px"><h3>'+feature.properties['name']+'</div>'+sliderContent+
-                                    '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                                    '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+
+                                    '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+'</table>';
             layer.bindPopup(popupContent);
         }
         layer._leaflet_id=feature.properties.name;
@@ -256,17 +229,13 @@ wwwMap.onEachFeature = {
             }
         });
         if (wwwMap.params.lang=='eng') {
-            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Trail length</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Trail duration</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Surface</th><td>'+ feature.properties['pod_eng'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature)+
+                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+wwwMap.html.tableRow('Surface',feature.properties['pod_eng'])+'</table>';
             layer.bindPopup(popupContent);
         }
         else {
-            var popupContent = '<div style="text-align:center"><h3>'+feature.properties['name']+'</h3></div>'+
-                            '</div><table style="margin:auto"><tr><th class="letterSpaceing"scope="row">Dužina staze</th><td>'+ feature.properties['len'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Trajanje staze</th><td>'+ feature.properties['time'] + '</td></tr>'+
-                            '<tr><th class="letterSpaceing"scope="row">Podloga</th><td>'+ feature.properties['pod'] + '</td></tr></table>';
+            var popupContent = wwwMap.html.name(feature)+
+                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+wwwMap.html.tableRow('Podloga',feature.properties['pod'])+'</table>';
             layer.bindPopup(popupContent);
         }
         layer._leaflet_id=feature.properties.name;
