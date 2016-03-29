@@ -1,5 +1,5 @@
 // take parameters from url and add them to object
-var wwwMap ={}
+var wwwMap ={};
 wwwMap.params = {};
 window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
     wwwMap.params[key] = decodeURIComponent(value);
@@ -16,21 +16,9 @@ wwwMap.highlight = function (layer) {
 };
 
 //dodavanje objekta za vraćanje boje na staro
-wwwMap.dehighlight = {
-    hike:function (layer) {
-        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
-            wwwMap.overlays.hike.resetStyle(layer);
-        }
-    },
-    wildtrail:function (layer) {
-        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
-            wwwMap.overlays.wildtrail.resetStyle(layer);
-        }
-    },
-    bike:function (layer) {
-        if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
-           wwwMap.overlays.bike.resetStyle(layer);
-        }
+wwwMap.dehighlight = function (layer,overlay) {
+    if (wwwMap.selected === null || wwwMap.selected._leaflet_id !== layer._leaflet_id) {
+        overlay.resetStyle(layer);
     }
 };
 
@@ -51,20 +39,36 @@ wwwMap.select = function(layer) {
 };
 
 wwwMap.html = {
-	name: function (feature,width) {
-		return'<div style="text-align:center;'+width+'"><h3>'+feature.properties['name']+'</h3></div>';
-	},
-	img: function (source,feature,activity,picNum) {
-		return '<div class="image '+activity+'">'+
-                    '<img class="imgShadow" src="photo/'+source + feature.properties['photo'] + picNum+'.jpg" />' +
-                '</div>';
-	},
-	tableRow: function (title,value) {
-		return '<tr><th class="letterSpaceing"scope="row">'+title+'</th><td>'+ value+'</td></tr><tr>';
-	},
-	button: function (title,value) {
-		return '</div><button href="#" class="prev">&laquo;</button><button href="#" class="next">&raquo;</button></div>';
-	}
+    name: function (feature,width) {
+        return '<div style="text-align:center;'+width+'"><h3>'+feature.properties['name']+'</h3></div>';
+    },
+    img: function (source,feature,activity,picNum) {
+        return '<div class="image '+activity+'"><img class="imgShadow" src="photo/'+source + feature.properties['photo'] + picNum+'.jpg" /></div>';
+    },
+    table: function (title,value) {
+        var rows = ['<table style="width:256px;margin:auto">'];
+        for (i = 0; i < title.length; i++) {
+            rows.push('<tr><th class="letterSpaceing"scope="row">'+title[i]+'</th><td>'+ value[i]+'</td></tr>');
+        }
+        rows.push('</table>');
+        return rows.join('');
+    },
+    button: function (title,value) {
+        return '</div><button href="#" class="prev">&laquo;</button><button href="#" class="next">&raquo;</button></div></div>';
+    },
+    slideshow: '<div class="popup"><div class="cycle"><div class="slideshow">'
+};
+
+wwwMap.oneachFeatureEvents = {
+    lineClick: function (feature,e) {
+        wwwMap.highlight(e.target);
+        wwwMap.select(e.target);
+        wwwMap.el.clear();
+        wwwMap.el.addData(feature);
+    },
+    photoSlide: function (feature,type) {
+        return wwwMap.html.slideshow+wwwMap.html.img(type,feature,'active','')+wwwMap.html.img(type,feature,'','2')+wwwMap.html.img(type,feature,'','3')+wwwMap.html.button();
+    }
 };
 
 // dodavanje objekta oneachFeature
@@ -73,15 +77,12 @@ wwwMap.onEachFeature = {
         marker.on({"click": function (e) {
             // Create custom popup content
             if (wwwMap.params.lang=='eng') {
-                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+
-                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Elevation',feature.properties['ele'])+wwwMap.html.tableRow('House type',feature.properties['tip_eng'])+wwwMap.html.tableRow('Number of beds',feature.properties['bed'])+'</table>';
-                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+wwwMap.html.table(['Elevation','House type','Number of beds'],[feature.properties['ele'],feature.properties['tip_eng'],feature.properties['bed']]);
             }
             else {
-                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+
-                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Nadmorska visina',feature.properties['ele'])+wwwMap.html.tableRow('Tip kuće',feature.properties['tip'])+wwwMap.html.tableRow('Broj kreveta',feature.properties['bed'])+'</table>';
-                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                var popupContent =  wwwMap.html.name(feature)+wwwMap.html.img('mhouse/',feature,'','')+wwwMap.html.table(['Nadmorska visina','Tip kuće','Broj kreveta'],[feature.properties['ele'],feature.properties['tip'],feature.properties['bed']]);
             }
+            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
         })
         marker._leaflet_id=feature.properties.name;
@@ -93,29 +94,19 @@ wwwMap.onEachFeature = {
     opg:function (feature, marker) {
         marker.on({"click": function (e) {
             if (feature.properties['photo']){
-                var sliderContent='<div class="popup">' +
-                                        '<div class="cycle">' +
-                                            '<div class="slideshow">' +
-                                                wwwMap.html.img('opg/',feature,'active','')+
-                                                wwwMap.html.img('opg/',feature,'','2')+
-                                                wwwMap.html.img('opg/',feature,'','3')+
-                                            	wwwMap.html.button()+
-                                        '</div>';
+                var sliderContent=wwwMap.oneachFeatureEvents.photoSlide(feature,'opg/');
             }
             else {
                 var sliderContent='';
             }
             // Create custom popup content
             if (wwwMap.params.lang=='eng') {
-                var popupContent =  wwwMap.html.name(feature)+sliderContent+
-                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Adress',feature.properties['addr'])+wwwMap.html.tableRow('Products',feature.properties['prod2'])+'</table>';
-                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                var popupContent =  wwwMap.html.name(feature)+sliderContent+wwwMap.html.table(['Adress','Products'],[feature.properties['addr'],feature.properties['prod2']]);
             }
             else {
-                var popupContent = wwwMap.html.name(feature)+sliderContent+
-                                '<table style="width:256px;margin:auto">'+wwwMap.html.tableRow('Adresa',feature.properties['addr'])+wwwMap.html.tableRow('Proizvodi',feature.properties['prod'])+'</table>';
-                var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
+                var popupContent = wwwMap.html.name(feature)+sliderContent+wwwMap.html.table(['Adresa','Proizvodi'],[feature.properties['addr'],feature.properties['prod']]);
             }
+            var popup = L.popup({"maxWidth":256, "minWidth":256}).setLatLng(e.latlng).setContent(popupContent).openOn(map);
         }
         })
         marker._leaflet_id=feature.properties.name;
@@ -126,29 +117,23 @@ wwwMap.onEachFeature = {
                 wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                wwwMap.dehighlight.hike(e.target);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.hike);
             },
             'click tap': function (e) {
-                wwwMap.highlight(e.target);
-                wwwMap.select(e.target);
-                wwwMap.el.clear();
-                wwwMap.el.addData(feature);
+                wwwMap.oneachFeatureEvents.lineClick(feature,e);
             },
             'popupclose':function (e) {
                 wwwMap.selected=null;
-                wwwMap.overlays.hike.resetStyle(layer);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.hike);
             }
         });
         if (wwwMap.params.lang=='eng') {
-            var popupContent = wwwMap.html.name(feature)+
-                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+wwwMap.html.tableRow('Trail difficulty',feature.properties['tez_eng'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature)+wwwMap.html.table(['Trail length','Trail duration','Trail difficulty'],[feature.properties['len'],feature.properties['time'],feature.properties['tez_eng']]);
         }
         else {
-            var popupContent = wwwMap.html.name(feature)+
-                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+wwwMap.html.tableRow('Težina staze',feature.properties['tez'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature)+wwwMap.html.table(['Dužina staze','Trajanje staze','Težina staze'],[feature.properties['len'],feature.properties['time'],feature.properties['tez']]);
         }
+        layer.bindPopup(popupContent);
         layer._leaflet_id=feature.properties.name;
     },
     wildtrail:function (feature, layer) {
@@ -157,42 +142,29 @@ wwwMap.onEachFeature = {
                 wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                wwwMap.dehighlight.wildtrail(e.target);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.wildtrail);
             },
             'click tap': function (e) {
-                wwwMap.highlight(e.target);
-                wwwMap.select(e.target);
-                wwwMap.el.clear();
-               wwwMap.el.addData(feature);
+                wwwMap.oneachFeatureEvents.lineClick(feature,e);
             },
             'popupclose':function (e) {
                 wwwMap.selected=null;
-                wwwMap.overlays.wildtrail.resetStyle(layer);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.wildtrail);
             }
         });
         if (feature.properties['photo']){
-            var sliderContent='<div class="popup">' +
-                                        '<div class="cycle">' +
-                                            '<div class="slideshow">' +
-                                                wwwMap.html.img('wildtrail/',feature,'active','')+
-                                                wwwMap.html.img('wildtrail/',feature,'','2')+
-                                                wwwMap.html.img('wildtrail/',feature,'','3')+
-		                                        wwwMap.html.button()+
-		                                 '</div>';
+            var sliderContent=wwwMap.oneachFeatureEvents.photoSlide(feature,'wildtrail/');
         }
         else {
             var sliderContent='';
         }
         if (wwwMap.params.lang=='eng') {
-            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+
-                                    '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+wwwMap.html.table(['Trail length','Trail duration'],[feature.properties['len'],feature.properties['time']]);
         }
         else {
-            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+
-                                    '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature,'width:256px;')+sliderContent+wwwMap.html.table(['Dužina staze','Trajanje staze'],[feature.properties['len'],feature.properties['time']]);
         }
+        layer.bindPopup(popupContent);
         layer._leaflet_id=feature.properties.name;
     },
     bike:function (feature, layer) {
@@ -201,51 +173,45 @@ wwwMap.onEachFeature = {
                 wwwMap.highlight(e.target);
             },
             'mouseout': function (e) {
-                wwwMap.dehighlight.bike(e.target);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.bike);
             },
             'click tap': function (e) {
-                wwwMap.highlight(e.target);
-                wwwMap.select(e.target);
-                wwwMap.el.clear();
-                wwwMap.el.addData(feature);
+                wwwMap.oneachFeatureEvents.lineClick(feature,e);
             },
             'popupclose':function (e) {
                 wwwMap.selected=null;
-                wwwMap.overlays.bike.resetStyle(layer);
+                wwwMap.dehighlight(e.target,wwwMap.overlays.bike);
             }
         });
         if (wwwMap.params.lang=='eng') {
-            var popupContent = wwwMap.html.name(feature)+
-                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Trail length',feature.properties['len'])+wwwMap.html.tableRow('Trail duration',feature.properties['time'])+wwwMap.html.tableRow('Surface',feature.properties['pod_eng'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature)+wwwMap.html.table(['Trail length','Trail duration','Surface'],[feature.properties['len'],feature.properties['time'],feature.properties['pod_eng']]);
         }
         else {
-            var popupContent = wwwMap.html.name(feature)+
-                            '</div><table style="margin:auto">'+wwwMap.html.tableRow('Dužina staze',feature.properties['len'])+wwwMap.html.tableRow('Trajanje staze',feature.properties['time'])+wwwMap.html.tableRow('Podloga',feature.properties['pod'])+'</table>';
-            layer.bindPopup(popupContent);
+            var popupContent = wwwMap.html.name(feature)+wwwMap.html.table(['Dužina staze','Trajanje staze','Podloga'],[feature.properties['len'],feature.properties['time'],feature.properties['pod']]);
         }
+        layer.bindPopup(popupContent);
         layer._leaflet_id=feature.properties.name;
     }
 };
 
 wwwMap.stylePresets = {
-	styleLine:function (weight,color) {
-		var styleReturn = {
-			weight: weight,
-			color: color,
-			opacity: 0.8,
-			fillOpacity: 1.0
-		}
-		return styleReturn;
-	},
-	styleMarker:function (icon,color) {
-		var styleReturn = L.MakiMarkers.icon({
-		    icon: icon,
-		    color: color,
-		    size: "m"
-		})
-		return styleReturn;
-	}
+    styleLine:function (weight,color) {
+        var styleReturn = {
+            weight: weight,
+            color: color,
+            opacity: 0.8,
+            fillOpacity: 1.0
+        };
+        return styleReturn;
+    },
+    styleMarker:function (icon,color) {
+        var styleReturn = L.MakiMarkers.icon({
+            icon: icon,
+            color: color,
+            size: "m"
+        });
+        return styleReturn;
+    }
 };
 
 wwwMap.doStyle = {
@@ -338,7 +304,7 @@ wwwMap.overlays = {
 
 wwwMap.additional_attrib = 'Created as part of Wildlife Watch project, funded by European Union';
 wwwMap.additional_attrib2 = 'Created as part of Wildlife Watch project, funded by European Union, imagery prvided by <a href="http://www.dgu.hr/">Državna Geodetska uprava</a>';
-wwwMap.basemaps ={
+wwwMap.basemaps = {
     basemap_0:L.tileLayer.wms('http://geoportal.dgu.hr/wms', {
         layers: 'DOF',
         format: 'image/jpeg',
