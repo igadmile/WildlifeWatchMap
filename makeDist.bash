@@ -23,9 +23,9 @@ rm ./dist/css/font-awesome.min.css ./dist/css/leaflet.css ./dist/css/leaflet.ful
 uglifycss ./dist/css/include.css > ./dist/css/includes.css;
 rm ./dist/css/include.css;
 
-cat ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/data/data.js ./dist/js/map.js ./dist/js/slider.js > ./dist/js/include.js;
-rm  ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js  ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js  ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/data/data.js ./dist/js/map.js ./dist/js/slider.js;
-rm  -r ./dist/data;
+cat ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/data/data.js ./dist/code/params.js ./dist/code/events.js ./dist/code/layers.js ./dist/code/map.js ./dist/code/init.js ./dist/code/slider.js > ./dist/js/include.js;
+rm  ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js  ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js  ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/data/data.js ./dist/code/slider.js ./dist/js/map.js;
+rm  -r ./dist/data ./dist/code;
 uglifyjs ./dist/js/include.js > ./dist/js/includes.js;
 rm ./dist/js/include.js;
 
