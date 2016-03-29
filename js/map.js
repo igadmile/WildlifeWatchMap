@@ -92,19 +92,7 @@ wwwMap.onEachFeature = {
     },
     opg:function (feature, marker) {
         marker.on({"click": function (e) {
-            if (feature.properties['name']=='OPG Marin Bušljeta') {
-                var sliderContent='<div class="popup">' +
-                                        '<div class="cycle">' +
-                                            '<div class="slideshow">' + 
-                                            wwwMap.html.img('opg/',feature,'active','')+
-                                            wwwMap.html.img('opg/',feature,'','2')+
-                                            wwwMap.html.button()+
-                                        '</div>';
-            }
-            else if (feature.properties['name']=='OPG Anić') {
-                var sliderContent='<div class="popup">' + wwwMap.html.img('opg/',feature,'active slideshow','');
-            }
-            else if (feature.properties['photo']){
+            if (feature.properties['photo']){
                 var sliderContent='<div class="popup">' +
                                         '<div class="cycle">' +
                                             '<div class="slideshow">' +
@@ -189,10 +177,8 @@ wwwMap.onEachFeature = {
                                                 wwwMap.html.img('wildtrail/',feature,'active','')+
                                                 wwwMap.html.img('wildtrail/',feature,'','2')+
                                                 wwwMap.html.img('wildtrail/',feature,'','3')+
-                                            '</div>' +
-                                                '<button href="#" class="prev">&laquo;</button>' +
-                                                '<button href="#" class="next">&raquo;</button>' +
-                                            '</div>';
+		                                        wwwMap.html.button()+
+		                                 '</div>';
         }
         else {
             var sliderContent='';
