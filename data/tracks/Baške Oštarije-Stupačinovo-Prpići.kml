@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Baške_Oštarije_Stupačinovo_Prpići" id="Baške_Oštarije_Stupačinovo_Prpići">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="desc" type="string"></SimpleField>
+	<SimpleField name="src" type="string"></SimpleField>
+	<SimpleField name="link1_href" type="string"></SimpleField>
+	<SimpleField name="link1_text" type="string"></SimpleField>
+	<SimpleField name="link1_type" type="string"></SimpleField>
+	<SimpleField name="link2_href" type="string"></SimpleField>
+	<SimpleField name="link2_text" type="string"></SimpleField>
+	<SimpleField name="link2_type" type="string"></SimpleField>
+	<SimpleField name="number" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+	<SimpleField name="ogr_time" type="string"></SimpleField>
+	<SimpleField name="ogr_c" type="int"></SimpleField>
+	<SimpleField name="ogr_len" type="float"></SimpleField>
+	<SimpleField name="ogr_pod_eng" type="string"></SimpleField>
+	<SimpleField name="ogr_pod" type="string"></SimpleField>
+</Schema>
+<Folder><name>Baške_Oštarije_Stupačinovo_Prpići</name>
+  <Placemark>
+	<name>Baške Oštarije-Stupačinovo-Prpići</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Baške_Oštarije_Stupačinovo_Prpići">
+		<SimpleData name="ogr_time">35min</SimpleData>
+		<SimpleData name="ogr_c">1</SimpleData>
+		<SimpleData name="ogr_len">6.83</SimpleData>
+		<SimpleData name="ogr_pod_eng">asphalt/macadam</SimpleData>
+		<SimpleData name="ogr_pod">asfalt/makadam</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><LineString><coordinates>15.17104,44.52646,915 15.17005,44.52637,914 15.16886,44.5261,915 15.16808,44.52604,918 15.16728,44.52608,915 15.16729,44.52621,915 15.16775,44.52717,917 15.16809,44.52762,920 15.16825,44.52814,927 15.16845,44.52871,927 15.16794,44.52953,932 15.16773,44.52968,934 15.16669,44.52984,940 15.16637,44.53002,941 15.16587,44.53047,943 15.16537,44.53085,950 15.16491,44.53121,952 15.16482,44.53144,948 15.16541,44.53218,952 15.16574,44.53253,960 15.16594,44.53279,973 15.16595,44.5331,987 15.16584,44.53333,989 15.16552,44.53347,980 15.16549,44.53362,985 15.16556,44.53393,988 15.1655,44.53401,988 15.16525,44.53406,979 15.16508,44.53414,968 15.1641,44.53498,976 15.16356,44.5354,983 15.1633,44.53556,983 15.16309,44.53572,979 15.16306,44.53587,981 15.16348,44.53614,989 15.16389,44.53664,990 15.16427,44.53738,989 15.16434,44.53814,990 15.1645,44.53874,992 15.16439,44.53931,993 15.16425,44.54005,993 15.16425,44.54049,996 15.16434,44.54081,1004 15.16385,44.54092,998 15.16318,44.54092,992 15.16273,44.54101,989 15.1625,44.54098,986 15.16196,44.5407,984 15.16158,44.54062,984 15.16124,44.54069,983 15.16102,44.54067,983 15.16011,44.5401,980 15.15997,44.54007,980 15.15961,44.54019,980 15.15938,44.5403,979 15.15912,44.54052,979 15.15883,44.5406,979 15.1584,44.54076,980 15.15781,44.54077,981 15.15732,44.54069,981 15.15711,44.54061,981 15.15697,44.5405,982 15.15669,44.54039,983 15.15638,44.54039,984 15.15548,44.54038,989 15.1548,44.54031,991 15.15389,44.54015,992 15.1533,44.53999,993 15.15249,44.5397,992 15.15183,44.53954,985 15.15118,44.53923,978 15.15098,44.53919,978 15.15066,44.53927,976 15.1504,44.53931,972 15.14992,44.53927,970 15.14964,44.53914,969 15.14935,44.53896,961 15.14814,44.53865,958 15.1478,44.53834,953 15.14753,44.53812,950 15.14737,44.53804,950 15.14657,44.53781,945 15.14609,44.53781,941 15.14596,44.53774,933 15.14594,44.53745,930 15.14596,44.5372,933 15.14619,44.53678,924 15.14627,44.53656,923 15.14624,44.53616,921 15.1462,44.53597,921 15.14596,44.53535,919 15.14613,44.53445,916 15.14627,44.5336,916 15.14627,44.53339,916 15.14609,44.53266,915 15.14604,44.53241,915 15.14609,44.53218,914 15.14653,44.53147,910 15.14696,44.53083,908 15.14693,44.5307,907 15.14673,44.53042,908 15.14664,44.53027,908 15.14637,44.52996,908 15.1464,44.5297,908 15.14715,44.52953,906 15.1478,44.52937,904 15.16136,44.52658,910 15.16237,44.52642,910 15.1635,44.52631,912 15.16728,44.52608,915 15.16808,44.52604,918 15.16886,44.5261,915 15.17005,44.52637,914 15.17104,44.52646,915</coordinates></LineString></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Poučna_staza___Kratko_putovanje_kroz_povijest" id="Poučna_staza___Kratko_putovanje_kroz_povijest">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Poučna_staza___Kratko_putovanje_kroz_povijest</name>
+  <Placemark>
+	<name>Poučna staza - Kratko putovanje kroz povijest</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Poučna_staza___Kratko_putovanje_kroz_povijest">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.74 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">18min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.45751,44.29362,37 15.45769,44.29369,37 15.45779,44.29367,37 15.45785,44.29359,37 15.4581,44.2935,29 15.45816,44.29336,30 15.45801,44.29317,29 15.45802,44.29311,29 15.45793,44.29293,29 15.45794,44.29253,28 15.45799,44.29243,27 15.45801,44.29227,27 15.45809,44.29214,23 15.45842,44.29178,26 15.45857,44.29164,30 15.45871,44.29154,26 15.45884,44.29143,30 15.45902,44.29133,28 15.45942,44.29118,31 15.4599,44.29099,29 15.46037,44.29088,29 15.46096,44.2908,39 15.46152,44.29075,38 15.46215,44.29053,41 15.46233,44.29042,36 15.46247,44.2903,36 15.46264,44.29021,27 15.463,44.28991,24 15.46341,44.28968,26</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

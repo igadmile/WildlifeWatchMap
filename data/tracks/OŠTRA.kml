@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OŠTRA" id="OŠTRA">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>OŠTRA</name>
+  <Placemark>
+	<name>OŠTRA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#OŠTRA">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.83 km</SimpleData>
+		<SimpleData name="tez">naporan</SimpleData>
+		<SimpleData name="tez_eng">challenging</SimpleData>
+		<SimpleData name="time">54min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.33124,44.52593,585 15.33118,44.52606,585 15.33101,44.52607,585 15.33089,44.52617,595 15.33087,44.52624,595 15.3309,44.52629,595 15.3308,44.5264,607 15.33068,44.52642,607 15.3305,44.52652,608 15.33054,44.52658,608 15.3305,44.52677,618 15.33038,44.52687,618 15.33034,44.52704,627 15.33039,44.52719,628 15.33027,44.52725,633 15.33013,44.52726,633 15.32996,44.52753,637 15.32983,44.52767,637 15.32956,44.52771,640 15.32911,44.52766,646 15.3285,44.52762,648 15.32785,44.52783,671 15.32716,44.52825,689 15.32653,44.52873,719 15.32624,44.52888,729 15.32593,44.52907,725 15.32588,44.52933,740 15.32587,44.52959,753 15.32625,44.52969,771 15.3266,44.52956,766 15.32666,44.52965,766 15.32649,44.53,771 15.32638,44.53017,771 15.32653,44.53026,781</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

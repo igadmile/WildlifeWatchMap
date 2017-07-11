@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="KUĆA_VESELINOVIČA_ŠKOLA" id="KUĆA_VESELINOVIČA_ŠKOLA">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>KUĆA_VESELINOVIČA_ŠKOLA</name>
+  <Placemark>
+	<name>KUĆA VESELINOVIČA-ŠKOLA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#KUĆA_VESELINOVIČA_ŠKOLA">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.3 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">30min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.84465,44.19296,257 15.84411,44.19337,264 15.844,44.19356,264 15.84396,44.19374,265 15.84393,44.19396,269 15.84392,44.1941,269 15.84384,44.19437,272 15.84382,44.19452,275 15.84372,44.19469,283 15.84348,44.19489,280 15.8432,44.19516,277 15.84288,44.19538,278 15.84271,44.19558,277 15.84268,44.19567,277 15.84265,44.19582,279 15.84252,44.19594,273 15.84249,44.19606,273 15.84242,44.19623,276 15.84243,44.19636,279 15.84279,44.1966,285 15.843,44.1967,292 15.84346,44.19687,295 15.84344,44.19702,299 15.84346,44.19714,299 15.84338,44.19723,310 15.84309,44.19738,309 15.84301,44.19748,309 15.84298,44.1976,309 15.84304,44.1977,309 15.84312,44.19768,309 15.84346,44.19754,311 15.84337,44.19767,310 15.84333,44.19783,317 15.8434,44.19807,323 15.84352,44.1982,323 15.84378,44.19819,323 15.84379,44.19826,323 15.84369,44.19852,328 15.84365,44.19911,339 15.84369,44.19934,343 15.84394,44.19971,347 15.84401,44.19986,346 15.84396,44.20002,347 15.84358,44.20034,349 15.84353,44.20044,349 15.84367,44.20066,350 15.84379,44.20093,353 15.84393,44.20159,360 15.84398,44.20262,360</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

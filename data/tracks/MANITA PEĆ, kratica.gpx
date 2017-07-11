@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.318710000000003" minlon="15.478500000000000" maxlat="44.319459999999999" maxlon="15.478640000000000"/></metadata>                  
+<trk>
+  <name>MANITA PEĆ, kratica</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.31871" lon="15.47864">
+        <ele>335.0</ele>
+    </trkpt>
+    <trkpt lat="44.31878" lon="15.47858">
+        <ele>335.0</ele>
+    </trkpt>
+    <trkpt lat="44.31891" lon="15.47863">
+        <ele>328.0</ele>
+    </trkpt>
+    <trkpt lat="44.31899" lon="15.47852">
+        <ele>328.0</ele>
+    </trkpt>
+    <trkpt lat="44.31904" lon="15.47854">
+        <ele>328.0</ele>
+    </trkpt>
+    <trkpt lat="44.3191" lon="15.4785">
+        <ele>328.0</ele>
+    </trkpt>
+    <trkpt lat="44.31919" lon="15.47852">
+        <ele>320.0</ele>
+    </trkpt>
+    <trkpt lat="44.31931" lon="15.47858">
+        <ele>320.0</ele>
+    </trkpt>
+    <trkpt lat="44.31937" lon="15.47858">
+        <ele>320.0</ele>
+    </trkpt>
+    <trkpt lat="44.31946" lon="15.47862">
+        <ele>320.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

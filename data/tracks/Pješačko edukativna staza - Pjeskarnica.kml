@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Pješačko_edukativna_staza___Pjeskarnica" id="Pješačko_edukativna_staza___Pjeskarnica">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Pješačko_edukativna_staza___Pjeskarnica</name>
+  <Placemark>
+	<name>Pješačko edukativna staza - Pjeskarnica</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Pješačko_edukativna_staza___Pjeskarnica">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.29 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">24min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.4593,44.29513,27 15.45938,44.2952,27 15.45956,44.29532,29 15.45971,44.29542,29 15.4599,44.2955,30 15.4601,44.29554,33 15.46027,44.29562,33 15.46036,44.29573,33 15.4605,44.2959,38 15.46055,44.29597,38 15.46067,44.29613,44 15.4607,44.29621,44 15.46073,44.2964,48 15.46077,44.29662,48 15.46084,44.29678,52 15.46084,44.2968,52 15.46092,44.29697,52 15.46093,44.29703,52 15.46095,44.29707,52 15.46104,44.29718,53 15.46126,44.29734,52 15.4613,44.29738,52 15.46148,44.29758,50 15.46162,44.29766,49 15.46192,44.2978,47 15.46204,44.29783,48 15.46212,44.29783,48 15.4624,44.29794,50 15.46272,44.29799,50 15.46305,44.29813,53 15.46318,44.29816,54 15.46373,44.29833,57 15.46415,44.29842,57 15.46464,44.29843,57 15.46486,44.29839,58 15.46498,44.2984,58 15.46528,44.29835,58 15.4655,44.29838,60 15.46568,44.29835,60 15.4675,44.29858,68 15.46837,44.29846,68 15.46916,44.29855,72 15.46952,44.29871,74 15.46958,44.29883,74 15.46966,44.299,75 15.46968,44.29909,75 15.46982,44.29944,82 15.46981,44.29953,83 15.46985,44.29969,85 15.46996,44.29985,85 15.46993,44.29991,85 15.47002,44.30015,90 15.47011,44.30038,95 15.47029,44.30069,100 15.47041,44.30074,101 15.47044,44.3008,105 15.47031,44.30104,105</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

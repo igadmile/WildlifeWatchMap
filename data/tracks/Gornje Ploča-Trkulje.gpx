@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.431680000000000" minlon="15.625130000000000" maxlat="44.439599999999999" maxlon="15.634750000000000"/></metadata>                  
+<trk>
+  <name>Gornje Ploča-Trkulje</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.4396" lon="15.63366">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43892" lon="15.63406">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43834" lon="15.63461">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43817" lon="15.63475">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43785" lon="15.63404">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43761" lon="15.63368">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43715" lon="15.63312">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43704" lon="15.63292">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43691" lon="15.63252">
+        <ele>601.0</ele>
+    </trkpt>
+    <trkpt lat="44.43673" lon="15.6322">
+        <ele>601.0</ele>
+    </trkpt>
+    <trkpt lat="44.43658" lon="15.63202">
+        <ele>601.0</ele>
+    </trkpt>
+    <trkpt lat="44.43595" lon="15.63146">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.4358" lon="15.63137">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43504" lon="15.63102">
+        <ele>602.0</ele>
+    </trkpt>
+    <trkpt lat="44.43447" lon="15.63055">
+        <ele>602.0</ele>
+    </trkpt>
+    <trkpt lat="44.43402" lon="15.63026">
+        <ele>605.0</ele>
+    </trkpt>
+    <trkpt lat="44.43344" lon="15.62976">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.43328" lon="15.62955">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.43318" lon="15.62931">
+        <ele>609.0</ele>
+    </trkpt>
+    <trkpt lat="44.43302" lon="15.62877">
+        <ele>609.0</ele>
+    </trkpt>
+    <trkpt lat="44.43276" lon="15.62822">
+        <ele>609.0</ele>
+    </trkpt>
+    <trkpt lat="44.43223" lon="15.6273">
+        <ele>604.0</ele>
+    </trkpt>
+    <trkpt lat="44.43208" lon="15.62692">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43203" lon="15.62663">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="44.43195" lon="15.62593">
+        <ele>602.0</ele>
+    </trkpt>
+    <trkpt lat="44.43187" lon="15.62559">
+        <ele>601.0</ele>
+    </trkpt>
+    <trkpt lat="44.43168" lon="15.62513">
+        <ele>601.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

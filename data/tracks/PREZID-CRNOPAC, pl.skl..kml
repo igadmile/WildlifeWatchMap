@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="PREZID_CRNOPAC__pl" id="PREZID_CRNOPAC__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>PREZID_CRNOPAC__pl</name>
+  <Placemark>
+	<name>PREZID-CRNOPAC, pl.skl.</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#PREZID_CRNOPAC__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">2.5 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">1h 48min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.81322,44.25174,833 15.81396,44.25259,858 15.81411,44.2531,877 15.8146,44.25425,905 15.81475,44.25435,905 15.81493,44.25425,913 15.8151,44.25401,913 15.81533,44.25413,913 15.81582,44.25446,935 15.81609,44.2548,944 15.81627,44.25503,950 15.81653,44.25502,960 15.81708,44.25517,977 15.81734,44.25543,976 15.81768,44.25559,984 15.81773,44.25588,979 15.81765,44.25601,979 15.81808,44.25608,989 15.81811,44.25645,985 15.81865,44.25708,994 15.81904,44.25825,1012 15.81965,44.25858,1016 15.82019,44.25883,1027 15.82055,44.25883,1046 15.82165,44.25912,1050 15.82188,44.25932,1057 15.82195,44.25961,1039 15.82254,44.25998,1037 15.82304,44.26003,1067 15.82335,44.26026,1070 15.82426,44.26086,1107 15.82501,44.26155,1106 15.82554,44.26222,1126 15.82626,44.26312,1149 15.82664,44.26358,1158 15.82702,44.26378,1166 15.82728,44.26367,1174 15.82767,44.26364,1180 15.82775,44.26346,1182 15.82812,44.26353,1189 15.82878,44.26352,1180 15.82904,44.26345,1174 15.82949,44.26302,1173 15.83079,44.26312,1149 15.83112,44.26325,1146 15.83069,44.26398,1136 15.83211,44.26411,1133</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

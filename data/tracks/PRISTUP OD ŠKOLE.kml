@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="PRISTUP_OD_ŠKOLE" id="PRISTUP_OD_ŠKOLE">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>PRISTUP_OD_ŠKOLE</name>
+  <Placemark>
+	<name>PRISTUP OD ŠKOLE</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#PRISTUP_OD_ŠKOLE">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.58 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">24min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.29863,44.56914,570 15.29844,44.56923,570 15.29831,44.56936,573 15.29827,44.56945,575 15.29829,44.56959,575 15.2984,44.56971,575 15.29829,44.56983,575 15.2979,44.56965,581 15.29781,44.56963,590 15.29759,44.56949,601 15.29747,44.56942,601 15.29735,44.56939,599 15.29728,44.56937,612 15.29707,44.56921,612 15.29692,44.56912,622 15.29681,44.56899,622 15.29677,44.56885,616 15.29659,44.56882,628 15.29647,44.56861,652 15.29636,44.56856,646 15.29626,44.5684,646 15.29601,44.56822,639 15.29568,44.56798,642 15.29555,44.56784,651 15.29554,44.56778,651 15.29538,44.56758,638 15.29536,44.56746,637 15.29514,44.5673,637 15.29506,44.56718,640 15.2947,44.56683,639 15.2946,44.56679,639 15.29451,44.5667,640 15.29456,44.56667,639</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

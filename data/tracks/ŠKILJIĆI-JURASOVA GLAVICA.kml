@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ŠKILJIĆI_JURASOVA_GLAVICA" id="ŠKILJIĆI_JURASOVA_GLAVICA">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>ŠKILJIĆI_JURASOVA_GLAVICA</name>
+  <Placemark>
+	<name>ŠKILJIĆI-JURASOVA GLAVICA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#ŠKILJIĆI_JURASOVA_GLAVICA">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.55 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">12min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.48747,44.31633,608 15.48751,44.31655,608 15.48758,44.31687,612 15.48767,44.31701,618 15.4877,44.31718,618 15.4876,44.31735,615 15.48744,44.31751,616 15.4874,44.31766,616 15.4874,44.31791,616 15.48749,44.31804,617 15.4875,44.31809,617 15.48758,44.31812,617 15.48755,44.3182,617 15.48756,44.3183,616 15.48749,44.31848,616 15.4874,44.31857,615 15.48749,44.31886,612 15.4876,44.31899,612 15.48762,44.31908,614 15.48772,44.31912,610 15.48775,44.31922,610 15.48775,44.3194,610 15.48781,44.31958,610 15.48784,44.31976,607 15.48791,44.31987,611 15.48801,44.31995,611 15.48826,44.32013,613 15.48835,44.32016,613 15.48847,44.32025,617 15.48851,44.32065,623 15.48832,44.32074,621</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

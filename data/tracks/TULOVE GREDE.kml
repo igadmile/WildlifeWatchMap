@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="TULOVE_GREDE" id="TULOVE_GREDE">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>TULOVE_GREDE</name>
+  <Placemark>
+	<name>TULOVE GREDE</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#TULOVE_GREDE">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.09 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">48min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.6477,44.26386,858 15.6478,44.26395,858 15.64804,44.26407,860 15.64843,44.26404,870 15.6485,44.26402,870 15.64861,44.2642,870 15.64878,44.26437,870 15.64892,44.2644,870 15.64898,44.26449,867 15.64921,44.26459,878 15.64951,44.26463,883 15.64976,44.26479,887 15.6502,44.26491,898 15.65063,44.26495,904 15.65084,44.26504,901 15.65125,44.2651,906 15.65217,44.26511,926 15.65339,44.26519,952 15.65386,44.26516,960 15.65401,44.26509,971 15.65449,44.26518,977 15.65485,44.26517,989 15.65525,44.26525,981 15.65648,44.26523,1011 15.65669,44.26511,1024 15.65694,44.2649,1047 15.65688,44.26476,1047 15.6569,44.26471,1047 15.65698,44.26467,1047 15.65695,44.26462,1047 15.65706,44.26459,1055 15.65702,44.26453,1047 15.65677,44.2644,1047 15.65665,44.2642,1060 15.65668,44.26414,1060 15.6566,44.26407,1062 15.65639,44.26382,1061 15.65624,44.26376,1061 15.65597,44.26392,1059 15.65577,44.26387,1059 15.65556,44.26388,1058 15.65543,44.26393,1058 15.65521,44.26376,1063 15.65516,44.26365,1063</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="KUGINA_KUĆA__pl" id="KUGINA_KUĆA__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>KUGINA_KUĆA__pl</name>
+  <Placemark>
+	<name>KUGINA KUĆA, pl.k.-LISAC</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#KUGINA_KUĆA__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.55 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">1h 24min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.07034,44.62216,1177 15.07,44.622,1182 15.06976,44.62154,1193 15.06984,44.62124,1187 15.06998,44.62106,1188 15.06999,44.62082,1188 15.0699,44.62055,1192 15.06972,44.62032,1210 15.06968,44.6199,1213 15.0696,44.61969,1213 15.06961,44.61938,1209 15.06954,44.6192,1223 15.06957,44.61875,1200 15.06955,44.61859,1213 15.06942,44.61833,1206 15.06932,44.61826,1196 15.06909,44.61831,1215 15.06884,44.6183,1209 15.06865,44.61825,1213 15.06819,44.61824,1213 15.06747,44.6181,1225 15.06726,44.61808,1227 15.06706,44.61805,1227 15.06661,44.61806,1232 15.0665,44.61802,1225 15.06652,44.6179,1225 15.0664,44.61789,1230 15.06595,44.61806,1239 15.06573,44.61831,1244 15.06565,44.61893,1256 15.0656,44.61899,1256 15.06529,44.61896,1253 15.06497,44.61883,1249 15.06448,44.61878,1251 15.06425,44.61883,1253 15.06405,44.61898,1251 15.06389,44.61901,1255 15.06377,44.61899,1255 15.0632,44.61913,1262 15.0632,44.61927,1262 15.06309,44.61943,1288 15.06271,44.61989,1308 15.06246,44.6199,1320 15.06222,44.61994,1334 15.06203,44.62007,1356 15.06171,44.62033,1377 15.06166,44.62046,1377 15.06151,44.62058,1379 15.06132,44.62064,1392 15.06114,44.6206,1403 15.06079,44.62043,1399 15.0605,44.62033,1415 15.06031,44.62024,1416 15.06022,44.62027,1421 15.05992,44.62064,1426 15.05988,44.62068,1426 15.05977,44.62067,1429 15.05969,44.62068,1429 15.05963,44.6207,1429 15.05945,44.62071,1430 15.05925,44.6207,1430 15.05913,44.62068,1430 15.05891,44.62065,1429</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

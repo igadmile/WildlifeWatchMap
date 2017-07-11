@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.721299999999999" minlon="14.968870000000001" maxlat="44.725529999999999" maxlon="14.971570000000000"/></metadata>                  
+<trk>
+  <name>Premužičeva staza - spoj za Alan, pl.k.</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.7213" lon="14.96916">
+        <ele>1341.0</ele>
+    </trkpt>
+    <trkpt lat="44.72144" lon="14.96912">
+        <ele>1352.0</ele>
+    </trkpt>
+    <trkpt lat="44.72146" lon="14.96917">
+        <ele>1352.0</ele>
+    </trkpt>
+    <trkpt lat="44.72154" lon="14.96913">
+        <ele>1352.0</ele>
+    </trkpt>
+    <trkpt lat="44.72161" lon="14.96888">
+        <ele>1348.0</ele>
+    </trkpt>
+    <trkpt lat="44.72172" lon="14.96887">
+        <ele>1353.0</ele>
+    </trkpt>
+    <trkpt lat="44.72187" lon="14.96894">
+        <ele>1353.0</ele>
+    </trkpt>
+    <trkpt lat="44.72205" lon="14.96899">
+        <ele>1361.0</ele>
+    </trkpt>
+    <trkpt lat="44.72216" lon="14.9691">
+        <ele>1367.0</ele>
+    </trkpt>
+    <trkpt lat="44.72231" lon="14.96933">
+        <ele>1376.0</ele>
+    </trkpt>
+    <trkpt lat="44.72241" lon="14.96948">
+        <ele>1376.0</ele>
+    </trkpt>
+    <trkpt lat="44.72257" lon="14.96969">
+        <ele>1396.0</ele>
+    </trkpt>
+    <trkpt lat="44.72266" lon="14.96989">
+        <ele>1401.0</ele>
+    </trkpt>
+    <trkpt lat="44.72289" lon="14.97011">
+        <ele>1412.0</ele>
+    </trkpt>
+    <trkpt lat="44.72308" lon="14.97013">
+        <ele>1417.0</ele>
+    </trkpt>
+    <trkpt lat="44.72329" lon="14.9703">
+        <ele>1417.0</ele>
+    </trkpt>
+    <trkpt lat="44.72337" lon="14.9705">
+        <ele>1422.0</ele>
+    </trkpt>
+    <trkpt lat="44.72361" lon="14.9706">
+        <ele>1422.0</ele>
+    </trkpt>
+    <trkpt lat="44.72373" lon="14.9706">
+        <ele>1422.0</ele>
+    </trkpt>
+    <trkpt lat="44.72408" lon="14.97074">
+        <ele>1430.0</ele>
+    </trkpt>
+    <trkpt lat="44.72417" lon="14.97075">
+        <ele>1436.0</ele>
+    </trkpt>
+    <trkpt lat="44.72428" lon="14.97084">
+        <ele>1436.0</ele>
+    </trkpt>
+    <trkpt lat="44.72448" lon="14.9709">
+        <ele>1444.0</ele>
+    </trkpt>
+    <trkpt lat="44.72457" lon="14.9709">
+        <ele>1444.0</ele>
+    </trkpt>
+    <trkpt lat="44.72473" lon="14.97099">
+        <ele>1453.0</ele>
+    </trkpt>
+    <trkpt lat="44.725" lon="14.97117">
+        <ele>1458.0</ele>
+    </trkpt>
+    <trkpt lat="44.7251" lon="14.97123">
+        <ele>1460.0</ele>
+    </trkpt>
+    <trkpt lat="44.72516" lon="14.97128">
+        <ele>1460.0</ele>
+    </trkpt>
+    <trkpt lat="44.72527" lon="14.97137">
+        <ele>1465.0</ele>
+    </trkpt>
+    <trkpt lat="44.72537" lon="14.97152">
+        <ele>1466.0</ele>
+    </trkpt>
+    <trkpt lat="44.72547" lon="14.97153">
+        <ele>1466.0</ele>
+    </trkpt>
+    <trkpt lat="44.72553" lon="14.97157">
+        <ele>1472.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

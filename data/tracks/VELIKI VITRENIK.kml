@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="VELIKI_VITRENIK" id="VELIKI_VITRENIK">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>VELIKI_VITRENIK</name>
+  <Placemark>
+	<name>VELIKI VITRENIK</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#VELIKI_VITRENIK">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.47 km</SimpleData>
+		<SimpleData name="tez">naporan</SimpleData>
+		<SimpleData name="tez_eng">challenging</SimpleData>
+		<SimpleData name="time">42min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.44884,44.30375,263 15.44898,44.30353,261 15.4494,44.30309,257 15.44963,44.30291,262 15.45014,44.30271,272 15.45053,44.30243,292 15.45103,44.3023,306 15.45156,44.30221,321 15.45191,44.30208,340 15.45215,44.30198,345 15.45225,44.30179,345 15.45242,44.30162,377 15.45276,44.30141,377 15.45302,44.30114,400 15.45301,44.30104,407</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

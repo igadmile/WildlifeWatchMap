@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.814579999999999" minlon="14.975390000000001" maxlat="44.815880000000000" maxlon="14.976340000000000"/></metadata>                  
+<trk>
+  <name>ZAVIŽAN, pl.d-VUČJAK</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.81458" lon="14.97543">
+        <ele>1587.0</ele>
+    </trkpt>
+    <trkpt lat="44.81464" lon="14.97539">
+        <ele>1587.0</ele>
+    </trkpt>
+    <trkpt lat="44.81471" lon="14.97541">
+        <ele>1594.0</ele>
+    </trkpt>
+    <trkpt lat="44.81479" lon="14.97551">
+        <ele>1594.0</ele>
+    </trkpt>
+    <trkpt lat="44.81487" lon="14.97553">
+        <ele>1594.0</ele>
+    </trkpt>
+    <trkpt lat="44.81496" lon="14.97549">
+        <ele>1594.0</ele>
+    </trkpt>
+    <trkpt lat="44.81505" lon="14.97544">
+        <ele>1604.0</ele>
+    </trkpt>
+    <trkpt lat="44.81507" lon="14.97549">
+        <ele>1604.0</ele>
+    </trkpt>
+    <trkpt lat="44.81504" lon="14.97559">
+        <ele>1604.0</ele>
+    </trkpt>
+    <trkpt lat="44.815" lon="14.97569">
+        <ele>1612.0</ele>
+    </trkpt>
+    <trkpt lat="44.81498" lon="14.97579">
+        <ele>1612.0</ele>
+    </trkpt>
+    <trkpt lat="44.81506" lon="14.97591">
+        <ele>1612.0</ele>
+    </trkpt>
+    <trkpt lat="44.81514" lon="14.97606">
+        <ele>1616.0</ele>
+    </trkpt>
+    <trkpt lat="44.81525" lon="14.97617">
+        <ele>1616.0</ele>
+    </trkpt>
+    <trkpt lat="44.81531" lon="14.97627">
+        <ele>1617.0</ele>
+    </trkpt>
+    <trkpt lat="44.81537" lon="14.97633">
+        <ele>1617.0</ele>
+    </trkpt>
+    <trkpt lat="44.81545" lon="14.97629">
+        <ele>1617.0</ele>
+    </trkpt>
+    <trkpt lat="44.81558" lon="14.97634">
+        <ele>1622.0</ele>
+    </trkpt>
+    <trkpt lat="44.81569" lon="14.9763">
+        <ele>1622.0</ele>
+    </trkpt>
+    <trkpt lat="44.81576" lon="14.9762">
+        <ele>1620.0</ele>
+    </trkpt>
+    <trkpt lat="44.8158" lon="14.97611">
+        <ele>1620.0</ele>
+    </trkpt>
+    <trkpt lat="44.81584" lon="14.97602">
+        <ele>1620.0</ele>
+    </trkpt>
+    <trkpt lat="44.81588" lon="14.97606">
+        <ele>1620.0</ele>
+    </trkpt>
+    <trkpt lat="44.81587" lon="14.97611">
+        <ele>1620.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

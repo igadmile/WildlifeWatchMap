@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="MANITA_PEĆ__kratica" id="MANITA_PEĆ__kratica">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>MANITA_PEĆ__kratica</name>
+  <Placemark>
+	<name>MANITA PEĆ, kratica</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#MANITA_PEĆ__kratica">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.09 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">6min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.47864,44.31871,335 15.47858,44.31878,335 15.47863,44.31891,328 15.47852,44.31899,328 15.47854,44.31904,328 15.4785,44.3191,328 15.47852,44.31919,320 15.47858,44.31931,320 15.47858,44.31937,320 15.47862,44.31946,320</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

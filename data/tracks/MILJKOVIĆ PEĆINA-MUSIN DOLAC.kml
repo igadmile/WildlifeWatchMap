@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="MILJKOVIĆ_PEĆINA_MUSIN_DOLAC" id="MILJKOVIĆ_PEĆINA_MUSIN_DOLAC">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>MILJKOVIĆ_PEĆINA_MUSIN_DOLAC</name>
+  <Placemark>
+	<name>MILJKOVIĆ PEĆINA-MUSIN DOLAC</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#MILJKOVIĆ_PEĆINA_MUSIN_DOLAC">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.77 km</SimpleData>
+		<SimpleData name="tez">naporan</SimpleData>
+		<SimpleData name="tez_eng">challenging</SimpleData>
+		<SimpleData name="time">48min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.21912,44.45845,778 15.21908,44.45854,778 15.21886,44.45871,783 15.21864,44.45896,789 15.21837,44.4591,786 15.21812,44.45932,795 15.21793,44.4594,795 15.21763,44.45949,806 15.21723,44.45956,802 15.21687,44.45963,802 15.21663,44.45966,801 15.21626,44.45984,817 15.21583,44.46006,826 15.21572,44.46012,826 15.21548,44.46009,822 15.21522,44.46017,818 15.21509,44.46036,821 15.2151,44.46069,834 15.21506,44.46086,834 15.21483,44.46118,842 15.21466,44.46134,831 15.21453,44.46155,837 15.21444,44.46177,843 15.21441,44.46208,849 15.2143,44.46236,855 15.21409,44.4627,857 15.21394,44.4629,862 15.21342,44.46337,879</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

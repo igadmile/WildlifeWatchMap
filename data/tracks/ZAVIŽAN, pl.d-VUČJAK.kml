@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ZAVIŽAN__pl" id="ZAVIŽAN__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>ZAVIŽAN__pl</name>
+  <Placemark>
+	<name>ZAVIŽAN, pl.d-VUČJAK</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#ZAVIŽAN__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.23 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">6min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>14.97543,44.81458,1587 14.97539,44.81464,1587 14.97541,44.81471,1594 14.97551,44.81479,1594 14.97553,44.81487,1594 14.97549,44.81496,1594 14.97544,44.81505,1604 14.97549,44.81507,1604 14.97559,44.81504,1604 14.97569,44.815,1612 14.97579,44.81498,1612 14.97591,44.81506,1612 14.97606,44.81514,1616 14.97617,44.81525,1616 14.97627,44.81531,1617 14.97633,44.81537,1617 14.97629,44.81545,1617 14.97634,44.81558,1622 14.9763,44.81569,1622 14.9762,44.81576,1620 14.97611,44.8158,1620 14.97602,44.81584,1620 14.97606,44.81588,1620 14.97611,44.81587,1620</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

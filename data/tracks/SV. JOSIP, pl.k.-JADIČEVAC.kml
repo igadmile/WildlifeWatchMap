@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="SV" id="SV">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>SV</name>
+  <Placemark>
+	<name>SV. JOSIP, pl.k.-JADIČEVAC</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#SV">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.09 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">30min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.19461,44.54939,1130 15.19487,44.54974,1123 15.19488,44.54986,1123 15.19465,44.55016,1123 15.19459,44.5505,1125 15.19459,44.55104,1132 15.19465,44.55133,1136 15.19471,44.55151,1137 15.19491,44.55163,1136 15.1953,44.55156,1137 15.19574,44.55166,1141 15.19612,44.55154,1140 15.19627,44.55154,1141 15.19654,44.5516,1141 15.19698,44.55172,1146 15.19706,44.55186,1147 15.19694,44.55201,1150 15.19662,44.55217,1149 15.19619,44.55238,1148 15.1961,44.5525,1148 15.19602,44.55266,1148 15.19603,44.55281,1160 15.19621,44.55298,1160 15.19622,44.55306,1171 15.19615,44.55322,1168 15.19619,44.55347,1178 15.19615,44.55364,1187 15.19617,44.55375,1187 15.19628,44.55391,1200 15.19631,44.55403,1200 15.19646,44.55413,1200 15.1967,44.55426,1206 15.19685,44.55443,1209 15.19721,44.55457,1215 15.19763,44.55462,1218 15.19796,44.55478,1225 15.19804,44.55483,1225 15.19833,44.5549,1231 15.19845,44.55497,1237 15.19855,44.55498,1237 15.19875,44.55499,1243 15.19898,44.55511,1243 15.19914,44.55516,1249 15.19939,44.55537,1258 15.19951,44.55551,1258 15.19968,44.5555,1260 15.19971,44.55557,1257 15.19966,44.55561,1257</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

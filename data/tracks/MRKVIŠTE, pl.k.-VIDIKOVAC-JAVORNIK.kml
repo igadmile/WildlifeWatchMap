@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="MRKVIŠTE__pl" id="MRKVIŠTE__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>MRKVIŠTE__pl</name>
+  <Placemark>
+	<name>MRKVIŠTE, pl.k.-VIDIKOVAC-JAVORNIK</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#MRKVIŠTE__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.08 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">42min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.04844,44.70889,1280 15.04853,44.70883,1276 15.0489,44.70882,1276 15.04971,44.70891,1282 15.05003,44.70904,1285 15.05021,44.70909,1289 15.05046,44.70906,1293 15.0515,44.70905,1300 15.0517,44.70898,1300 15.05194,44.70896,1301 15.05216,44.70899,1302 15.05239,44.70893,1302 15.0527,44.70891,1303 15.05301,44.70885,1299 15.05329,44.70876,1301 15.05354,44.70861,1301 15.05363,44.70844,1301 15.05379,44.70831,1300 15.05404,44.70818,1302 15.05435,44.70809,1303 15.05469,44.70794,1309 15.05475,44.70786,1309 15.05535,44.70778,1318 15.0554,44.70774,1336 15.05548,44.70759,1336 15.05547,44.70743,1347 15.05553,44.70731,1347 15.05577,44.70729,1369 15.05589,44.70714,1378 15.05595,44.70713,1378 15.05609,44.70718,1378 15.05625,44.70717,1385 15.05643,44.7072,1377 15.05666,44.70713,1391 15.05681,44.70715,1397 15.0569,44.70715,1397 15.05726,44.70703,1403 15.05752,44.70703,1409 15.05799,44.70695,1419 15.05811,44.7069,1422 15.05832,44.70689,1436 15.05842,44.70687,1436 15.05886,44.70671,1446 15.05903,44.70673,1456 15.05914,44.70679,1456 15.05931,44.70677,1466 15.05937,44.70681,1466 15.05963,44.70682,1473 15.05986,44.70676,1479 15.0603,44.7068,1483 15.06045,44.7068,1484</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

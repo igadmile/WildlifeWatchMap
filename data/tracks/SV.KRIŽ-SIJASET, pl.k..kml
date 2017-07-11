@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="SV" id="SV">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>SV</name>
+  <Placemark>
+	<name>SV.KRIŽ-SIJASET, pl.k.</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#SV">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.44 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">36min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>14.95739,44.97277,227 14.95719,44.97249,231 14.95723,44.97242,232 14.95753,44.9722,229 14.95804,44.97199,231 14.95829,44.97178,231 14.95873,44.97165,236 14.95922,44.97141,241 14.9594,44.97133,237 14.95944,44.97122,237 14.95969,44.97105,243 14.96007,44.97089,244 14.96054,44.97079,249 14.96084,44.9707,249 14.96114,44.9706,250 14.96133,44.97046,250 14.9614,44.97039,250 14.9614,44.97034,250 14.96141,44.97006,251 14.96161,44.96971,252 14.96186,44.96944,258 14.96211,44.96928,261 14.96251,44.96917,260 14.96269,44.96908,260 14.96277,44.96898,260 14.96298,44.96858,283 14.96319,44.96847,282 14.96333,44.96838,282 14.9638,44.96797,292 14.9644,44.96767,295 14.96453,44.9675,295 14.96473,44.96738,293 14.96505,44.96734,292 14.96523,44.96724,295 14.96546,44.96699,297 14.96577,44.96669,301 14.96589,44.96647,301 14.96615,44.96611,307 14.96633,44.96594,311 14.96644,44.96575,315 14.96665,44.96556,315 14.96688,44.96524,324 14.96709,44.96505,325 14.96714,44.96493,329 14.96718,44.96467,333 14.96726,44.96435,339 14.96733,44.96415,333 14.96733,44.96402,333 14.96738,44.96376,343 14.96748,44.96367,343 14.96765,44.96334,343 14.96772,44.96334,343 14.96778,44.96328,350</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

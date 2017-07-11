@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.316330000000001" minlon="15.487399999999999" maxlat="44.320740000000001" maxlon="15.488510000000000"/></metadata>                  
+<trk>
+  <name>ŠKILJIĆI-JURASOVA GLAVICA</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.31633" lon="15.48747">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="44.31655" lon="15.48751">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="44.31687" lon="15.48758">
+        <ele>612.0</ele>
+    </trkpt>
+    <trkpt lat="44.31701" lon="15.48767">
+        <ele>618.0</ele>
+    </trkpt>
+    <trkpt lat="44.31718" lon="15.4877">
+        <ele>618.0</ele>
+    </trkpt>
+    <trkpt lat="44.31735" lon="15.4876">
+        <ele>615.0</ele>
+    </trkpt>
+    <trkpt lat="44.31751" lon="15.48744">
+        <ele>616.0</ele>
+    </trkpt>
+    <trkpt lat="44.31766" lon="15.4874">
+        <ele>616.0</ele>
+    </trkpt>
+    <trkpt lat="44.31791" lon="15.4874">
+        <ele>616.0</ele>
+    </trkpt>
+    <trkpt lat="44.31804" lon="15.48749">
+        <ele>617.0</ele>
+    </trkpt>
+    <trkpt lat="44.31809" lon="15.4875">
+        <ele>617.0</ele>
+    </trkpt>
+    <trkpt lat="44.31812" lon="15.48758">
+        <ele>617.0</ele>
+    </trkpt>
+    <trkpt lat="44.3182" lon="15.48755">
+        <ele>617.0</ele>
+    </trkpt>
+    <trkpt lat="44.3183" lon="15.48756">
+        <ele>616.0</ele>
+    </trkpt>
+    <trkpt lat="44.31848" lon="15.48749">
+        <ele>616.0</ele>
+    </trkpt>
+    <trkpt lat="44.31857" lon="15.4874">
+        <ele>615.0</ele>
+    </trkpt>
+    <trkpt lat="44.31886" lon="15.48749">
+        <ele>612.0</ele>
+    </trkpt>
+    <trkpt lat="44.31899" lon="15.4876">
+        <ele>612.0</ele>
+    </trkpt>
+    <trkpt lat="44.31908" lon="15.48762">
+        <ele>614.0</ele>
+    </trkpt>
+    <trkpt lat="44.31912" lon="15.48772">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.31922" lon="15.48775">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.3194" lon="15.48775">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.31958" lon="15.48781">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="44.31976" lon="15.48784">
+        <ele>607.0</ele>
+    </trkpt>
+    <trkpt lat="44.31987" lon="15.48791">
+        <ele>611.0</ele>
+    </trkpt>
+    <trkpt lat="44.31995" lon="15.48801">
+        <ele>611.0</ele>
+    </trkpt>
+    <trkpt lat="44.32013" lon="15.48826">
+        <ele>613.0</ele>
+    </trkpt>
+    <trkpt lat="44.32016" lon="15.48835">
+        <ele>613.0</ele>
+    </trkpt>
+    <trkpt lat="44.32025" lon="15.48847">
+        <ele>617.0</ele>
+    </trkpt>
+    <trkpt lat="44.32065" lon="15.48851">
+        <ele>623.0</ele>
+    </trkpt>
+    <trkpt lat="44.32074" lon="15.48832">
+        <ele>621.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

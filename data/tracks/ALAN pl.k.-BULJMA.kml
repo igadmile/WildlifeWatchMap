@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ALAN_pl" id="ALAN_pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>ALAN_pl</name>
+  <Placemark>
+	<name>ALAN pl.k.-BULJMA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#ALAN_pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.81 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">18min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>14.96959,44.71603,1421 14.96958,44.71611,1421 14.96925,44.71628,1420 14.96893,44.7164,1408 14.96864,44.71645,1408 14.96846,44.71653,1408 14.96816,44.71665,1395 14.96803,44.71674,1395 14.96788,44.71683,1391 14.96766,44.71687,1391 14.96737,44.71699,1383 14.96724,44.71711,1382 14.96703,44.71726,1371 14.96685,44.71745,1371 14.96673,44.71765,1366 14.96639,44.71793,1358 14.96635,44.71801,1358 14.96639,44.71816,1355 14.96633,44.71835,1350 14.96633,44.71844,1350 14.9663,44.71859,1350 14.96631,44.71871,1350 14.96645,44.71883,1350 14.96652,44.71893,1339 14.96661,44.71902,1339 14.96664,44.71915,1333 14.96669,44.71925,1333 14.96696,44.7194,1333 14.96712,44.71951,1333 14.96732,44.71974,1329 14.96747,44.71998,1327 14.9679,44.72027,1328 14.96811,44.72043,1328 14.9685,44.72088,1339 14.96859,44.72106,1339 14.96877,44.72128,1340 14.96916,44.7213,1341</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

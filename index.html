@@ -59,16 +59,22 @@
                         <input type="text" ng-model="selectedFeature" uib-typeahead="feature.properties.name for feature in features[selectedLayer] | filter:$viewValue" typeahead-show-hint="true" class="form-control" reqired>
                     </div>
                 </form>
+                <div ng-show="urlReady" class="alert alert-warning spacer" role="alert">
+                    Vaš link je: <a target="_blank" ng-href="{{urlReady}}">{{urlReady}}</a></div>
                 <form class="form-inline">
                     <div class="form-group">
                         <button ng-disabled="!selectedFeature" ng-click="searchExpression(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži na karti</button>
                     </div>
-                    <div class="form-group pull-right">
-                        <button ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-defaut">Prikaži link</button>
+                    <div class="form-group">
+                        <button ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-defaut">Prikaži url</button>
+                    </div>
+                    <div class="form-group">
+                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{kml}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-defaut" role="button">Preuzmi KML</a>
+                    </div>
+                    <div class="form-group">
+                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{gpx}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-defaut" role="button">Preuzmi GPX</a>
                     </div>
                 </form>
-                <div ng-show="urlReady" class="alert alert-warning spacer" role="alert">
-                    Vaš link je: <a target="_blank" ng-href="{{urlReady}}">{{urlReady}}</a></div>
             </div>
         </div>
     </div>

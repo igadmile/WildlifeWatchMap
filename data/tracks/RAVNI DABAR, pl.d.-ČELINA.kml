@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="RAVNI_DABAR__pl" id="RAVNI_DABAR__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>RAVNI_DABAR__pl</name>
+  <Placemark>
+	<name>RAVNI DABAR, pl.d.-ČELINA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#RAVNI_DABAR__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.56 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">24min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.12454,44.56325,733 15.12473,44.56321,737 15.125,44.56318,739 15.12517,44.56322,741 15.12531,44.56327,741 15.12555,44.56328,741 15.12576,44.56339,755 15.12582,44.56345,755 15.12579,44.56354,755 15.12584,44.56365,767 15.12584,44.56368,767 15.12577,44.56379,767 15.12575,44.56385,779 15.12579,44.56393,779 15.12587,44.564,779 15.12587,44.56406,779 15.12593,44.56414,792 15.126,44.5643,797 15.126,44.56434,797 15.12598,44.56437,797 15.12606,44.5644,797 15.12616,44.56449,813 15.12629,44.56457,814 15.1263,44.56465,814 15.12647,44.56476,814 15.12652,44.56478,810 15.1266,44.56503,821 15.1266,44.56508,821 15.12655,44.56511,821 15.1265,44.56516,821 15.12649,44.56528,829 15.12653,44.56542,824 15.1266,44.56549,824 15.12656,44.56563,823 15.12628,44.5657,821 15.12618,44.56571,816 15.12609,44.5657,816 15.12606,44.56567,816 15.12604,44.56561,816 15.12597,44.5656,816 15.12595,44.56553,816 15.12588,44.56554,814 15.12586,44.5655,827 15.12579,44.56543,827 15.12573,44.56541,827 15.12564,44.56531,832 15.12552,44.56525,832 15.12548,44.56521,815 15.12531,44.56522,815 15.12518,44.5652,815 15.12507,44.56516,813 15.12506,44.56514,813 15.12505,44.56511,813 15.12502,44.56507,813 15.12495,44.56506,813</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.263379999999998" minlon="15.831810000000001" maxlat="44.271780000000000" maxlon="15.844920000000000"/></metadata>                  
+<trk>
+  <name>KITA GAČEŠINA</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.26962" lon="15.83181">
+        <ele>1049.0</ele>
+    </trkpt>
+    <trkpt lat="44.26994" lon="15.83224">
+        <ele>1050.0</ele>
+    </trkpt>
+    <trkpt lat="44.27022" lon="15.83261">
+        <ele>1057.0</ele>
+    </trkpt>
+    <trkpt lat="44.27058" lon="15.8332">
+        <ele>1066.0</ele>
+    </trkpt>
+    <trkpt lat="44.27066" lon="15.83354">
+        <ele>1073.0</ele>
+    </trkpt>
+    <trkpt lat="44.27077" lon="15.83395">
+        <ele>1078.0</ele>
+    </trkpt>
+    <trkpt lat="44.2706" lon="15.83442">
+        <ele>1092.0</ele>
+    </trkpt>
+    <trkpt lat="44.27062" lon="15.83468">
+        <ele>1101.0</ele>
+    </trkpt>
+    <trkpt lat="44.27055" lon="15.83486">
+        <ele>1101.0</ele>
+    </trkpt>
+    <trkpt lat="44.27065" lon="15.83618">
+        <ele>1146.0</ele>
+    </trkpt>
+    <trkpt lat="44.27083" lon="15.83629">
+        <ele>1156.0</ele>
+    </trkpt>
+    <trkpt lat="44.27113" lon="15.83631">
+        <ele>1155.0</ele>
+    </trkpt>
+    <trkpt lat="44.27137" lon="15.83649">
+        <ele>1160.0</ele>
+    </trkpt>
+    <trkpt lat="44.27141" lon="15.83659">
+        <ele>1160.0</ele>
+    </trkpt>
+    <trkpt lat="44.27155" lon="15.83659">
+        <ele>1160.0</ele>
+    </trkpt>
+    <trkpt lat="44.27167" lon="15.83683">
+        <ele>1157.0</ele>
+    </trkpt>
+    <trkpt lat="44.27178" lon="15.83723">
+        <ele>1161.0</ele>
+    </trkpt>
+    <trkpt lat="44.27168" lon="15.8374">
+        <ele>1161.0</ele>
+    </trkpt>
+    <trkpt lat="44.27163" lon="15.83758">
+        <ele>1161.0</ele>
+    </trkpt>
+    <trkpt lat="44.27166" lon="15.83775">
+        <ele>1164.0</ele>
+    </trkpt>
+    <trkpt lat="44.2716" lon="15.83798">
+        <ele>1170.0</ele>
+    </trkpt>
+    <trkpt lat="44.27164" lon="15.83832">
+        <ele>1163.0</ele>
+    </trkpt>
+    <trkpt lat="44.27173" lon="15.83851">
+        <ele>1162.0</ele>
+    </trkpt>
+    <trkpt lat="44.27159" lon="15.83884">
+        <ele>1169.0</ele>
+    </trkpt>
+    <trkpt lat="44.27163" lon="15.83907">
+        <ele>1159.0</ele>
+    </trkpt>
+    <trkpt lat="44.27162" lon="15.83927">
+        <ele>1168.0</ele>
+    </trkpt>
+    <trkpt lat="44.27141" lon="15.83954">
+        <ele>1167.0</ele>
+    </trkpt>
+    <trkpt lat="44.27125" lon="15.83955">
+        <ele>1173.0</ele>
+    </trkpt>
+    <trkpt lat="44.27141" lon="15.83954">
+        <ele>1167.0</ele>
+    </trkpt>
+    <trkpt lat="44.27162" lon="15.83927">
+        <ele>1168.0</ele>
+    </trkpt>
+    <trkpt lat="44.27174" lon="15.83944">
+        <ele>1158.0</ele>
+    </trkpt>
+    <trkpt lat="44.27174" lon="15.83944">
+        <ele>1158.0</ele>
+    </trkpt>
+    <trkpt lat="44.27154" lon="15.84018">
+        <ele>1163.0</ele>
+    </trkpt>
+    <trkpt lat="44.27142" lon="15.84039">
+        <ele>1159.0</ele>
+    </trkpt>
+    <trkpt lat="44.27062" lon="15.84119">
+        <ele>1165.0</ele>
+    </trkpt>
+    <trkpt lat="44.27055" lon="15.84135">
+        <ele>1156.0</ele>
+    </trkpt>
+    <trkpt lat="44.27056" lon="15.84159">
+        <ele>1146.0</ele>
+    </trkpt>
+    <trkpt lat="44.27048" lon="15.8419">
+        <ele>1140.0</ele>
+    </trkpt>
+    <trkpt lat="44.27014" lon="15.84233">
+        <ele>1133.0</ele>
+    </trkpt>
+    <trkpt lat="44.26993" lon="15.84285">
+        <ele>1122.0</ele>
+    </trkpt>
+    <trkpt lat="44.27007" lon="15.84337">
+        <ele>1107.0</ele>
+    </trkpt>
+    <trkpt lat="44.26972" lon="15.84386">
+        <ele>1100.0</ele>
+    </trkpt>
+    <trkpt lat="44.26948" lon="15.84405">
+        <ele>1094.0</ele>
+    </trkpt>
+    <trkpt lat="44.26906" lon="15.84375">
+        <ele>1104.0</ele>
+    </trkpt>
+    <trkpt lat="44.26888" lon="15.84381">
+        <ele>1104.0</ele>
+    </trkpt>
+    <trkpt lat="44.26881" lon="15.84394">
+        <ele>1100.0</ele>
+    </trkpt>
+    <trkpt lat="44.26867" lon="15.84397">
+        <ele>1100.0</ele>
+    </trkpt>
+    <trkpt lat="44.26827" lon="15.84416">
+        <ele>1090.0</ele>
+    </trkpt>
+    <trkpt lat="44.26817" lon="15.84428">
+        <ele>1088.0</ele>
+    </trkpt>
+    <trkpt lat="44.26813" lon="15.84443">
+        <ele>1088.0</ele>
+    </trkpt>
+    <trkpt lat="44.26783" lon="15.84471">
+        <ele>1078.0</ele>
+    </trkpt>
+    <trkpt lat="44.26747" lon="15.84477">
+        <ele>1072.0</ele>
+    </trkpt>
+    <trkpt lat="44.26717" lon="15.84465">
+        <ele>1066.0</ele>
+    </trkpt>
+    <trkpt lat="44.26685" lon="15.84462">
+        <ele>1059.0</ele>
+    </trkpt>
+    <trkpt lat="44.26659" lon="15.84486">
+        <ele>1055.0</ele>
+    </trkpt>
+    <trkpt lat="44.26632" lon="15.84492">
+        <ele>1052.0</ele>
+    </trkpt>
+    <trkpt lat="44.2662" lon="15.8448">
+        <ele>1052.0</ele>
+    </trkpt>
+    <trkpt lat="44.26598" lon="15.84488">
+        <ele>1049.0</ele>
+    </trkpt>
+    <trkpt lat="44.26571" lon="15.84488">
+        <ele>1047.0</ele>
+    </trkpt>
+    <trkpt lat="44.26559" lon="15.84456">
+        <ele>1047.0</ele>
+    </trkpt>
+    <trkpt lat="44.2654" lon="15.8445">
+        <ele>1046.0</ele>
+    </trkpt>
+    <trkpt lat="44.26496" lon="15.84473">
+        <ele>1047.0</ele>
+    </trkpt>
+    <trkpt lat="44.26468" lon="15.84441">
+        <ele>1050.0</ele>
+    </trkpt>
+    <trkpt lat="44.26443" lon="15.84424">
+        <ele>1049.0</ele>
+    </trkpt>
+    <trkpt lat="44.26424" lon="15.84402">
+        <ele>1065.0</ele>
+    </trkpt>
+    <trkpt lat="44.26386" lon="15.84293">
+        <ele>1072.0</ele>
+    </trkpt>
+    <trkpt lat="44.26338" lon="15.84262">
+        <ele>1086.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

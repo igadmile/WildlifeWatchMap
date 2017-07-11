@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Zimski_put_na_Zavižan" id="Zimski_put_na_Zavižan">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Zimski_put_na_Zavižan</name>
+  <Placemark>
+	<name>Zimski put na Zavižan</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Zimski_put_na_Zavižan">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.14 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">36min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>14.96787,44.82034,1444 14.96818,44.82023,1443 14.96858,44.81999,1443 14.96882,44.81989,1462 14.96892,44.8199,1462 14.96911,44.81986,1465 14.96918,44.81983,1465 14.96929,44.81981,1465 14.9694,44.81978,1465 14.96947,44.81968,1472 14.96969,44.81943,1480 14.96972,44.81933,1487 14.96982,44.81916,1487 14.96981,44.81906,1491 14.96984,44.81896,1493 14.96995,44.81887,1493 14.97017,44.81858,1505 14.97022,44.81842,1505 14.97029,44.81836,1505 14.9703,44.81828,1508 14.97048,44.81783,1513 14.97063,44.8174,1515 14.97062,44.81706,1516 14.97064,44.81697,1516 14.97068,44.81687,1525 14.97076,44.81653,1529 14.97085,44.81638,1529 14.9709,44.81625,1533 14.97093,44.81603,1533 14.97095,44.81599,1532 14.97095,44.81589,1532 14.97091,44.81558,1532 14.97095,44.81522,1528 14.97112,44.8149,1519 14.97129,44.81469,1517 14.9714,44.81448,1517 14.97151,44.81442,1516 14.97173,44.81437,1516 14.97225,44.81426,1518 14.97263,44.81414,1523 14.97326,44.8139,1535 14.9736,44.81378,1551 14.97383,44.81373,1557 14.97404,44.81372,1561 14.97414,44.81378,1561 14.97427,44.81383,1561 14.97443,44.81391,1556 14.97456,44.81394,1566 14.9747,44.81405,1566 14.97478,44.8141,1566 14.97508,44.81425,1573 14.9753,44.81436,1577 14.97531,44.81444,1581 14.97543,44.81456,1587</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

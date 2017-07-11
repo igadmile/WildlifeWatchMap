@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Premužičeva_staza___spoj_za_Alan__pl" id="Premužičeva_staza___spoj_za_Alan__pl">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Premužičeva_staza___spoj_za_Alan__pl</name>
+  <Placemark>
+	<name>Premužičeva staza - spoj za Alan, pl.k.</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Premužičeva_staza___spoj_za_Alan__pl">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.56 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">24min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>14.96916,44.7213,1341 14.96912,44.72144,1352 14.96917,44.72146,1352 14.96913,44.72154,1352 14.96888,44.72161,1348 14.96887,44.72172,1353 14.96894,44.72187,1353 14.96899,44.72205,1361 14.9691,44.72216,1367 14.96933,44.72231,1376 14.96948,44.72241,1376 14.96969,44.72257,1396 14.96989,44.72266,1401 14.97011,44.72289,1412 14.97013,44.72308,1417 14.9703,44.72329,1417 14.9705,44.72337,1422 14.9706,44.72361,1422 14.9706,44.72373,1422 14.97074,44.72408,1430 14.97075,44.72417,1436 14.97084,44.72428,1436 14.9709,44.72448,1444 14.9709,44.72457,1444 14.97099,44.72473,1453 14.97117,44.725,1458 14.97123,44.7251,1460 14.97128,44.72516,1460 14.97137,44.72527,1465 14.97152,44.72537,1466 14.97153,44.72547,1466 14.97157,44.72553,1472</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

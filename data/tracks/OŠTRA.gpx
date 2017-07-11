@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.525930000000002" minlon="15.325870000000000" maxlat="44.530259999999998" maxlon="15.331239999999999"/></metadata>                  
+<trk>
+  <name>OŠTRA</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.52593" lon="15.33124">
+        <ele>585.0</ele>
+    </trkpt>
+    <trkpt lat="44.52606" lon="15.33118">
+        <ele>585.0</ele>
+    </trkpt>
+    <trkpt lat="44.52607" lon="15.33101">
+        <ele>585.0</ele>
+    </trkpt>
+    <trkpt lat="44.52617" lon="15.33089">
+        <ele>595.0</ele>
+    </trkpt>
+    <trkpt lat="44.52624" lon="15.33087">
+        <ele>595.0</ele>
+    </trkpt>
+    <trkpt lat="44.52629" lon="15.3309">
+        <ele>595.0</ele>
+    </trkpt>
+    <trkpt lat="44.5264" lon="15.3308">
+        <ele>607.0</ele>
+    </trkpt>
+    <trkpt lat="44.52642" lon="15.33068">
+        <ele>607.0</ele>
+    </trkpt>
+    <trkpt lat="44.52652" lon="15.3305">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="44.52658" lon="15.33054">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="44.52677" lon="15.3305">
+        <ele>618.0</ele>
+    </trkpt>
+    <trkpt lat="44.52687" lon="15.33038">
+        <ele>618.0</ele>
+    </trkpt>
+    <trkpt lat="44.52704" lon="15.33034">
+        <ele>627.0</ele>
+    </trkpt>
+    <trkpt lat="44.52719" lon="15.33039">
+        <ele>628.0</ele>
+    </trkpt>
+    <trkpt lat="44.52725" lon="15.33027">
+        <ele>633.0</ele>
+    </trkpt>
+    <trkpt lat="44.52726" lon="15.33013">
+        <ele>633.0</ele>
+    </trkpt>
+    <trkpt lat="44.52753" lon="15.32996">
+        <ele>637.0</ele>
+    </trkpt>
+    <trkpt lat="44.52767" lon="15.32983">
+        <ele>637.0</ele>
+    </trkpt>
+    <trkpt lat="44.52771" lon="15.32956">
+        <ele>640.0</ele>
+    </trkpt>
+    <trkpt lat="44.52766" lon="15.32911">
+        <ele>646.0</ele>
+    </trkpt>
+    <trkpt lat="44.52762" lon="15.3285">
+        <ele>648.0</ele>
+    </trkpt>
+    <trkpt lat="44.52783" lon="15.32785">
+        <ele>671.0</ele>
+    </trkpt>
+    <trkpt lat="44.52825" lon="15.32716">
+        <ele>689.0</ele>
+    </trkpt>
+    <trkpt lat="44.52873" lon="15.32653">
+        <ele>719.0</ele>
+    </trkpt>
+    <trkpt lat="44.52888" lon="15.32624">
+        <ele>729.0</ele>
+    </trkpt>
+    <trkpt lat="44.52907" lon="15.32593">
+        <ele>725.0</ele>
+    </trkpt>
+    <trkpt lat="44.52933" lon="15.32588">
+        <ele>740.0</ele>
+    </trkpt>
+    <trkpt lat="44.52959" lon="15.32587">
+        <ele>753.0</ele>
+    </trkpt>
+    <trkpt lat="44.52969" lon="15.32625">
+        <ele>771.0</ele>
+    </trkpt>
+    <trkpt lat="44.52956" lon="15.3266">
+        <ele>766.0</ele>
+    </trkpt>
+    <trkpt lat="44.52965" lon="15.32666">
+        <ele>766.0</ele>
+    </trkpt>
+    <trkpt lat="44.53" lon="15.32649">
+        <ele>771.0</ele>
+    </trkpt>
+    <trkpt lat="44.53017" lon="15.32638">
+        <ele>771.0</ele>
+    </trkpt>
+    <trkpt lat="44.53026" lon="15.32653">
+        <ele>781.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

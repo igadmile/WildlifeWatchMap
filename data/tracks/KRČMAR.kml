@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="KRČMAR" id="KRČMAR">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>KRČMAR</name>
+  <Placemark>
+	<name>KRČMAR</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#KRČMAR">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.19 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">36min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.2998,44.56414,564 15.29872,44.5637,575 15.29853,44.56358,575 15.29843,44.56346,578 15.29826,44.56349,578 15.29813,44.56361,582 15.29784,44.56376,586 15.29775,44.56396,590 15.29743,44.56426,598 15.29715,44.56443,602 15.29693,44.56462,604 15.29684,44.56474,604 15.29656,44.56495,609 15.29647,44.56504,622 15.29642,44.56531,626 15.29611,44.56553,627 15.29603,44.56568,627 15.29593,44.56572,631 15.29581,44.56572,631 15.29554,44.5659,634 15.2953,44.56595,635 15.29517,44.56612,636 15.2951,44.5663,637 15.29516,44.56644,636 15.2951,44.5665,638 15.29492,44.56654,638 15.29482,44.56651,638 15.29463,44.56659,638 15.2946,44.56665,639 15.29453,44.56668,640 15.29442,44.56666,640 15.29416,44.56681,640 15.29404,44.56694,644 15.29401,44.56713,644 15.29396,44.5673,644 15.29403,44.5675,650 15.29412,44.56765,650 15.29442,44.56784,668 15.29461,44.56806,671 15.29462,44.56834,677 15.2946,44.5685,677 15.29448,44.56861,689 15.29456,44.56877,685 15.2945,44.56894,699 15.29439,44.56906,699 15.29435,44.56939,709 15.29422,44.56951,719 15.29406,44.56959,719 15.29405,44.56964,719 15.29395,44.56966,721 15.29389,44.56975,721 15.29388,44.56986,721 15.29374,44.56996,721 15.29372,44.5701,729 15.29376,44.57024,729 15.29364,44.57036,738 15.29352,44.57043,738 15.29338,44.57045,738 15.29322,44.57052,739 15.29322,44.57062,739 15.29315,44.57069,737</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

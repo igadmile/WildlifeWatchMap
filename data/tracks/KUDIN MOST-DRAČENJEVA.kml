@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="KUDIN_MOST_DRAČENJEVA" id="KUDIN_MOST_DRAČENJEVA">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>KUDIN_MOST_DRAČENJEVA</name>
+  <Placemark>
+	<name>KUDIN MOST-DRAČENJEVA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#KUDIN_MOST_DRAČENJEVA">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.38 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">1h 12min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.84627,44.1876,91 15.84592,44.18789,86 15.84539,44.18827,85 15.84534,44.18845,91 15.84508,44.18869,92 15.84515,44.18876,99 15.84531,44.18868,99 15.84541,44.18869,102 15.84536,44.18875,99 15.84544,44.18883,102 15.84533,44.18885,111 15.84538,44.18888,113 15.84529,44.1889,111 15.84523,44.18898,111 15.8452,44.18908,111 15.84534,44.18901,111 15.84541,44.18904,113 15.84531,44.18915,126 15.84528,44.18926,126 15.84535,44.18923,126 15.84534,44.18928,126 15.84526,44.18939,126 15.84537,44.18937,127 15.84555,44.18929,127 15.84566,44.18931,126 15.84559,44.18939,127 15.84571,44.18939,126 15.84563,44.18947,142 15.84571,44.18952,141 15.84559,44.18956,142 15.84515,44.18998,171 15.84475,44.19024,178 15.84432,44.19055,169 15.8442,44.19093,182 15.84429,44.1912,204 15.8443,44.19136,213 15.84406,44.19182,211 15.84365,44.19219,220 15.84311,44.19241,210 15.84281,44.19254,220 15.84216,44.19282,228 15.84172,44.19303,223 15.84138,44.19324,222 15.84133,44.19349,242 15.84117,44.19385,250 15.841,44.19402,250 15.84098,44.19415,251 15.84073,44.19451,248 15.84077,44.19485,250 15.84084,44.19528,254 15.8412,44.19556,262 15.84177,44.19586,270 15.8422,44.19599,273 15.84249,44.19606,273</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

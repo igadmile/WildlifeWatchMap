@@ -4,42 +4,35 @@ body {
     margin: 0;
     height: 100%;
 }
-
 .letterSpaceing {
     letter-spacing: -0.5px;
     text-align: right;
     padding-right: 5px;
 }
-
 td {
     text-align: left;
     padding-left: 5px;
 }
-
 .leaflet-container,
 body {
     font-family: 'Allerta', sans-serif;
     color: #525252;
 }
-
 #map {
     height: 100%;
     width: 100%;
     margin: auto;
 }
-
 th {
     text-align: left;
     vertical-align: top;
 }
-
 .leaflet-popup-content-wrapper,
 .map-legends,
 .map-tooltip {
     background: #fff none repeat scroll 0 0;
     border-radius: 3px;
 }
-
 
 /* new css */
 
@@ -54,48 +47,38 @@ th {
 .btn {
     border-radius: 0px;
 }
-
 .leaflet-control-layers-expanded {
     padding-right: 6px;
 }
-
 .ac-container label {
     font-family: 'Open Sans', sans-serif;
 }
-
 .ac-container input.menu:checked+label,
 .ac-container input.menu:checked+label:hover {
     background: #525252 none repeat scroll 0 0 !important;
     color: #f2f2f2;
 }
-
 .leaflet-control-locate a {
     padding: 0;
 }
-
 .leaflet-control-fullscreen-button {
     background-position: 0 0 !important;
 }
-
 
 /* slideshow */
 
 .cycle {
     position: relative;
 }
-
 .popup .slideshow .image {
     display: none;
 }
-
 .popup .slideshow .image.active {
     display: block;
 }
-
 .popup .slideshow img {
     width: 256px;
 }
-
 .popup button {
     position: absolute;
     display: block;
@@ -120,15 +103,12 @@ th {
     -o-transition: opacity .25s ease-in-out;
     transition: opacity .25s ease-in-out;
 }
-
 .popup button.prev {
     left: 0;
 }
-
 .popup button.next {
     right: 0;
 }
-
 .popup button:hover,
 .slider button:active {
     opacity: 1.0;
@@ -136,14 +116,12 @@ th {
     -webkit-transition: opacity .25s ease;
     -moz-transition: opacity .25s ease;
 }
-
 .imgShadow {
     -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
     margin-bottom: 10px;
 }
-
 .sidebar-header,
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:focus,
@@ -152,7 +130,13 @@ th {
 .sidebar-tabs>ul>li.active {
     background-color: #525252;
 }
-
 .spacer {
     margin-top: 20px;
+}
+.sidebar-pane {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+.btn {
+    padding: 6px;
 }

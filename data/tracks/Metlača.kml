@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Metlača" id="Metlača">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Metlača</name>
+  <Placemark>
+	<name>Metlača</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Metlača">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.06 km</SimpleData>
+		<SimpleData name="tez">naporan</SimpleData>
+		<SimpleData name="tez_eng">challenging</SimpleData>
+		<SimpleData name="time">1h</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.30958,44.65374,591 15.30951,44.65401,615 15.30937,44.6543,615 15.30939,44.65434,615 15.3097,44.65449,625 15.30992,44.65462,623 15.30994,44.65471,637 15.30974,44.65482,639 15.30978,44.65493,639 15.30993,44.65498,652 15.31011,44.65492,636 15.31019,44.65495,636 15.31022,44.65504,650 15.31052,44.6551,646 15.31081,44.65515,643 15.31088,44.65539,656 15.31074,44.65558,666 15.31066,44.65575,666 15.31058,44.65603,683 15.31052,44.65608,695 15.31045,44.65635,695 15.31037,44.6564,722 15.3102,44.65687,722 15.31011,44.65704,725 15.30998,44.65708,732 15.30997,44.65718,732 15.30991,44.65727,731 15.3097,44.65712,739 15.30965,44.65718,739 15.3097,44.65733,738 15.30952,44.65743,744 15.30923,44.65737,749 15.30919,44.65741,749 15.30931,44.65751,739 15.30931,44.65754,739 15.3092,44.65753,745 15.30911,44.65743,749 15.30906,44.65722,749 15.30892,44.65718,757 15.3088,44.65721,758 15.30883,44.65725,758 15.30892,44.65728,758 15.3088,44.65751,753 15.30874,44.65737,758 15.30864,44.65731,758 15.30848,44.65743,758 15.30837,44.65731,761 15.30806,44.65743,766 15.30803,44.65729,766 15.3079,44.65726,766 15.30768,44.65742,773 15.30742,44.6573,780 15.30705,44.65755,766 15.30695,44.65757,767 15.30693,44.65738,784 15.30677,44.6572,784 15.30665,44.65719,783 15.30634,44.65761,764</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

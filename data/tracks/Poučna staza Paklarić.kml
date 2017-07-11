@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Poučna_staza_Paklarić" id="Poučna_staza_Paklarić">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Poučna_staza_Paklarić</name>
+  <Placemark>
+	<name>Poučna staza Paklarić</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Poučna_staza_Paklarić">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.59 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">18min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.45864,44.29524,34 15.45873,44.2953,31 15.45881,44.29531,31 15.45913,44.29517,27 15.45935,44.29512,27 15.45941,44.29489,27 15.45946,44.2948,27 15.45948,44.29436,32 15.45948,44.29424,32 15.45966,44.29437,36 15.45979,44.29443,36 15.4598,44.29441,36 15.45976,44.29439,36 15.4597,44.29419,36 15.45965,44.2934,63 15.45958,44.2931,72 15.45976,44.2932,72 15.46,44.29339,73 15.45998,44.29314,82 15.45993,44.29305,82 15.45992,44.29299,89 15.45986,44.29291,89 15.45989,44.2929,89 15.46001,44.29296,89 15.46003,44.29288,89 15.46,44.29275,89 15.46004,44.29272,90 15.46019,44.29273,90 15.4605,44.29276,104 15.46073,44.29282,109 15.46071,44.29297,109 15.46052,44.29312,100 15.46047,44.29308,100</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

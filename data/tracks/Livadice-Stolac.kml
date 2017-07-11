@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Livadice_Stolac" id="Livadice_Stolac">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="desc" type="string"></SimpleField>
+	<SimpleField name="src" type="string"></SimpleField>
+	<SimpleField name="link1_href" type="string"></SimpleField>
+	<SimpleField name="link1_text" type="string"></SimpleField>
+	<SimpleField name="link1_type" type="string"></SimpleField>
+	<SimpleField name="link2_href" type="string"></SimpleField>
+	<SimpleField name="link2_text" type="string"></SimpleField>
+	<SimpleField name="link2_type" type="string"></SimpleField>
+	<SimpleField name="number" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+	<SimpleField name="ogr_time" type="string"></SimpleField>
+	<SimpleField name="ogr_c" type="int"></SimpleField>
+	<SimpleField name="ogr_len" type="float"></SimpleField>
+	<SimpleField name="ogr_pod_eng" type="string"></SimpleField>
+	<SimpleField name="ogr_pod" type="string"></SimpleField>
+</Schema>
+<Folder><name>Livadice_Stolac</name>
+  <Placemark>
+	<name>Livadice-Stolac</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Livadice_Stolac">
+		<SimpleData name="ogr_time">25min</SimpleData>
+		<SimpleData name="ogr_c">1</SimpleData>
+		<SimpleData name="ogr_len">4.11</SimpleData>
+		<SimpleData name="ogr_pod_eng">macadam</SimpleData>
+		<SimpleData name="ogr_pod">makadam</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><LineString><coordinates>14.96342,44.925,765 14.96357,44.92503,768 14.96422,44.92561,768 14.96461,44.9259,774 14.96466,44.926,774 14.96466,44.92615,774 14.96445,44.92656,765 14.96426,44.92686,765 14.96387,44.92767,762 14.96377,44.92805,766 14.96369,44.92904,766 14.96373,44.9296,770 14.96392,44.93011,770 14.96394,44.93052,771 14.96405,44.93097,780 14.96444,44.93195,765 14.96506,44.93278,777 14.96541,44.93316,790 14.96619,44.93364,792 14.96669,44.93386,802 14.9673,44.93397,797 14.96787,44.93394,795 14.96836,44.93377,802 14.96904,44.93341,806 14.96928,44.93331,806 14.97029,44.93298,814 14.97141,44.93243,825 14.97165,44.93238,827 14.9721,44.93249,831 14.97274,44.93305,838 14.97345,44.93428,854 14.97345,44.93491,854 14.97362,44.93537,851 14.97392,44.93563,849 14.9744,44.93578,851 14.9753,44.93588,844 14.9763,44.93572,853 14.97658,44.93571,851 14.97795,44.93572,847 14.97869,44.93563,847 14.97941,44.93538,856 14.98002,44.93499,861 14.98051,44.93459,862 14.98103,44.93395,855 14.98143,44.93331,858 14.98219,44.93224,861 14.98275,44.93172,858 14.98301,44.9316,866 14.98422,44.93121,861 14.98445,44.93118,861 14.9849,44.9312,856 14.98554,44.93121,856 14.98623,44.93137,860 14.98634,44.93146,860 14.98652,44.93193,863 14.98653,44.9324,863 14.9863,44.9329,860 14.98599,44.93359,862 14.98577,44.93388,859 14.98535,44.93438,855 14.98504,44.93518,855 14.98476,44.93555,860 14.98435,44.93611,857 14.9843,44.9363,857 14.98431,44.93654,859 14.98436,44.93673,859 14.98432,44.93704,863 14.98421,44.93766,859 14.98424,44.93787,856 14.98428,44.93881,851 14.98433,44.93909,851</coordinates></LineString></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

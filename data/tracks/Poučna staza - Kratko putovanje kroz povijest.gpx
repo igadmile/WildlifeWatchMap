@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.289679999999997" minlon="15.457509999999999" maxlat="44.293689999999998" maxlon="15.463410000000000"/></metadata>                  
+<trk>
+  <name>Poučna staza - Kratko putovanje kroz povijest</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.29362" lon="15.45751">
+        <ele>37.0</ele>
+    </trkpt>
+    <trkpt lat="44.29369" lon="15.45769">
+        <ele>37.0</ele>
+    </trkpt>
+    <trkpt lat="44.29367" lon="15.45779">
+        <ele>37.0</ele>
+    </trkpt>
+    <trkpt lat="44.29359" lon="15.45785">
+        <ele>37.0</ele>
+    </trkpt>
+    <trkpt lat="44.2935" lon="15.4581">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.29336" lon="15.45816">
+        <ele>30.0</ele>
+    </trkpt>
+    <trkpt lat="44.29317" lon="15.45801">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.29311" lon="15.45802">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.29293" lon="15.45793">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.29253" lon="15.45794">
+        <ele>28.0</ele>
+    </trkpt>
+    <trkpt lat="44.29243" lon="15.45799">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.29227" lon="15.45801">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.29214" lon="15.45809">
+        <ele>23.0</ele>
+    </trkpt>
+    <trkpt lat="44.29178" lon="15.45842">
+        <ele>26.0</ele>
+    </trkpt>
+    <trkpt lat="44.29164" lon="15.45857">
+        <ele>30.0</ele>
+    </trkpt>
+    <trkpt lat="44.29154" lon="15.45871">
+        <ele>26.0</ele>
+    </trkpt>
+    <trkpt lat="44.29143" lon="15.45884">
+        <ele>30.0</ele>
+    </trkpt>
+    <trkpt lat="44.29133" lon="15.45902">
+        <ele>28.0</ele>
+    </trkpt>
+    <trkpt lat="44.29118" lon="15.45942">
+        <ele>31.0</ele>
+    </trkpt>
+    <trkpt lat="44.29099" lon="15.4599">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.29088" lon="15.46037">
+        <ele>29.0</ele>
+    </trkpt>
+    <trkpt lat="44.2908" lon="15.46096">
+        <ele>39.0</ele>
+    </trkpt>
+    <trkpt lat="44.29075" lon="15.46152">
+        <ele>38.0</ele>
+    </trkpt>
+    <trkpt lat="44.29053" lon="15.46215">
+        <ele>41.0</ele>
+    </trkpt>
+    <trkpt lat="44.29042" lon="15.46233">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.2903" lon="15.46247">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.29021" lon="15.46264">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.28991" lon="15.463">
+        <ele>24.0</ele>
+    </trkpt>
+    <trkpt lat="44.28968" lon="15.46341">
+        <ele>26.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

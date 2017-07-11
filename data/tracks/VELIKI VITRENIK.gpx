@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.301040000000000" minlon="15.448840000000001" maxlat="44.303750000000001" maxlon="15.453020000000000"/></metadata>                  
+<trk>
+  <name>VELIKI VITRENIK</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.30375" lon="15.44884">
+        <ele>263.0</ele>
+    </trkpt>
+    <trkpt lat="44.30353" lon="15.44898">
+        <ele>261.0</ele>
+    </trkpt>
+    <trkpt lat="44.30309" lon="15.4494">
+        <ele>257.0</ele>
+    </trkpt>
+    <trkpt lat="44.30291" lon="15.44963">
+        <ele>262.0</ele>
+    </trkpt>
+    <trkpt lat="44.30271" lon="15.45014">
+        <ele>272.0</ele>
+    </trkpt>
+    <trkpt lat="44.30243" lon="15.45053">
+        <ele>292.0</ele>
+    </trkpt>
+    <trkpt lat="44.3023" lon="15.45103">
+        <ele>306.0</ele>
+    </trkpt>
+    <trkpt lat="44.30221" lon="15.45156">
+        <ele>321.0</ele>
+    </trkpt>
+    <trkpt lat="44.30208" lon="15.45191">
+        <ele>340.0</ele>
+    </trkpt>
+    <trkpt lat="44.30198" lon="15.45215">
+        <ele>345.0</ele>
+    </trkpt>
+    <trkpt lat="44.30179" lon="15.45225">
+        <ele>345.0</ele>
+    </trkpt>
+    <trkpt lat="44.30162" lon="15.45242">
+        <ele>377.0</ele>
+    </trkpt>
+    <trkpt lat="44.30141" lon="15.45276">
+        <ele>377.0</ele>
+    </trkpt>
+    <trkpt lat="44.30114" lon="15.45302">
+        <ele>400.0</ele>
+    </trkpt>
+    <trkpt lat="44.30104" lon="15.45301">
+        <ele>407.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

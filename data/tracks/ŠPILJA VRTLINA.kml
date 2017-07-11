@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ŠPILJA_VRTLINA" id="ŠPILJA_VRTLINA">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>ŠPILJA_VRTLINA</name>
+  <Placemark>
+	<name>ŠPILJA VRTLINA</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#ŠPILJA_VRTLINA">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.18 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">36min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.35468,44.39169,847 15.35455,44.39168,847 15.35437,44.39177,848 15.35408,44.39176,850 15.35326,44.39159,868 15.35288,44.39157,870 15.35274,44.39154,872 15.35264,44.39147,872 15.3524,44.39145,875 15.35233,44.39143,875 15.35216,44.39146,880 15.35208,44.39142,880 15.35191,44.39149,884 15.35186,44.39144,884 15.35177,44.39141,884 15.35176,44.39132,896 15.35172,44.3913,896 15.35157,44.39129,896 15.35153,44.39125,896 15.35152,44.39118,896 15.35142,44.39113,895 15.35128,44.39117,895 15.35115,44.39111,892 15.35116,44.391,892 15.35111,44.39094,892 15.3511,44.3909,892 15.351,44.39078,895 15.35084,44.39068,895 15.35079,44.39091,892 15.35089,44.39107,892 15.35067,44.39132,892 15.35037,44.39145,890 15.35034,44.39162,890 15.34993,44.39179,895 15.34964,44.39175,894 15.34937,44.39182,894 15.34924,44.39181,893 15.34889,44.39194,898 15.3486,44.39201,900 15.34835,44.39223,908 15.34858,44.39232,908 15.34882,44.39249,912 15.34913,44.39253,910 15.34943,44.39263,907 15.34983,44.39264,898 15.34993,44.39285,892 15.34994,44.39301,892 15.34982,44.39317,894 15.34949,44.3937,902 15.34934,44.39393,889 15.34927,44.39419,885 15.34893,44.39484,908 15.34892,44.39509,912 15.34894,44.39527,914 15.34892,44.39543,914 15.34897,44.3957,917</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

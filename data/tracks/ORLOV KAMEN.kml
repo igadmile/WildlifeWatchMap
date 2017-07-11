@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ORLOV_KAMEN" id="ORLOV_KAMEN">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>ORLOV_KAMEN</name>
+  <Placemark>
+	<name>ORLOV KAMEN</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#ORLOV_KAMEN">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">0.47 km</SimpleData>
+		<SimpleData name="tez">umjeren</SimpleData>
+		<SimpleData name="tez_eng">moderate</SimpleData>
+		<SimpleData name="time">18min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.8319,44.26553,1121 15.83104,44.26519,1139 15.83073,44.2651,1142 15.83037,44.26509,1145 15.82994,44.26507,1156 15.82977,44.26501,1156 15.82928,44.26508,1162 15.82866,44.26518,1186 15.82855,44.26528,1180 15.82796,44.26538,1195 15.82736,44.26547,1196 15.82654,44.26551,1183 15.8263,44.26557,1177</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

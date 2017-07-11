@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.292720000000003" minlon="15.458640000000001" maxlat="44.295310000000001" maxlon="15.460730000000000"/></metadata>                  
+<trk>
+  <name>Poučna staza Paklarić</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.29524" lon="15.45864">
+        <ele>34.0</ele>
+    </trkpt>
+    <trkpt lat="44.2953" lon="15.45873">
+        <ele>31.0</ele>
+    </trkpt>
+    <trkpt lat="44.29531" lon="15.45881">
+        <ele>31.0</ele>
+    </trkpt>
+    <trkpt lat="44.29517" lon="15.45913">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.29512" lon="15.45935">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.29489" lon="15.45941">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.2948" lon="15.45946">
+        <ele>27.0</ele>
+    </trkpt>
+    <trkpt lat="44.29436" lon="15.45948">
+        <ele>32.0</ele>
+    </trkpt>
+    <trkpt lat="44.29424" lon="15.45948">
+        <ele>32.0</ele>
+    </trkpt>
+    <trkpt lat="44.29437" lon="15.45966">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.29443" lon="15.45979">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.29441" lon="15.4598">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.29439" lon="15.45976">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.29419" lon="15.4597">
+        <ele>36.0</ele>
+    </trkpt>
+    <trkpt lat="44.2934" lon="15.45965">
+        <ele>63.0</ele>
+    </trkpt>
+    <trkpt lat="44.2931" lon="15.45958">
+        <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="44.2932" lon="15.45976">
+        <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="44.29339" lon="15.46">
+        <ele>73.0</ele>
+    </trkpt>
+    <trkpt lat="44.29314" lon="15.45998">
+        <ele>82.0</ele>
+    </trkpt>
+    <trkpt lat="44.29305" lon="15.45993">
+        <ele>82.0</ele>
+    </trkpt>
+    <trkpt lat="44.29299" lon="15.45992">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.29291" lon="15.45986">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.2929" lon="15.45989">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.29296" lon="15.46001">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.29288" lon="15.46003">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.29275" lon="15.46">
+        <ele>89.0</ele>
+    </trkpt>
+    <trkpt lat="44.29272" lon="15.46004">
+        <ele>90.0</ele>
+    </trkpt>
+    <trkpt lat="44.29273" lon="15.46019">
+        <ele>90.0</ele>
+    </trkpt>
+    <trkpt lat="44.29276" lon="15.4605">
+        <ele>104.0</ele>
+    </trkpt>
+    <trkpt lat="44.29282" lon="15.46073">
+        <ele>109.0</ele>
+    </trkpt>
+    <trkpt lat="44.29297" lon="15.46071">
+        <ele>109.0</ele>
+    </trkpt>
+    <trkpt lat="44.29312" lon="15.46052">
+        <ele>100.0</ele>
+    </trkpt>
+    <trkpt lat="44.29308" lon="15.46047">
+        <ele>100.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

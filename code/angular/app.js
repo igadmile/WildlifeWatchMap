@@ -68,6 +68,13 @@ angular.module('chooseLayers').controller('select', ['$scope', function ($scope)
         }
     };
 
+    $scope.getFiles = function (selectedLayer, selectedFeature) {
+        if (selectedLayer === 'hike' || selectedLayer === 'bike' || selectedLayer === 'wildtrail') {
+            $scope.kml = 'data/tracks/' + selectedFeature + '.kml';
+            $scope.gpx = 'data/tracks/' + selectedFeature + '.gpx';
+        }
+    };
+
     $scope.resetFeature = function () {
         $scope.selectedFeature = undefined;
     };

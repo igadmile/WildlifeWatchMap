@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.716030000000003" minlon="14.966300000000000" maxlat="44.721299999999999" maxlon="14.969590000000000"/></metadata>                  
+<trk>
+  <name>ALAN pl.k.-BULJMA</name>
+  <desc>1</desc>
+  <trkseg>
+    <trkpt lat="44.71603" lon="14.96959">
+        <ele>1421.0</ele>
+    </trkpt>
+    <trkpt lat="44.71611" lon="14.96958">
+        <ele>1421.0</ele>
+    </trkpt>
+    <trkpt lat="44.71628" lon="14.96925">
+        <ele>1420.0</ele>
+    </trkpt>
+    <trkpt lat="44.7164" lon="14.96893">
+        <ele>1408.0</ele>
+    </trkpt>
+    <trkpt lat="44.71645" lon="14.96864">
+        <ele>1408.0</ele>
+    </trkpt>
+    <trkpt lat="44.71653" lon="14.96846">
+        <ele>1408.0</ele>
+    </trkpt>
+    <trkpt lat="44.71665" lon="14.96816">
+        <ele>1395.0</ele>
+    </trkpt>
+    <trkpt lat="44.71674" lon="14.96803">
+        <ele>1395.0</ele>
+    </trkpt>
+    <trkpt lat="44.71683" lon="14.96788">
+        <ele>1391.0</ele>
+    </trkpt>
+    <trkpt lat="44.71687" lon="14.96766">
+        <ele>1391.0</ele>
+    </trkpt>
+    <trkpt lat="44.71699" lon="14.96737">
+        <ele>1383.0</ele>
+    </trkpt>
+    <trkpt lat="44.71711" lon="14.96724">
+        <ele>1382.0</ele>
+    </trkpt>
+    <trkpt lat="44.71726" lon="14.96703">
+        <ele>1371.0</ele>
+    </trkpt>
+    <trkpt lat="44.71745" lon="14.96685">
+        <ele>1371.0</ele>
+    </trkpt>
+    <trkpt lat="44.71765" lon="14.96673">
+        <ele>1366.0</ele>
+    </trkpt>
+    <trkpt lat="44.71793" lon="14.96639">
+        <ele>1358.0</ele>
+    </trkpt>
+    <trkpt lat="44.71801" lon="14.96635">
+        <ele>1358.0</ele>
+    </trkpt>
+    <trkpt lat="44.71816" lon="14.96639">
+        <ele>1355.0</ele>
+    </trkpt>
+    <trkpt lat="44.71835" lon="14.96633">
+        <ele>1350.0</ele>
+    </trkpt>
+    <trkpt lat="44.71844" lon="14.96633">
+        <ele>1350.0</ele>
+    </trkpt>
+    <trkpt lat="44.71859" lon="14.9663">
+        <ele>1350.0</ele>
+    </trkpt>
+    <trkpt lat="44.71871" lon="14.96631">
+        <ele>1350.0</ele>
+    </trkpt>
+    <trkpt lat="44.71883" lon="14.96645">
+        <ele>1350.0</ele>
+    </trkpt>
+    <trkpt lat="44.71893" lon="14.96652">
+        <ele>1339.0</ele>
+    </trkpt>
+    <trkpt lat="44.71902" lon="14.96661">
+        <ele>1339.0</ele>
+    </trkpt>
+    <trkpt lat="44.71915" lon="14.96664">
+        <ele>1333.0</ele>
+    </trkpt>
+    <trkpt lat="44.71925" lon="14.96669">
+        <ele>1333.0</ele>
+    </trkpt>
+    <trkpt lat="44.7194" lon="14.96696">
+        <ele>1333.0</ele>
+    </trkpt>
+    <trkpt lat="44.71951" lon="14.96712">
+        <ele>1333.0</ele>
+    </trkpt>
+    <trkpt lat="44.71974" lon="14.96732">
+        <ele>1329.0</ele>
+    </trkpt>
+    <trkpt lat="44.71998" lon="14.96747">
+        <ele>1327.0</ele>
+    </trkpt>
+    <trkpt lat="44.72027" lon="14.9679">
+        <ele>1328.0</ele>
+    </trkpt>
+    <trkpt lat="44.72043" lon="14.96811">
+        <ele>1328.0</ele>
+    </trkpt>
+    <trkpt lat="44.72088" lon="14.9685">
+        <ele>1339.0</ele>
+    </trkpt>
+    <trkpt lat="44.72106" lon="14.96859">
+        <ele>1339.0</ele>
+    </trkpt>
+    <trkpt lat="44.72128" lon="14.96877">
+        <ele>1340.0</ele>
+    </trkpt>
+    <trkpt lat="44.7213" lon="14.96916">
+        <ele>1341.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

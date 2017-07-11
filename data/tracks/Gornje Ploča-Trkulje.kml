@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Gornje_Ploča_Trkulje" id="Gornje_Ploča_Trkulje">
+	<SimpleField name="desc" type="int"></SimpleField>
+	<SimpleField name="len" type="string"></SimpleField>
+	<SimpleField name="tez" type="string"></SimpleField>
+	<SimpleField name="tez_eng" type="string"></SimpleField>
+	<SimpleField name="time" type="string"></SimpleField>
+</Schema>
+<Folder><name>Gornje_Ploča_Trkulje</name>
+  <Placemark>
+	<name>Gornje Ploča-Trkulje</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Gornje_Ploča_Trkulje">
+		<SimpleData name="desc">1</SimpleData>
+		<SimpleData name="len">1.28 km</SimpleData>
+		<SimpleData name="tez">lagan</SimpleData>
+		<SimpleData name="tez_eng">easy</SimpleData>
+		<SimpleData name="time">18min</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>15.63366,44.4396,603 15.63406,44.43892,603 15.63461,44.43834,603 15.63475,44.43817,603 15.63404,44.43785,603 15.63368,44.43761,603 15.63312,44.43715,603 15.63292,44.43704,603 15.63252,44.43691,601 15.6322,44.43673,601 15.63202,44.43658,601 15.63146,44.43595,603 15.63137,44.4358,603 15.63102,44.43504,602 15.63055,44.43447,602 15.63026,44.43402,605 15.62976,44.43344,610 15.62955,44.43328,610 15.62931,44.43318,609 15.62877,44.43302,609 15.62822,44.43276,609 15.6273,44.43223,604 15.62692,44.43208,603 15.62663,44.43203,603 15.62593,44.43195,602 15.62559,44.43187,601 15.62513,44.43168,601</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
