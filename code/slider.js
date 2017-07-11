@@ -1,4 +1,5 @@
-$('#map').on('click', '.popup .cycle button', function() {
+$('#map').on('click', '.popup .cycle button', function () {
+    'use strict';
     var $slideshow = $('.slideshow'),
         $newSlide;
 

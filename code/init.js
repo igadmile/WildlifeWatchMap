@@ -1,4 +1,5 @@
 wwwMap.init = function (parameter) {
+    'use strict';
     wwwMap.el = L.control.elevation({
         position: "bottomright",
         theme: "steelblue-theme",
@@ -10,7 +11,7 @@ wwwMap.init = function (parameter) {
     }).addTo(map);
 
     if (wwwMap.params.layers && wwwMap.params.feat) {
-        if (wwwMap.params.layers == 'opg' || wwwMap.params.layers == 'scenery' || wwwMap.params.layers == 'mhouse' || wwwMap.params.layers == 'accommodation') {
+        if (wwwMap.params.layers === 'opg' || wwwMap.params.layers === 'scenery' || wwwMap.params.layers === 'mhouse' || wwwMap.params.layers === 'accommodation') {
             wwwMap.layers[0]._layers[wwwMap.params.feat].fire('click', {
                 latlng: wwwMap.layers[0]._layers[wwwMap.params.feat]._latlng
             });

@@ -1,5 +1,6 @@
 wwwMap.stylePresets = {
     styleLine: function (weight, color) {
+        'use strict';
         var styleReturn = {
             weight: weight,
             color: color,
@@ -9,6 +10,7 @@ wwwMap.stylePresets = {
         return styleReturn;
     },
     styleMarker: function (icon, color) {
+        'use strict';
         var styleReturn = L.MakiMarkers.icon({
             icon: icon,
             color: color,
@@ -20,6 +22,7 @@ wwwMap.stylePresets = {
 
 wwwMap.doStyle = {
     hike: function (feature) {
+        'use strict';
         switch (feature.properties.desc) {
             case 1:
                 return wwwMap.stylePresets.styleLine('2.3', '#525252');
@@ -33,9 +36,11 @@ wwwMap.doStyle = {
         }
     },
     wildtrail: function (feature) {
+        'use strict';
         return wwwMap.stylePresets.styleLine('3.3', '#009245');
     },
     bike: function (feature) {
+        'use strict';
         switch (feature.properties.c) {
             case 1:
                 return wwwMap.stylePresets.styleLine('2.5', '#c1272d');
@@ -52,7 +57,7 @@ wwwMap.doStyle = {
     mhouse: wwwMap.stylePresets.styleMarker('campsite', '#FDB913'),
     accommodation: wwwMap.stylePresets.styleMarker('building', '#0072BC'),
     scenery: wwwMap.stylePresets.styleMarker('camera', '#B3B3B3'),
-    opg: wwwMap.stylePresets.styleMarker('farm', '#c1272d'),
+    opg: wwwMap.stylePresets.styleMarker('farm', '#c1272d')
 };
 
 wwwMap.overlays = {
@@ -67,6 +72,7 @@ wwwMap.overlays = {
     mhouse: L.geoJson(exp_mhouse, {
         onEachFeature: wwwMap.onEachFeature.mhouse,
         pointToLayer: function (feature, latlng) {
+            'use strict';
             return L.marker(latlng, {
                 icon: wwwMap.doStyle.mhouse,
                 riseOnHover: true
@@ -76,6 +82,7 @@ wwwMap.overlays = {
     accommodation: L.geoJson(exp_accommodation, {
         onEachFeature: wwwMap.onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
+            'use strict';
             return L.marker(latlng, {
                 icon: wwwMap.doStyle.accommodation,
                 riseOnHover: true
@@ -85,6 +92,7 @@ wwwMap.overlays = {
     scenery: L.geoJson(exp_scenery, {
         onEachFeature: wwwMap.onEachFeature.poi,
         pointToLayer: function (feature, latlng) {
+            'use strict';
             return L.marker(latlng, {
                 icon: wwwMap.doStyle.scenery,
                 riseOnHover: true
@@ -98,6 +106,7 @@ wwwMap.overlays = {
     opg: L.geoJson(exp_opg, {
         onEachFeature: wwwMap.onEachFeature.opg,
         pointToLayer: function (feature, latlng) {
+            'use strict';
             return L.marker(latlng, {
                 icon: wwwMap.doStyle.opg,
                 riseOnHover: true
@@ -124,7 +133,7 @@ wwwMap.basemaps = {
     })
 };
 
-if (wwwMap.params.lang == 'eng') {
+if (wwwMap.params.lang === 'eng') {
     wwwMap.baseMaps = [
         {
             groupName: "Basemaps",
@@ -143,7 +152,7 @@ if (wwwMap.params.lang == 'eng') {
             layers: {
                 "Wildlife trails": wwwMap.overlays.wildtrail,
                 "Hiking trails": wwwMap.overlays.hike,
-                "Biking trails": wwwMap.overlays.bike,
+                "Biking trails": wwwMap.overlays.bike
             }
         },
         {
@@ -176,7 +185,7 @@ if (wwwMap.params.lang == 'eng') {
             layers: {
                 "Staze u prirodi": wwwMap.overlays.wildtrail,
                 "Planinarske staze": wwwMap.overlays.hike,
-                "Biciklističke staze": wwwMap.overlays.bike,
+                "Biciklističke staze": wwwMap.overlays.bike
             }
         },
         {

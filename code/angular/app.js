@@ -1,6 +1,7 @@
 angular.module('chooseLayers', ['ngAnimate', 'ui.bootstrap']);
 
 angular.module('chooseLayers').controller('select', ['$scope', function ($scope) {
+    'use strict';
     $scope.urlReady = undefined;
     $scope.layers = {
         hike: 'Planinarske staze',
@@ -41,11 +42,12 @@ angular.module('chooseLayers').controller('select', ['$scope', function ($scope)
         wwwMap.overlays[selectedLayer].addTo(map);
         wwwMap.basemaps[selectedBase].addTo(map);
 
-        boundsParams = {
+        var boundsParams = {
             maxZoom: 17
         };
 
-        if (selectedLayer == 'opg' || selectedLayer == 'scenery' || selectedLayer == 'mhouse' || selectedLayer == 'accommodation') {
+        if (selectedLayer === 'opg' || selectedLayer === 'scenery' || selectedLayer === 'mhouse' || selectedLayer === 'accommodation') {
+            wwwMap.el.clear();
             wwwMap.overlays[selectedLayer]._layers[selectedFeature].fire('click', {
                 latlng: wwwMap.overlays[selectedLayer]._layers[selectedFeature]._latlng
             });
