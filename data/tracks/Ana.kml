@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Ana" id="Ana">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Ana</name>
+  <Placemark>
+	<name>Ana</name>
+	<ExtendedData><SchemaData schemaUrl="#Ana">
+		<SimpleData name="cmt">PD Bačić duliba, Karlobag</SimpleData>
+		<SimpleData name="bed">14</SimpleData>
+		<SimpleData name="tip">planinarska kuća</SimpleData>
+		<SimpleData name="tip_eng">mountain house</SimpleData>
+		<SimpleData name="photo">ana</SimpleData>
+		<SimpleData name="ele">862 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.10965,44.5794</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

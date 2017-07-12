@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.771009999999997" minlon="15.093159999999999" maxlat="44.771009999999997" maxlon="15.093159999999999"/></metadata>                  
+<wpt lat="44.77101" lon="15.09316">
+  <ele>1112.0</ele>
+  <name>Apatišan</name>
+  <cmt>HPD Rajinac, Krasno</cmt>
+</wpt>
+</gpx>

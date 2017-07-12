@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Anić" id="OPG_Anić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Anić</name>
+  <Placemark>
+	<name>OPG Anić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Anić">
+		<SimpleData name="photo">anic</SimpleData>
+		<SimpleData name="addr">Anići 54, Krasno</SimpleData>
+		<SimpleData name="prod">uzgoj stoke, sirevi i drugi mliječni proizvodi</SimpleData>
+		<SimpleData name="prod2">cattle farming, cheese and dairy products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.04641,44.82163</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

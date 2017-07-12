@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Apatišan" id="Apatišan">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Apatišan</name>
+  <Placemark>
+	<name>Apatišan</name>
+	<ExtendedData><SchemaData schemaUrl="#Apatišan">
+		<SimpleData name="cmt">HPD Rajinac, Krasno</SimpleData>
+		<SimpleData name="bed">12</SimpleData>
+		<SimpleData name="tip">planinarska kuća</SimpleData>
+		<SimpleData name="tip_eng">mountain house</SimpleData>
+		<SimpleData name="photo">apatisan</SimpleData>
+		<SimpleData name="ele">1112 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.09316,44.77101</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

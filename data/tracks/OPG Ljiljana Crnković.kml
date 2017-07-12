@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Ljiljana_Crnković" id="OPG_Ljiljana_Crnković">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Ljiljana_Crnković</name>
+  <Placemark>
+	<name>OPG Ljiljana Crnković</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Ljiljana_Crnković">
+		<SimpleData name="photo">lcrnkovic</SimpleData>
+		<SimpleData name="addr">Pod Kunjačom 3, Perušić</SimpleData>
+		<SimpleData name="prod">pčelinji proizvodi</SimpleData>
+		<SimpleData name="prod2">bees products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.37803,44.65501</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

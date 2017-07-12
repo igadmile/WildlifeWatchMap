@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Ania_kuk</name>
+  <Placemark>
+	<name>Ania kuk</name>
+      <Point><coordinates>15.48242,44.30694,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

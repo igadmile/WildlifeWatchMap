@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.708950000000002" minlon="15.048719999999999" maxlat="44.708950000000002" maxlon="15.048719999999999"/></metadata>                  
+<wpt lat="44.70895" lon="15.04872">
+  <ele>1276.0</ele>
+  <name>Mrkvište</name>
+  <cmt>PD Zavižan, Senj</cmt>
+</wpt>
+</gpx>

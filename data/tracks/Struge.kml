@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Struge" id="Struge">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Struge</name>
+  <Placemark>
+	<name>Struge</name>
+	<ExtendedData><SchemaData schemaUrl="#Struge">
+		<SimpleData name="cmt">PD Paklenica, Zadar</SimpleData>
+		<SimpleData name="bed">15</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">struge</SimpleData>
+		<SimpleData name="ele">1400 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.46621,44.37651</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -35,7 +35,7 @@ angular.module('chooseLayers').controller('select', ['$scope', function ($scope)
     }
 
     $scope.searchExpression = function (selectedLayer, selectedBase, selectedFeature) {
-        // remove all layers except
+        // remove all layers
         map.eachLayer(function (layer) {
             map.removeLayer(layer);
         });
@@ -51,13 +51,13 @@ angular.module('chooseLayers').controller('select', ['$scope', function ($scope)
             wwwMap.overlays[selectedLayer]._layers[selectedFeature].fire('click', {
                 latlng: wwwMap.overlays[selectedLayer]._layers[selectedFeature]._latlng
             });
+        } else {
+            var featureCoordinates = wwwMap.overlays[selectedLayer]._layers[selectedFeature]._latlngs;
+            wwwMap.overlays[selectedLayer]._layers[selectedFeature].fire('click', {
+                latlng: featureCoordinates[Math.round((featureCoordinates.length - 50) / 2)]
+            });
+            map.fitBounds(wwwMap.overlays[selectedLayer]._layers[selectedFeature].getBounds(), wwwMap.boundsParams);
         }
-
-        var featureCoordinates = wwwMap.overlays[selectedLayer]._layers[selectedFeature]._latlngs;
-        wwwMap.overlays[selectedLayer]._layers[selectedFeature].fire('click', {
-            latlng: featureCoordinates[Math.round((featureCoordinates.length - 50) / 2)]
-        });
-        map.fitBounds(wwwMap.overlays[selectedLayer]._layers[selectedFeature].getBounds(), wwwMap.boundsParams);
     };
 
     $scope.genUrl = function (selectedLayer, selectedBase, selectedFeature) {
@@ -69,7 +69,10 @@ angular.module('chooseLayers').controller('select', ['$scope', function ($scope)
     };
 
     $scope.getFiles = function (selectedLayer, selectedFeature) {
-        if (selectedLayer === 'hike' || selectedLayer === 'bike' || selectedLayer === 'wildtrail') {
+        if (selectedLayer === 'scenery' && selectedFeature === 'Oltari') {
+            $scope.kml = 'data/tracks/Oltari2.kml';
+            $scope.gpx = 'data/tracks/Oltari2.gpx';
+        } else {
             $scope.kml = 'data/tracks/' + selectedFeature + '.kml';
             $scope.gpx = 'data/tracks/' + selectedFeature + '.gpx';
         }

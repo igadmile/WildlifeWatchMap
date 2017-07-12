@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Vesnica_Kasumović" id="OPG_Vesnica_Kasumović">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Vesnica_Kasumović</name>
+  <Placemark>
+	<name>OPG Vesnica Kasumović</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Vesnica_Kasumović">
+		<SimpleData name="photo">kasunovic</SimpleData>
+		<SimpleData name="addr">Kvarte 106, Perušić</SimpleData>
+		<SimpleData name="prod">pčelinji proizvodi</SimpleData>
+		<SimpleData name="prod2">bees products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.38125,44.68797</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

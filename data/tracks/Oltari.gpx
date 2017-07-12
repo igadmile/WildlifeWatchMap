@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.873579999999997" minlon="14.983689999999999" maxlat="44.873579999999997" maxlon="14.983689999999999"/></metadata>                  
+<wpt lat="44.87358" lon="14.98369">
+  <ele>940.0</ele>
+  <name>Oltari</name>
+  <cmt>HPD Sisak, Sisak</cmt>
+</wpt>
+</gpx>

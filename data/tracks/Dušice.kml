@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Dušice" id="Dušice">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Dušice</name>
+  <Placemark>
+	<name>Dušice</name>
+	<ExtendedData><SchemaData schemaUrl="#Dušice">
+		<SimpleData name="cmt">PD Belveder, Biograd na moru</SimpleData>
+		<SimpleData name="bed">12</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">dusice</SimpleData>
+		<SimpleData name="ele">1262 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.58566,44.3177</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

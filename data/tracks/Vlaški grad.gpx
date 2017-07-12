@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.326819999999998" minlon="15.552049999999999" maxlat="44.326819999999998" maxlon="15.552049999999999"/></metadata>                  
+<wpt lat="44.32682" lon="15.55205">
+  <ele>1280.0</ele>
+  <name>Vlaški grad</name>
+  <cmt>PD Paklenica, Zadar</cmt>
+</wpt>
+</gpx>

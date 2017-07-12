@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Ivine_vodice" id="Ivine_vodice">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Ivine_vodice</name>
+  <Placemark>
+	<name>Ivine vodice</name>
+	<ExtendedData><SchemaData schemaUrl="#Ivine_vodice">
+		<SimpleData name="cmt">PD Babulj, Bibinje</SimpleData>
+		<SimpleData name="bed">12</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">ivodice</SimpleData>
+		<SimpleData name="ele">1250 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.53677,44.33654</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

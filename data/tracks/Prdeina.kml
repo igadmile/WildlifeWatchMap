@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Prdeina</name>
+  <Placemark>
+	<name>Prdeina</name>
+      <Point><coordinates>15.46908,44.33684,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

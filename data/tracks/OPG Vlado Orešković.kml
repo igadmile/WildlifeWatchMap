@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Vlado_Orešković" id="OPG_Vlado_Orešković">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Vlado_Orešković</name>
+  <Placemark>
+	<name>OPG Vlado Orešković</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Vlado_Orešković">
+		<SimpleData name="photo">oreskovic</SimpleData>
+		<SimpleData name="addr">Kralja Zvonimira 5a, Perušić</SimpleData>
+		<SimpleData name="prod">pčelinji proizvodi</SimpleData>
+		<SimpleData name="prod2">bees products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.37833,44.64739</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

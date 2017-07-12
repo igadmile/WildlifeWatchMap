@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Nikolina_Hećimović" id="OPG_Nikolina_Hećimović">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Nikolina_Hećimović</name>
+  <Placemark>
+	<name>OPG Nikolina Hećimović</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Nikolina_Hećimović">
+		<SimpleData name="photo">hecimovic</SimpleData>
+		<SimpleData name="addr">Kaniža 86, Perušić</SimpleData>
+		<SimpleData name="prod">svježe voće i povrće, konzervirano voće i povrće</SimpleData>
+		<SimpleData name="prod2">fresh fruits and vegetables, preserved fruits and vegetables</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.36646,44.65162</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

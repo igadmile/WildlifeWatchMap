@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.525109999999998" minlon="15.178140000000001" maxlat="44.525109999999998" maxlon="15.178140000000001"/></metadata>                  
+<wpt lat="44.52511" lon="15.17814">
+  <ele>920.0</ele>
+  <name>Vila Velebita</name>
+  <cmt>PD Željezničar, Gospić</cmt>
+</wpt>
+</gpx>

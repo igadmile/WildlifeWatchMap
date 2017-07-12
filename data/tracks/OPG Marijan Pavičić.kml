@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Marijan_Pavičić" id="OPG_Marijan_Pavičić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Marijan_Pavičić</name>
+  <Placemark>
+	<name>OPG Marijan Pavičić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Marijan_Pavičić">
+		<SimpleData name="photo">pavicic</SimpleData>
+		<SimpleData name="addr">Budačka 42, Gospić</SimpleData>
+		<SimpleData name="prod">pčelinji proizvodi, sokovi</SimpleData>
+		<SimpleData name="prod2">bees products, juices
+</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.3782,44.55163</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

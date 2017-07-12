@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Marija_Žarak" id="OPG_Marija_Žarak">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Marija_Žarak</name>
+  <Placemark>
+	<name>OPG Marija Žarak</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Marija_Žarak">
+		<SimpleData name="photo">mzarak</SimpleData>
+		<SimpleData name="addr">Stjepana Radića 72, Perušić</SimpleData>
+		<SimpleData name="prod">sirevi i drugi mliječni proizvodi, suhomesnati proizvodi, alkoholna pića, konzervirano voće i povrće, jaja</SimpleData>
+		<SimpleData name="prod2">cheese and dairy products, dried meat, spirits, preserved fruits and vegetables, eggs</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.37887,44.65186</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

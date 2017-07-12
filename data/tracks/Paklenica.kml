@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Paklenica" id="Paklenica">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Paklenica</name>
+  <Placemark>
+	<name>Paklenica</name>
+	<ExtendedData><SchemaData schemaUrl="#Paklenica">
+		<SimpleData name="cmt">PD Paklenica, Zadar</SimpleData>
+		<SimpleData name="bed">50</SimpleData>
+		<SimpleData name="tip">planinarski dom</SimpleData>
+		<SimpleData name="tip_eng">mountain guesthouse</SimpleData>
+		<SimpleData name="photo">paklenica</SimpleData>
+		<SimpleData name="ele">480 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.48262,44.34578</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

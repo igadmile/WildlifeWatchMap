@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Božo_Grgurić" id="OPG_Božo_Grgurić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Božo_Grgurić</name>
+  <Placemark>
+	<name>OPG Božo Grgurić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Božo_Grgurić">
+		<SimpleData name="photo">grguric</SimpleData>
+		<SimpleData name="addr">Neznanih Junaka bb, Gospić</SimpleData>
+		<SimpleData name="prod">alkoholna pića, pčelinji proizvodi</SimpleData>
+		<SimpleData name="prod2">spirits, bees products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.4471,44.4927</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

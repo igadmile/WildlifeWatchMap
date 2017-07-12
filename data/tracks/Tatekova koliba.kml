@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Tatekova_koliba" id="Tatekova_koliba">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Tatekova_koliba</name>
+  <Placemark>
+	<name>Tatekova koliba</name>
+	<ExtendedData><SchemaData schemaUrl="#Tatekova_koliba">
+		<SimpleData name="cmt">PD Paklenica, Zadar</SimpleData>
+		<SimpleData name="bed">10</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">tkoliba</SimpleData>
+		<SimpleData name="ele">860 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.31881,44.40844</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

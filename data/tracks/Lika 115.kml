@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Lika_115</name>
+  <Placemark>
+	<name>Lika 115</name>
+      <Point><coordinates>15.26688,44.5029,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

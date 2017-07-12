@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Sijaset" id="Sijaset">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Sijaset</name>
+  <Placemark>
+	<name>Sijaset</name>
+	<ExtendedData><SchemaData schemaUrl="#Sijaset">
+		<SimpleData name="cmt">PD Zavižan, Senj</SimpleData>
+		<SimpleData name="bed">26</SimpleData>
+		<SimpleData name="tip">planinarska kuća</SimpleData>
+		<SimpleData name="tip_eng">mountain house</SimpleData>
+		<SimpleData name="photo">sijaset</SimpleData>
+		<SimpleData name="ele">328 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>14.96781,44.96332</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

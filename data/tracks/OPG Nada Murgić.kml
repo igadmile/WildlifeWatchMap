@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Nada_Murgić" id="OPG_Nada_Murgić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Nada_Murgić</name>
+  <Placemark>
+	<name>OPG Nada Murgić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Nada_Murgić">
+		<SimpleData name="photo">nmurgic</SimpleData>
+		<SimpleData name="addr">Kralja Tomislava 6, Perušić</SimpleData>
+		<SimpleData name="prod">jaja, sirevi i drugi mliječni proizvodi</SimpleData>
+		<SimpleData name="prod2">eggs, cheese and dairy products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.38439,44.65027</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

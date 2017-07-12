@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Marijana_Knežević" id="OPG_Marijana_Knežević">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Marijana_Knežević</name>
+  <Placemark>
+	<name>OPG Marijana Knežević</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Marijana_Knežević">
+		<SimpleData name="photo">mknezevic</SimpleData>
+		<SimpleData name="addr">Seline, Kneževići 1, Libinje</SimpleData>
+		<SimpleData name="prod">alkoholna pića, pčelinji proizvodi, jaja</SimpleData>
+		<SimpleData name="prod2">spirits, bees products, eggs</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.54454,44.29448</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

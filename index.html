@@ -63,16 +63,16 @@
                     Vaš link je: <a target="_blank" ng-href="{{urlReady}}">{{urlReady}}</a></div>
                 <form class="form-inline">
                     <div class="form-group">
-                        <button ng-disabled="!selectedFeature" ng-click="searchExpression(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži na karti</button>
+                        <a ng-disabled="!selectedFeature" ng-click="searchExpression(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži na karti</a>
                     </div>
                     <div class="form-group">
-                        <button ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-defaut">Prikaži url</button>
+                        <a ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži link</a>
                     </div>
                     <div class="form-group">
-                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{kml}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-defaut" role="button">Preuzmi KML</a>
+                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{kml}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-warning" role="button">Preuzmi KML</a>
                     </div>
                     <div class="form-group">
-                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{gpx}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-defaut" role="button">Preuzmi GPX</a>
+                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{gpx}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-warning" role="button">Preuzmi GPX</a>
                     </div>
                 </form>
             </div>
@@ -82,7 +82,9 @@
     <!--javascript-->
     <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script><!--include end-->
     <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script><!--include end-->
-    <!--include--><script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script><!--include end-->
+    <!--include-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <!--include end-->
     <!--include--><script src="https://code.jquery.com/jquery-2.2.0.min.js"></script><!--include end-->
     <!--include--><script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script><!--include end-->
     <!--include--><script src="js/leaflet-sidebar.min.js"></script><!--include end-->

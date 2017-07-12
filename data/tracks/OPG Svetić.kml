@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Svetić" id="OPG_Svetić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Svetić</name>
+  <Placemark>
+	<name>OPG Svetić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Svetić">
+		<SimpleData name="photo">svetic</SimpleData>
+		<SimpleData name="addr">Budačka 59, Gospić</SimpleData>
+		<SimpleData name="prod">gljive, konzervirano voće i povrće, sokovi, pčelinji proizvodi, suhomesnati proizvodi</SimpleData>
+		<SimpleData name="prod2">mushrooms, preserved fruits and vegetables, juices, bees products, dried meat</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.37845,44.5527</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

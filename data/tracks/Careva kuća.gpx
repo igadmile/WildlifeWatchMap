@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.741849999999999" minlon="15.057410000000001" maxlat="44.741849999999999" maxlon="15.057410000000001"/></metadata>                  
+<wpt lat="44.74185" lon="15.05741">
+  <ele>1180.0</ele>
+  <name>Careva kuća</name>
+  <cmt>PD Gromovača, Otočac</cmt>
+</wpt>
+</gpx>

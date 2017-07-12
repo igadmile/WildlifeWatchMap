@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Skorpovac" id="Skorpovac">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Skorpovac</name>
+  <Placemark>
+	<name>Skorpovac</name>
+	<ExtendedData><SchemaData schemaUrl="#Skorpovac">
+		<SimpleData name="cmt">HPD Sv. Šimun, Markuševec, Zagreb</SimpleData>
+		<SimpleData name="bed">14</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">skorpovac</SimpleData>
+		<SimpleData name="ele">958 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.05499,44.59218</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

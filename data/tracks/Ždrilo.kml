@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Ždrilo" id="Ždrilo">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Ždrilo</name>
+  <Placemark>
+	<name>Ždrilo</name>
+	<ExtendedData><SchemaData schemaUrl="#Ždrilo">
+		<SimpleData name="cmt">PD Panj, Zagreb</SimpleData>
+		<SimpleData name="bed">6</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">zdrilo</SimpleData>
+		<SimpleData name="ele">1010 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.18101,44.48355</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

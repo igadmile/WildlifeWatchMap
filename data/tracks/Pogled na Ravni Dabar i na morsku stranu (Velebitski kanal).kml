@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Pogled_na_Ravni_Dabar_i_na_morsku_stranu__Velebitski_kanal_</name>
+  <Placemark>
+	<name>Pogled na Ravni Dabar i na morsku stranu (Velebitski kanal)</name>
+      <Point><coordinates>15.10534,44.55072,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

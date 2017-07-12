@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Zlatno_sklonište" id="Zlatno_sklonište">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Zlatno_sklonište</name>
+  <Placemark>
+	<name>Zlatno sklonište</name>
+	<ExtendedData><SchemaData schemaUrl="#Zlatno_sklonište">
+		<SimpleData name="cmt">PU Tulove grede Jasenice</SimpleData>
+		<SimpleData name="bed">4</SimpleData>
+		<SimpleData name="tip">planinarsko sklonište</SimpleData>
+		<SimpleData name="tip_eng">mountain shelter</SimpleData>
+		<SimpleData name="photo">zskloniste</SimpleData>
+		<SimpleData name="ele">900 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.58113,44.29182</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

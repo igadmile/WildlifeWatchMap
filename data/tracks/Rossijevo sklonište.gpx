@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.766010000000001" minlon="14.987130000000001" maxlat="44.766010000000001" maxlon="14.987130000000001"/></metadata>                  
+<wpt lat="44.76601" lon="14.98713">
+  <ele>1580.0</ele>
+  <name>Rossijevo sklonište</name>
+  <cmt>PD Kailaš, Zagreb</cmt>
+</wpt>
+</gpx>

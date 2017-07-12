@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Kugina_kuća" id="Kugina_kuća">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="bed" type="string"></SimpleField>
+	<SimpleField name="tip" type="string"></SimpleField>
+	<SimpleField name="tip_eng" type="string"></SimpleField>
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="ele" type="string"></SimpleField>
+</Schema>
+<Folder><name>Kugina_kuća</name>
+  <Placemark>
+	<name>Kugina kuća</name>
+	<ExtendedData><SchemaData schemaUrl="#Kugina_kuća">
+		<SimpleData name="cmt">PD Željezničar, Gospić</SimpleData>
+		<SimpleData name="bed">50</SimpleData>
+		<SimpleData name="tip">planinarska kuća</SimpleData>
+		<SimpleData name="tip_eng">mountain house</SimpleData>
+		<SimpleData name="photo">kkuca</SimpleData>
+		<SimpleData name="ele">1180 m</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.07039,44.62218</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Dragica_Pejnović" id="OPG_Dragica_Pejnović">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Dragica_Pejnović</name>
+  <Placemark>
+	<name>OPG Dragica Pejnović</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Dragica_Pejnović">
+		<SimpleData name="photo">pejnovic</SimpleData>
+		<SimpleData name="addr">Zagrebačka 52, Gospić</SimpleData>
+		<SimpleData name="prod">svježe voće i povrće, konzervirano voće i povrće, jaja, sokovi
+</SimpleData>
+		<SimpleData name="prod2">fresh fruits and vegetables, preserved fruits and vegetables, eggs, juices</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.30323,44.55608</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="44.336539999999999" minlon="15.536770000000001" maxlat="44.336539999999999" maxlon="15.536770000000001"/></metadata>                  
+<wpt lat="44.33654" lon="15.53677">
+  <ele>1250.0</ele>
+  <name>Ivine vodice</name>
+  <cmt>PD Babulj, Bibinje</cmt>
+</wpt>
+</gpx>

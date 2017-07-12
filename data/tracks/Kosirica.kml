@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Kosirica</name>
+  <Placemark>
+	<name>Kosirica</name>
+      <Point><coordinates>15.47564,44.34503,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

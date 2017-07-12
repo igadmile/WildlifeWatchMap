@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Krbava_121</name>
+  <Placemark>
+	<name>Krbava 121</name>
+      <Point><coordinates>15.89516,44.33588,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

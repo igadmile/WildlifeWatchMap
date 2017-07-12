@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Ivanka_Pavelić" id="OPG_Ivanka_Pavelić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Ivanka_Pavelić</name>
+  <Placemark>
+	<name>OPG Ivanka Pavelić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Ivanka_Pavelić">
+		<SimpleData name="photo">pavelic</SimpleData>
+		<SimpleData name="addr">Debelo Brdo 46, Gospić</SimpleData>
+		<SimpleData name="prod">uzgoj stoke</SimpleData>
+		<SimpleData name="prod2">cattle farming</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.30037,44.53758</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Brkić" id="OPG_Brkić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Brkić</name>
+  <Placemark>
+	<name>OPG Brkić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Brkić">
+		<SimpleData name="addr">Krasno 97a, Krasno</SimpleData>
+		<SimpleData name="prod">konzervirano voće i povrće, sokovi, pčelinji proizvodi</SimpleData>
+		<SimpleData name="prod2">preserved fruits and vegetables, juices, bees products</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.05968,44.81715</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

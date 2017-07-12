@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="OPG_Anka_Nenadić" id="OPG_Anka_Nenadić">
+	<SimpleField name="photo" type="string"></SimpleField>
+	<SimpleField name="addr" type="string"></SimpleField>
+	<SimpleField name="prod" type="string"></SimpleField>
+	<SimpleField name="prod2" type="string"></SimpleField>
+</Schema>
+<Folder><name>OPG_Anka_Nenadić</name>
+  <Placemark>
+	<name>OPG Anka Nenadić</name>
+	<ExtendedData><SchemaData schemaUrl="#OPG_Anka_Nenadić">
+		<SimpleData name="photo">anenadic</SimpleData>
+		<SimpleData name="addr">Kvarte 47, Perušić</SimpleData>
+		<SimpleData name="prod">konzervirano voće i povrće, sokovi, alkoholna pića, suhomesnati proizvodi</SimpleData>
+		<SimpleData name="prod2">preserved fruits and vegetables, juices, spirits, dried meat</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>15.38322,44.67895</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>
