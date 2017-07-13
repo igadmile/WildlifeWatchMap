@@ -33,15 +33,17 @@
         <div class="sidebar-content">
             <div class="sidebar-pane" id="home">
                 <h1 class="sidebar-header">
-                    Odabir slojeva i poligona
+                    Odabir slojeva i staza
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <div class="alert alert-warning spacer" role="alert">
-                    Iz ovih izbornika možete odabrati pozadinsku kartu, sloj i/ili poligon iz odabranog sloja.
+                    Iz ovih izbornika možete odabrati pozadinsku kartu, sloj i/ili stazu/točku od interesa iz odabranog sloja.
                     <br>
-                    <br>Pritiskom na gump "Prikaži na karti", na karti će se prikazati odabrani poligon. Gumb će biti omogućen nakon što odaberete poligon iz odabranog sloja
+                    <br>Pritiskom na gump "Prikaži na karti", na karti će se prikazati odabrana staza/točka od interesa. Gumb će biti omogućen nakon što odaberete stazu/točku od interesa iz odabranog sloja.
                     <br>
-                    <br>Pritiskom na gumb "Prikaži link", dobit će te link kojeg možete koristiti za prikazivanje odabranog sloja i/ili poligona pri učitavanju stranice.
+                    <br>Pritiskom na gumb "Prikaži link", dobit će te link kojeg možete koristiti za prikazivanje odabranog sloja i/ili staze/točke od interesa pri učitavanju stranice.
+                    <br>
+                    <br>Pritiskom na "Preuzmi KML", preuzet će te KML odabrane staze/točke od interesa. Pritiskom na "Preuzmi GPX", preuzet će te GPX odabrane staze/točke od interesa. Ovi gumbi će biti omogućeni tek kada odaberete stazu/točku od interesa iz odabranog sloja.
                 </div>
                 <form>
                     <div class="form-group">
@@ -82,9 +84,7 @@
     <!--javascript-->
     <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script><!--include end-->
     <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script><!--include end-->
-    <!--include-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <!--include end-->
+    <!--include--><script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script><!--include end-->
     <!--include--><script src="https://code.jquery.com/jquery-2.2.0.min.js"></script><!--include end-->
     <!--include--><script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script><!--include end-->
     <!--include--><script src="js/leaflet-sidebar.min.js"></script><!--include end-->

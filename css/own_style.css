@@ -70,6 +70,8 @@ th {
 .leaflet-control-fullscreen-button {
     background-position: 0 0 !important;
 }
+
+
 /* slideshow */
 
 .cycle {
@@ -191,3 +193,11 @@ fieldset[disabled] .btn-warning:hover {
     background-color: #3b3939;
     border-color: #3b3939;
 }
+
+/*
+.alert-warning {
+    color: #525252;
+    background-color: #e2e2e2;
+    border-color: #ddd;
+}
+*/

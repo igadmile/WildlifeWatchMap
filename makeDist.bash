@@ -30,13 +30,13 @@ rm ./dist/css/include.css;
 
 cat ./dist/js/angular.min.js ./dist/js/angular-animate.min.js ./dist/js/ui-bootstrap-tpls.min.js ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js ./dist/js/leaflet-sidebar.min.js ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/code/angular/app.js ./dist/data/data.js ./dist/code/params.js ./dist/code/events.js ./dist/code/layers.js ./dist/code/map.js ./dist/code/init.js ./dist/code/slider.js > ./dist/js/include.js;
 rm  ./dist/js/angular.min.js ./dist/js/angular-animate.min.js  ./dist/js/ui-bootstrap-tpls.min.js  ./dist/js/jquery-2.2.0.min.js ./dist/js/leaflet.js  ./dist/js/leaflet-sidebar.min.js ./dist/js/Leaflet.fullscreen.min.js ./dist/js/Leaflet.MakiMarkers.js ./dist/js/L.Control.Locate.js  ./dist/js/d3.v3.min.js ./dist/js/leaflet.elevation-0.0.4.min.js ./dist/js/styledLayerControl.js ./dist/code/angular/app.js ./dist/data/data.js ./dist/code/params.js ./dist/code/events.js ./dist/code/layers.js ./dist/code/map.js ./dist/code/init.js ./dist/code/slider.js;
-rm  -r ./dist/data ./dist/code;
+rm  -r ./dist/code;
 uglifyjs ./dist/js/include.js > ./dist/js/includes.js;
 rm ./dist/js/include.js;
 
 wget http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.zip -P ./dist/css;
 unzip ./dist/css/leaflet.zip -d ./dist/css
-rm ./dist/css/leaflet-src.js ./dist/css/leaflet.css ./dist/css/leaflet.js ./dist/css/leaflet.zip
+rm ./dist/css/leaflet-src.js ./dist/css/leaflet.css ./dist/css/leaflet.js ./dist/css/leaflet.zip;
 
 sed -i 's/<!--include-->.*<!--include end-->//g' ./dist/index.html;
 sed -i 's/<!--include final css-->/<link rel="stylesheet" type="text\/css" href="css\/includes.css">/g' ./dist/index.html;
@@ -46,4 +46,4 @@ sed -i 's/<!--javascript-->//g' ./dist/index.html;
 sed -i 's/<!--data-->//g' ./dist/index.html;
 sed -i '/^\s*$/d' ./dist/index.html;
 
-rm ./dist/kmlTogpx.sh ./dist/LICENSE ./dist/qgis.py
+rm ./dist/kmlTogpx.sh ./dist/LICENSE ./dist/qgis.py ./dist/makeDist.bash
