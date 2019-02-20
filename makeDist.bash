@@ -46,4 +46,4 @@ sed -i 's/<!--javascript-->//g' ./dist/index.html;
 sed -i 's/<!--data-->//g' ./dist/index.html;
 sed -i '/^\s*$/d' ./dist/index.html;
 
-rm ./dist/kmlTogpx.sh ./dist/LICENSE ./dist/qgis.py ./dist/makeDist.bash
+rm ./dist/kmlTogpx.sh ./dist/LICENSE ./dist/makeDist.bash
