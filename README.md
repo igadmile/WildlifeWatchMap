@@ -1,2 +1,2 @@
 Interactive map built as part of Wildlife Watch project.
-![Layer Control](../screenshot/layer-control.jpg)
+![Layer Control](../screenshots/layer-control.jpg)
