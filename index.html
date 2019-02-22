@@ -1,109 +1,202 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Wildlife Watch map</title>
     <link rel="shortcut icon" type="image/png" href="favico.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <meta charset="utf-8" />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!--css-->
-    <!--include--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!--include end-->
-    <!--include--><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" /><!--include end-->
-    <!--include--><link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" /><!--include end-->
-    <!--include--><link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.min.css"><!--include end-->
-    <!--include--><link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' /><!--include end-->
-    <!--include--><link rel="stylesheet" href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css" /><!--include end-->
-    <!--include--><link rel="stylesheet" type="text/css" href="css/leaflet.elevation-0.0.4.css"><!--include end-->
-    <!--include--><link rel="stylesheet" type="text/css" href="css/styledLayerControl.css"><!--include end-->
-    <!--include--><link rel="stylesheet" type="text/css" href="css/own_style.css"><!--include end-->
-    <!--include final css-->
-</head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.min.css" />
+    <link
+      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/leaflet.elevation-0.0.4.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styledLayerControl.css" />
+    <link rel="stylesheet" type="text/css" href="css/own_style.css" />
+  </head>
 
-<body ng-app="chooseLayers">
-    <div ng-controller="select" ng-hide="smallScreen" id="sidebar" class="sidebar collapsed">
-        <!-- Nav tabs -->
-        <div class="sidebar-tabs">
-            <ul role="tablist">
-                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
-            </ul>
-        </div>
+  <body ng-app="chooseLayers">
+    <div
+      ng-controller="select"
+      ng-hide="smallScreen"
+      id="sidebar"
+      class="sidebar collapsed"
+    >
+      <!-- Nav tabs -->
+      <div class="sidebar-tabs">
+        <ul role="tablist">
+          <li>
+            <a href="#home" role="tab"><i class="fa fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
 
-        <!-- Tab panes -->
-        <div class="sidebar-content">
-            <div class="sidebar-pane" id="home">
-                <h1 class="sidebar-header">
-                    Odabir slojeva i staza
-                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-                </h1>
-                <div class="alert alert-warning spacer" role="alert">
-                    Iz ovih izbornika možete odabrati pozadinsku kartu, sloj i/ili stazu/točku od interesa iz odabranog sloja.
-                    <br>
-                    <br>Pritiskom na gump "Prikaži na karti", na karti će se prikazati odabrana staza/točka od interesa. Gumb će biti omogućen nakon što odaberete stazu/točku od interesa iz odabranog sloja.
-                    <br>
-                    <br>Pritiskom na gumb "Prikaži link", dobit će te link kojeg možete koristiti za prikazivanje odabranog sloja i/ili staze/točke od interesa pri učitavanju stranice.
-                    <br>
-                    <br>Pritiskom na "Preuzmi KML", preuzet će te KML odabrane staze/točke od interesa. Pritiskom na "Preuzmi GPX", preuzet će te GPX odabrane staze/točke od interesa. Ovi gumbi će biti omogućeni tek kada odaberete stazu/točku od interesa iz odabranog sloja.
-                </div>
-                <form>
-                    <div class="form-group">
-                        <label>Odaberite pozadinsku kartu</label>
-                        <select class="form-control" ng-model="selectedBase" ng-options="selectedBase as baseLayer for (selectedBase, baseLayer) in baseLayers">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Odaberite sloj</label>
-                        <select class="form-control" ng-options="selectedLayer as layer for (selectedLayer , layer) in layers" ng-model="selectedLayer" ng-change="resetFeature()">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Odaberite poligon</label>
-                        <input type="text" ng-model="selectedFeature" uib-typeahead="feature.properties.name for feature in features[selectedLayer] | filter:$viewValue" typeahead-show-hint="true" class="form-control" reqired>
-                    </div>
-                </form>
-                <div ng-show="urlReady" class="alert alert-warning spacer" role="alert">
-                    Vaš link je: <a target="_blank" ng-href="{{urlReady}}">{{urlReady}}</a></div>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <a ng-disabled="!selectedFeature" ng-click="searchExpression(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži na karti</a>
-                    </div>
-                    <div class="form-group">
-                        <a ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)" type="submit" class="btn btn-danger">Prikaži link</a>
-                    </div>
-                    <div class="form-group">
-                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{kml}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-warning" role="button">Preuzmi KML</a>
-                    </div>
-                    <div class="form-group">
-                        <a ng-disabled="!selectedFeature" type="submit" ng-href="{{gpx}}" ng-click="getFiles(selectedLayer, selectedFeature)" type="submit" class="btn btn-warning" role="button">Preuzmi GPX</a>
-                    </div>
-                </form>
+      <!-- Tab panes -->
+      <div class="sidebar-content">
+        <div class="sidebar-pane" id="home">
+          <h1 class="sidebar-header">
+            Odabir slojeva i staza
+            <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+          </h1>
+          <div class="alert alert-warning spacer" role="alert">
+            Iz ovih izbornika možete odabrati pozadinsku kartu, sloj i/ili
+            stazu/točku od interesa iz odabranog sloja.
+            <br />
+            <br />Pritiskom na gump "Prikaži na karti", na karti će se prikazati
+            odabrana staza/točka od interesa. Gumb će biti omogućen nakon što
+            odaberete stazu/točku od interesa iz odabranog sloja.
+            <br />
+            <br />Pritiskom na gumb "Prikaži link", dobit će te link kojeg
+            možete koristiti za prikazivanje odabranog sloja i/ili staze/točke
+            od interesa pri učitavanju stranice.
+            <br />
+            <br />Pritiskom na "Preuzmi KML", preuzet će te KML odabrane
+            staze/točke od interesa. Pritiskom na "Preuzmi GPX", preuzet će te
+            GPX odabrane staze/točke od interesa. Ovi gumbi će biti omogućeni
+            tek kada odaberete stazu/točku od interesa iz odabranog sloja.
+          </div>
+          <form>
+            <div class="form-group">
+              <label>Odaberite pozadinsku kartu</label>
+              <select
+                class="form-control"
+                ng-model="selectedBase"
+                ng-options="selectedBase as baseLayer for (selectedBase, baseLayer) in baseLayers"
+              >
+              </select>
             </div>
+            <div class="form-group">
+              <label>Odaberite sloj</label>
+              <select
+                class="form-control"
+                ng-options="selectedLayer as layer for (selectedLayer , layer) in layers"
+                ng-model="selectedLayer"
+                ng-change="resetFeature()"
+              >
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Odaberite stazu/točku</label>
+              <input
+                type="text"
+                ng-model="selectedFeature"
+                uib-typeahead="feature.properties.name for feature in features[selectedLayer] | filter:$viewValue"
+                typeahead-show-hint="true"
+                class="form-control"
+                reqired
+              />
+            </div>
+          </form>
+          <div
+            ng-show="urlReady"
+            class="alert alert-warning spacer"
+            role="alert"
+          >
+            Vaš link je:
+            <a target="_blank" ng-href="{{ urlReady }}">{{ urlReady }}</a>
+          </div>
+          <form class="form-inline">
+            <div class="form-group">
+              <a
+                ng-disabled="!selectedFeature"
+                ng-click="searchExpression(selectedLayer, selectedBase, selectedFeature)"
+                type="submit"
+                class="btn btn-danger"
+                >Prikaži na karti</a
+              >
+            </div>
+            <div class="form-group">
+              <a
+                ng-click="genUrl(selectedLayer, selectedBase, selectedFeature)"
+                type="submit"
+                class="btn btn-danger"
+                >Prikaži link</a
+              >
+            </div>
+            <div class="form-group">
+              <a
+                ng-disabled="!selectedFeature"
+                type="submit"
+                ng-href="{{ kml }}"
+                ng-click="getFiles(selectedLayer, selectedFeature)"
+                type="submit"
+                class="btn btn-warning"
+                role="button"
+                >Preuzmi KML</a
+              >
+            </div>
+            <div class="form-group">
+              <a
+                ng-disabled="!selectedFeature"
+                type="submit"
+                ng-href="{{ gpx }}"
+                ng-click="getFiles(selectedLayer, selectedFeature)"
+                type="submit"
+                class="btn btn-warning"
+                role="button"
+                >Preuzmi GPX</a
+              >
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <div id="map" class="sidebar-map"></div>
     <!--javascript-->
-    <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script><!--include end-->
-    <!--include--><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script><!--include end-->
-    <!--include--><script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script><!--include end-->
-    <!--include--><script src="https://code.jquery.com/jquery-2.2.0.min.js"></script><!--include end-->
-    <!--include--><script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script><!--include end-->
-    <!--include--><script src="js/leaflet-sidebar.min.js"></script><!--include end-->
-    <!--include--><script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script><!--include end-->
-    <!--include--><script src="js/Leaflet.MakiMarkers.js"></script><!--include end-->
-    <!--include--><script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script><!--include end-->
-    <!--include--><script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script><!--include end-->
-    <!--include--><script src="js/leaflet.elevation-0.0.4.min.js"></script><!--include end-->
-    <!--include--><script src="js/styledLayerControl.js"></script><!--include end-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+    <script src="js/leaflet-sidebar.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+    <script src="js/Leaflet.MakiMarkers.js"></script>
+    <script
+      src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/leaflet.elevation-0.0.4.min.js"></script>
+    <script src="js/styledLayerControl.js"></script>
     <!--data-->
-    <!--include--><script src="code/angular/app.js"></script><!--include end-->
-    <!--include--><script src='data/data.js'></script><!--include end-->
-    <!--include--><script src='code/params.js'></script><!--include end-->
-    <!--include--><script src='code/events.js'></script><!--include end-->
-    <!--include--><script src='code/layers.js'></script><!--include end-->
-    <!--include--><script src='code/map.js'></script><!--include end-->
-    <!--include--><script src='code/init.js'></script><!--include end-->
-    <!--include--><script src='code/slider.js'></script><!--include end-->
-    <!--include final js-->
-</body>
-
+    <script src="code/angular/app.js"></script>
+    <script src="data/data.js"></script>
+    <script src="code/params.js"></script>
+    <script src="code/events.js"></script>
+    <script src="code/layers.js"></script>
+    <script src="code/map.js"></script>
+    <script src="code/init.js"></script>
+    <script src="code/slider.js"></script>
+  </body>
 </html>
