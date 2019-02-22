@@ -15,6 +15,10 @@ It is part of the [GoVelebit](http://www.govelebit.com/) website. Standalone map
 # Feature overview
 ![map overview](../screenshots/map-overview_2.jpg)
 
+When the line layer is hovered, it will be higlihted.
+
+Whan any of the features is clicked, the popup with the feature medadata will be displyed.
+
 ## Layer control
 - Choose which base map (Pozadinske karte) will be shown.
 - Choose which trails or POIs will be displayed.
