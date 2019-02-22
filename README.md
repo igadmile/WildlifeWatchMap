@@ -6,11 +6,12 @@ It is part of the [GoVelebit](http://www.govelebit.com/) website. Standalone map
 
 # Technologies
 - leafletjs
+- leaflet-elevation leaflet plugin
+- styledLayerControl leaflet plugin
+- leaflet-sidebar-v2
 - angular
 - angular-animate
 - angular-ui-bootstrap
-- leaflet-elevation leaflet plugin
-- styledLayerControl leaflet plugin
 
 # Feature overview
 ![map overview](../screenshots/map-overview_2.jpg)
