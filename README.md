@@ -5,9 +5,9 @@ The scope of the project was to collect and provide a way to explore hiking, bik
 It is part of the [GoVelebit](http://www.govelebit.com/) website. Standalone map is hosted [here](http://wildlifewatch.biom.hr/)
 
 # Technologies
+- leafletjs
 - angular
 - angular-animate
 - angular-ui-bootstrap
-- leafletjs
 - leaflet-elevation leaflet plugin
 - styledLayerControl leaflet plugin
